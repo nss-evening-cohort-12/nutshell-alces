@@ -16,4 +16,4 @@ const convertFirebaseCollection = (data) => {
   return arrayCollection;
 };
 
-export default { printToDom, convertFirebaseCollection }
+export default { printToDom, convertFirebaseCollection };
