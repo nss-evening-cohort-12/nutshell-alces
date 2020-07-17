@@ -1,0 +1,11 @@
+{
+  "firebaseConfig": {
+    "apiKey": "AIzaSyCjmHXez84yaS9SRKftimMvtpS68dt88tc",
+    "authDomain": "panam-airlines-aea42.firebaseapp.com",
+    "databaseURL": "https://panam-airlines-aea42.firebaseio.com",
+    "projectId": "panam-airlines-aea42",
+    "storageBucket": "panam-airlines-aea42.appspot.com",
+    "messagingSenderId": "368163169173",
+    "appId": "1:368163169173:web:bd935f469f7ca4b4bd4c9c"
+  }
+}
