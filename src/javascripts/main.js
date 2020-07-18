@@ -3,7 +3,6 @@ import apiKeys from './helpers/apiKeys.json';
 
 import auth from './components/auth/auth';
 import myNavbar from './components/myNavbar/myNavbar';
-import planesList from './components/planesList/planesList';
 import authData from './helpers/data/authData';
 
 import 'bootstrap';
@@ -14,7 +13,6 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   myNavbar.logoutEvent();
-  planesList.showPlanes();
 };
 
 init();

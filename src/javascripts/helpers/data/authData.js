@@ -3,6 +3,7 @@ import 'firebase/auth';
 
 import crewList from '../../components/crewList/crewList';
 import airportList from '../../components/airportList/airportList';
+import planesList from '../../components/planesList/planesList';
 
 const authDiv = $('#auth');
 const homeDiv = $('#homepage');
@@ -15,13 +16,17 @@ const checkLoginStatus = () => {
       homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
 
-      $('#crew').show(crewList.buildCrew);
+      crewList.buildCrew();
       airportList.buildHangar();
+      planesList.showPlanes();
     } else {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
       logoutButton.addClass('hide');
-      $('#crew').show(crewList.buildCrew);
+
+      crewList.buildCrew();
+      airportList.buildHangar();
+      planesList.showPlanes();
     }
   });
 };

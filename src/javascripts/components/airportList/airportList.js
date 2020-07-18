@@ -6,7 +6,7 @@ const buildHangar = () => {
   airportData.getAirports()
     .then((airports) => {
       let domString = `
-        <h2 class="text-center">Hangar</h2>
+        <h2 class="text-center">Airports Serviced by Pan Am</h2>
         <div class="d-flex flex-wrap">
       `;
 
