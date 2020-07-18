@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import crewList from '../../components/crewList/crewList';
+import airportList from '../../components/airportList/airportList';
 
 const authDiv = $('#auth');
 const homeDiv = $('#homepage');
@@ -13,7 +14,9 @@ const checkLoginStatus = () => {
       authDiv.addClass('hide');
       homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
+
       $('#crew').show(crewList.buildCrew);
+      airportList.buildHangar();
     } else {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
