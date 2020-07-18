@@ -1,6 +1,5 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import planesList from '../../components/planesList/planesList';
 
 const authDiv = $('#auth');
 const homeDiv = $('#homepage');
