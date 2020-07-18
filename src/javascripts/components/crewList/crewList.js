@@ -12,7 +12,7 @@ const buildCrew = () => {
           <div class="d-flex flex-wrap">
           `;
       crews.forEach((crew) => {
-        domString += crewComponent.crewMaker(crew);
+        domString += crewComponent.crewCardMaker(crew);
       });
 
       domString += '</div></div>';

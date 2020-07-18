@@ -1,6 +1,6 @@
 import './crew.scss';
 
-const crewMaker = (crew) => {
+const crewCardMaker = (crew) => {
   const domString = `
     <div class="crew-card">
       <img class="card-img-top" src=${crew.imageUrl} id=${crew.id}>
@@ -13,4 +13,4 @@ const crewMaker = (crew) => {
   return domString;
 };
 
-export default { crewMaker };
+export default { crewCardMaker };
