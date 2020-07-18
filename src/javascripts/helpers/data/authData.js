@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import planesList from '../../components/planesList/planesList';
 
 const authDiv = $('#auth');
 const homeDiv = $('#homepage');
@@ -11,10 +12,12 @@ const checkLoginStatus = () => {
       authDiv.addClass('hide');
       homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
+      $('#plane-collection').show(planesList.showPlanes);
     } else {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
       logoutButton.addClass('hide');
+      $('#plane-collection').hide(planesList.showPlanes);
     }
   });
 };
