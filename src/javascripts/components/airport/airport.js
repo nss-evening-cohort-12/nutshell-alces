@@ -15,4 +15,4 @@ const airportCardMaker = (airport) => {
   return domString;
 };
 
-export default { airportMaker };
+export default { airportCardMaker };
