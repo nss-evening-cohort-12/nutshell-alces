@@ -5,7 +5,6 @@ import utils from '../../helpers/utils';
 const showPlanes = () => {
   planesData.getPlanes()
     .then((planes) => {
-      console.warn('getPlanes does work', planes);
       let domString = ` 
                       <div id="model-category" class="d-flex flex-wrap">
                       `;
