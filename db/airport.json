@@ -1,0 +1,38 @@
+{
+  "airport1": {
+    "imgURL": "https://media.licdn.com/dms/image/C4D1BAQEM_PS14tla_w/company-background_10000/0?e=2159024400&v=beta&t=hzvgo2APwkwTJ60dM5vV7ARFIKfQ8BV-Hx9kOr-m2ho",
+    "name": "Nashville International Airport (BNA",
+    "location": "Nashville, TN",
+    "webURL": "https://flynashville.com/“"
+  },
+  "airport2": {
+    "imgURL": "https://www.newyorkconstructionreport.com/wp-content/uploads/2020/02/jfk.jpg",
+    "name": "John F. Kennedy International Airport (JFK)",
+    "location": "New York, NY",
+    "webURL": "https://www.jfkairport.com/"
+  },
+  "airport3": {
+    "imgURL": "https://xpressshuttles.com/wp-content/uploads/2015/01/lax-los-angeles-airport.jpg",
+    "name": "Los Angeles International Airport (LAX)",
+    "location": "Los Angeles, CA",
+    "webURL": "https://www.flylax.com/"
+  },
+  "airport4": {
+    "imgURL": "https://cdn.vox-cdn.com/thumbor/hWQL_8rB8g7xvqr2HYFDjswlH28=/0x0:960x639/1520x1013/filters:focal(335x155:487x307):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/59812915/dulles-photo-guide-intro.0.0.0.0.jpg",
+    "name": "Washington Dulles International Airport (Dulles)",
+    "location": "Washington D.C",
+    "webURL": "https://www.flydulles.com/iad/dulles-international-airport"
+  },
+  "airport5": {
+    "imgURL": "https://cdn.vox-cdn.com/thumbor/hWQL_8rB8g7xvqr2HYFDjswlH28=/0x0:960x639/1520x1013/filters:focal(335x155:487x307):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/59812915/dulles-photo-guide-intro.0.0.0.0.jpg",
+    "name": "O’Hare International Airport (O’Hare)",
+    "location": "Chicago, IL",
+    "webURL": "https://www.flychicago.com/ohare/home/pages/default.aspx"
+  },
+  "airport6": {
+    "imgURL": "https://www.cottoncpa.com/wp-content/uploads/2016/04/POJV-vs-Miami-Dade-project.jpg",
+    "name": "Miami International Airport (MIA)",
+    "service": "Miami, FL",
+    "type": "http://www.miami-airport.com/"
+  }
+}
