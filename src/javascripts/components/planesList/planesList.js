@@ -8,7 +8,7 @@ const showPlanes = () => {
       let domString = '<div id="model-category" class="d-flex flex-wrap">';
 
       planes.forEach((plane) => {
-        domString += planesComponent.createPlane(plane);
+        domString += planesComponent.createPlaneCard(plane);
       });
 
       domString += '</div>';
