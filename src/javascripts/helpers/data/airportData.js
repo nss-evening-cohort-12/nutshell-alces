@@ -3,8 +3,6 @@ import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-// axios.get(`${baseUrl}/airport.json`);
-
 const getAirports = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/airport.json`)
     .then((response) => {
