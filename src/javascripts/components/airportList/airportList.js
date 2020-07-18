@@ -11,7 +11,7 @@ const buildHangar = () => {
       `;
 
       airports.forEach((airport) => {
-        domString += airportComponent.airportMaker(airport);
+        domString += airportComponent.airportCardMaker(airport);
       });
 
       domString += '</div>';
