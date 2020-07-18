@@ -2,6 +2,18 @@ import airportComponent from '../airport/airport';
 import airportData from '../../helpers/data/airportData';
 import utils from '../../helpers/utils';
 
+const removeAirportEvent = (e) => {
+  const airportId = e.target.closest('.airport-card').id;
+  console.warn(airportId);
+  airportData.deleteAirport(airportId)
+    .then((response) => {
+      console.warn('response', response);
+
+      buildHangar();
+    })
+    .catch((err) => console.error('did not delete irport', err));
+};
+
 const buildHangar = () => {
   airportData.getAirports()
     .then((airports) => {
@@ -17,6 +29,7 @@ const buildHangar = () => {
       domString += '</div>';
 
       utils.printToDom('#hangar', domString);
+      $('body').on('click', '.delete-airport', removeAirportEvent);
     })
     .catch((err) => console.error('get airports broke', err));
 };
