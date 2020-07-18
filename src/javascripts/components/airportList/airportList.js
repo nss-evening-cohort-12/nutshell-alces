@@ -19,8 +19,6 @@ const buildHangar = () => {
       utils.printToDom('#hangar', domString);
     })
     .catch((err) => console.error('get airports broke', err));
-  // const domString = '<h1>I SEE AIRPORTS</h1>';
-  // utils.printToDom('#hangar', domString);
 };
 
 export default { buildHangar };
