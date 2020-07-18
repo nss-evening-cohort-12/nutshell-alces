@@ -1,4 +1,6 @@
-const createPlane = (plane) => {
+import './planes.scss';
+
+const createPlaneCard = (plane) => {
   const domString = ` <div class="plane-card">
                         <img class="card-img-top" src="${plane.imgURL}" alt="Card image cap">
                         <div class="plane-body">
@@ -10,4 +12,4 @@ const createPlane = (plane) => {
   return domString;
 };
 
-export default { createPlane };
+export default { createPlaneCard };
