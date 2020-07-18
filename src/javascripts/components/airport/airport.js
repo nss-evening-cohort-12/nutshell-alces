@@ -1,6 +1,6 @@
 import './airport.scss';
 
-const airportMaker = (airport) => {
+const airportCardMaker = (airport) => {
   const domString = `
     <div class="airport-card">
       <img class="card-img-top" src="${airport.imgURL}" alt="Card image cap">
