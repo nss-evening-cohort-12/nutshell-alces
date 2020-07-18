@@ -5,9 +5,7 @@ import utils from '../../helpers/utils';
 const showPlanes = () => {
   planesData.getPlanes()
     .then((planes) => {
-      let domString = ` 
-                      <div id="model-category" class="d-flex flex-wrap">
-                      `;
+      let domString = '<div id="model-category" class="d-flex flex-wrap">';
 
       planes.forEach((plane) => {
         domString += planesComponent.createPlane(plane);
