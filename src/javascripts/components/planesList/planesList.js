@@ -1,7 +1,6 @@
 import planesData from '../../helpers/data/planesData';
 import planesComponent from '../planes/planes';
 import utils from '../../helpers/utils';
-@import "../javascripts/components/planes/planes.scss";
 
 const showPlanes = () => {
   planesData.getPlanes()
