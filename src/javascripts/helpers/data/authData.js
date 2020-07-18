@@ -1,6 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import crewList from '../../components/crewList/crewList';
+
 const authDiv = $('#auth');
 const homeDiv = $('#homepage');
 const logoutButton = $('#navbar-logout-button');
@@ -11,10 +13,12 @@ const checkLoginStatus = () => {
       authDiv.addClass('hide');
       homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
+      $('#crew').show(crewList.buildCrew);
     } else {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
       logoutButton.addClass('hide');
+      $('#crew').show(crewList.buildCrew);
     }
   });
 };

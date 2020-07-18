@@ -1,9 +1,16 @@
 import './crew.scss';
 
 const crewMaker = (crew) => {
-  let domString = `
-    <div class="col-3">
-      <img src=class="card" id=${crew.id}>
-          <div class="card-body">
-        `
-}
+  const domString = `
+    <div class="crew-card">
+      <img class="card-img-top" src=${crew.imageUrl} id=${crew.id}>
+        <div class="crew-body">
+        <h4 class "card-title">${crew.name}</h4>
+        <h5 class "card-title">${crew.title}</h5>
+        </div>
+        </div>`;
+
+  return domString;
+};
+
+export default { crewMaker };
