@@ -5,7 +5,6 @@ import utils from '../../helpers/utils';
 const buildHangar = () => {
   airportData.getAirports()
     .then((airports) => {
-      console.warn('Get airports worked', airports);
       let domString = `
         <h2 class="text-center">Hangar</h2>
         <div class="d-flex flex-wrap">
