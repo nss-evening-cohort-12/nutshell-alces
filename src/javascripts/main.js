@@ -4,7 +4,7 @@ import apiKeys from './helpers/apiKeys.json';
 import auth from './components/auth/auth';
 import myNavbar from './components/myNavbar/myNavbar';
 import authData from './helpers/data/authData';
-import crewEvents from './components/crewList/crewList';
+// import crewEvents from './components/crewList/crewList';
 
 import 'bootstrap';
 import '../styles/main.scss';
@@ -14,7 +14,7 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   myNavbar.logoutEvent();
-  crewEvents.crewEvents();
+  // crewEvents.crewEvents();
 };
 
 init();

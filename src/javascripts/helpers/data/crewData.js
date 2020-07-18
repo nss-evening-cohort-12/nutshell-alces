@@ -18,5 +18,12 @@ const getCrew = () => new Promise((resolve, reject) => {
 });
 
 const deleteCrew = (crewId) => axios.delete(`${baseUrl}/crew/${crewId}.json`);
+const addCrew = (newCrewObj) => axios.post(`${baseUrl}/crew.json`, newCrewObj);
+const editCrew = (crewId, editedCrew) => axios.put(`${baseUrl}/crew/${crewId}.json`, editedCrew);
 
-export default { getCrew, deleteCrew };
+export default {
+  getCrew,
+  deleteCrew,
+  addCrew,
+  editCrew,
+};

@@ -8,7 +8,6 @@ import planesList from '../../components/planesList/planesList';
 const authDiv = $('#auth');
 const homeDiv = $('#homepage');
 const logoutButton = $('#navbar-logout-button');
-// const editCrewDiv = $('#edit-crew)')
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -16,8 +15,8 @@ const checkLoginStatus = () => {
       authDiv.addClass('hide');
       homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
-      // editCrewDiv.removeClass('hide');
 
+      crewList.crewEvents();
       crewList.buildCrew();
       airportList.buildHangar();
       planesList.showPlanes();
@@ -25,7 +24,6 @@ const checkLoginStatus = () => {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
       logoutButton.addClass('hide');
-      // editCrewDiv.addClass('hide');
 
       crewList.buildCrew();
       airportList.buildHangar();
