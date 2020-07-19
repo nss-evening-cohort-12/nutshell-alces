@@ -9,6 +9,7 @@ const authDiv = $('#auth');
 const homeDiv = $('#homepage');
 const logoutButton = $('#navbar-logout-button');
 const newAirportDiv = $('#new-airport');
+const editAirportDiv = $('#edit-airport');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -17,6 +18,7 @@ const checkLoginStatus = () => {
       homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
       newAirportDiv.removeClass('hide');
+      editAirportDiv.removeClass('hide');
 
       airportList.airportEvents();
       crewList.buildCrew();
@@ -27,6 +29,7 @@ const checkLoginStatus = () => {
       homeDiv.addClass('hide');
       logoutButton.addClass('hide');
       newAirportDiv.addClass('hide');
+      editAirportDiv.addClass('hide');
 
       crewList.buildCrew();
       airportList.buildHangar();

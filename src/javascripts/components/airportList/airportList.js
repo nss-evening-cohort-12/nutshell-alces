@@ -1,5 +1,7 @@
 import airportComponent from '../airport/airport';
 import addAirport from '../addAirport/addAirport';
+import editAirport from '../editAirport/editAirport';
+
 import airportData from '../../helpers/data/airportData';
 import utils from '../../helpers/utils';
 
@@ -19,7 +21,6 @@ const buildHangar = () => {
       domString += '</div>';
 
       utils.printToDom('#hangar', domString);
-      // $('body').on('click', '#show-add-airport', addAirport.showForm);
     })
     .catch((err) => console.error('get airports broke', err));
 };
@@ -40,25 +41,46 @@ const addAirportEvent = (e) => {
       utils.printToDom('#new-airport', '');
     })
     .catch((err) => console.error('could not add airport', err));
-
-  console.warn(newAirport);
 };
 
 const removeAirportEvent = (e) => {
   const airportId = e.target.closest('.airport-card').id;
-  console.warn(airportId);
   airportData.deleteAirport(airportId)
     .then((response) => {
       console.warn('response', response);
-
       buildHangar();
     })
     .catch((err) => console.error('did not delete airport', err));
 };
 
+const editAirportEvent = (e) => {
+  e.preventDefault();
+
+  const airportId = e.target.closest('.edit-airport').id;
+
+  const editedAirport = {
+    imgURL: $('#edit-airport-pic').val(),
+    name: $('#edit-airport-name').val(),
+    location: $('#edit-airport-location').val(),
+    webURL: $('#edit-airport-website').val(),
+  };
+  airportData.updateAirport(airportId, editedAirport)
+    .then(() => {
+      buildHangar();
+      utils.printToDom('#edit-airport', '');
+    })
+    .catch((err) => console.error('could not edit airport', err));
+};
+
+const showAirportForm = (e) => {
+  editAirport.showForm(e.target.closest('.airport-card').id);
+};
+
 const airportEvents = () => {
   $('body').on('click', '.delete-airport', removeAirportEvent);
+  $('body').on('click', '.edit-airport', showAirportForm);
   $('body').on('click', '#airport-creator', addAirportEvent);
+  $('body').on('click', '', editAirportEvent);
   $('body').on('click', '#show-add-airport', addAirport.showForm);
 };
 
