@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import airportComponent from '../airport/airport';
 import airportData from '../../helpers/data/airportData';
 import utils from '../../helpers/utils';
@@ -25,4 +23,3 @@ const buildHangar = () => {
 };
 
 export default { buildHangar };
->>>>>>> Stashed changes

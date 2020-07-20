@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import crewComponent from '../crew/crew';
 import crewData from '../../helpers/data/crewData';
 import './crewList.scss';
@@ -24,4 +22,3 @@ const buildCrew = () => {
 };
 
 export default { buildCrew };
->>>>>>> Stashed changes
