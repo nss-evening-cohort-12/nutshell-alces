@@ -10,18 +10,18 @@ const editPlaneForm = (planeId) => {
                           <h2> Edit Plane</h2>
                           <form>
                             <div id="${planeId}" class="edit-plane">
-                              <label for="plane-image">Name:</label>
-                              <input type="imageUrl" class="form-control" id="edit-plane-image" placeholder="Image Url" value=${plane.imageUrl}>
+                              <label for="edit-plane-image">Image:</label>
+                              <input type="imageUrl" class="form-control" id="edit-plane-image" placeholder="Image Url" value=${plane.imgURL}>
                             </div>
                             <div class="form-group">
-                              <label for="plane-name">Name:</label>
+                              <label for="edit-plane-name">Name:</label>
                               <input type="text" class="form-control" id="edit-plane-name" placeholder="Name of Plane" value=${plane.name}>
                             </div>
                             <div class="form-group">
-                              <label for="plane-type">Type:</label>
+                              <label for="edit-plane-type">Type:</label>
                               <input type="text" class="form-control" id="edit-plane-type" placeholder="Type of Plane" value=${plane.type}>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="edit-plane">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="update-plane">Update</button>
                           </form>
                         `;
       utils.printToDom('#change-plane', domString);
