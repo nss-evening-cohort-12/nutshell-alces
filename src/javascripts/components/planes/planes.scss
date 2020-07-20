@@ -1,5 +1,15 @@
 .plane-card {
-  width: 330px;
+  width: 25%;
   height: 180px;
   margin: 40px 40px 200px;
+  img {
+    height: 250px;
+  }
+  .plane-body {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .plane-button {
+    margin-top: 10px;
+  }
 }

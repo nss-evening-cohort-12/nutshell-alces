@@ -4,13 +4,14 @@ import crewComponent from '../crew/crew';
 
 import crewData from '../../helpers/data/crewData';
 
+import './crewList.scss';
 import utils from '../../helpers/utils';
 
 const buildCrew = () => {
   crewData.getCrew()
     .then((crews) => {
       let domString = `
-        <div class="crew">
+        <div id="crew">
           <h2 class="text-center">Pan Am Crew</h2>
           <button class="btn btn-light" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Crew</button>
           <div class="d-flex flex-wrap">
@@ -19,7 +20,7 @@ const buildCrew = () => {
         domString += crewComponent.crewCardMaker(crew);
       });
 
-      domString += '</div></div>';
+      domString += '</div>';
 
       utils.printToDom('#crew', domString);
     })
