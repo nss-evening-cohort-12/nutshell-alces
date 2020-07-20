@@ -47,6 +47,7 @@ const removeAirportEvent = (e) => {
   const airportId = e.target.closest('.airport-card').id;
   airportData.deleteAirport(airportId)
     .then((response) => {
+      console.warn('response', response);
       buildHangar();
     })
     .catch((err) => console.error('did not delete airport', err));
@@ -65,6 +66,7 @@ const editAirportEvent = (e) => {
   };
   airportData.updateAirport(airportId, editedAirport)
     .then(() => {
+      console.warn(airportId);
       buildHangar();
       utils.printToDom('#edit-airport', '');
     })
@@ -73,6 +75,7 @@ const editAirportEvent = (e) => {
 
 const showAirportForm = (e) => {
   editAirport.showForm(e.target.closest('.airport-card').id);
+  console.error(e.target.closest('.airport-card').id);
 };
 
 const airportEvents = () => {

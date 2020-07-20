@@ -5,7 +5,6 @@ const showForm = (airportId) => {
   airportData.getAirportById(airportId)
     .then((response) => {
       const airport = response.data;
-
       const domString = `
         <h2>Edit Airport</h2>
         <form class="edit-airport" id=${airportId}>
@@ -25,7 +24,7 @@ const showForm = (airportId) => {
             <label for="edit-airport-website">Website</label>
             <input type="url" class="form-control" id="edit-airport-website" value=${airport.webURL}>
           </div>
-          <button type="submit" class="btn btn-primary" id="airport-editor">Update</button>
+          <button type="submit" class="btn btn-light" id="airport-editor">Update</button>
         </form>
       `;
       utils.printToDom('#edit-airport', domString);
