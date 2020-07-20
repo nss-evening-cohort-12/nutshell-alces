@@ -19,7 +19,6 @@ const checkLoginStatus = () => {
       logoutButton.removeClass('hide');
       newAirportDiv.removeClass('hide');
       editAirportDiv.removeClass('hide');
-
       airportList.airportEvents();
       crewList.buildCrew();
       airportList.buildHangar();
@@ -28,9 +27,11 @@ const checkLoginStatus = () => {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
       logoutButton.addClass('hide');
+      $('#crew').hide();
+      $('#hangar').hide();
+      $('#plane-collection').hide();
       newAirportDiv.addClass('hide');
       editAirportDiv.addClass('hide');
-
       crewList.buildCrew();
       airportList.buildHangar();
       planesList.showPlanes();
