@@ -80,7 +80,7 @@ const airportEvents = () => {
   $('body').on('click', '.delete-airport', removeAirportEvent);
   $('body').on('click', '.edit-airport', showAirportForm);
   $('body').on('click', '#airport-creator', addAirportEvent);
-  $('body').on('click', '', editAirportEvent);
+  $('body').on('click', '#airport-editor', editAirportEvent);
   $('body').on('click', '#show-add-airport', addAirport.showForm);
 };
 
