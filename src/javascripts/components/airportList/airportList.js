@@ -47,7 +47,6 @@ const removeAirportEvent = (e) => {
   const airportId = e.target.closest('.airport-card').id;
   airportData.deleteAirport(airportId)
     .then((response) => {
-      console.warn('response', response);
       buildHangar();
     })
     .catch((err) => console.error('did not delete airport', err));
