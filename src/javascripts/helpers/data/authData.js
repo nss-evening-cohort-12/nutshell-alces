@@ -19,6 +19,8 @@ const checkLoginStatus = () => {
       logoutButton.removeClass('hide');
       newAirportDiv.removeClass('hide');
       editAirportDiv.removeClass('hide');
+
+      crewList.crewEvents();
       airportList.airportEvents();
       crewList.buildCrew();
       airportList.buildHangar();
