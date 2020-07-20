@@ -11,10 +11,25 @@ const checkLoginStatus = () => {
       authDiv.addClass('hide');
       homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
+<<<<<<< Updated upstream
+=======
+
+      crewList.buildCrew();
+      airportList.buildHangar();
+      planesList.planeEvents();
+      planesList.showPlanes();
+>>>>>>> Stashed changes
     } else {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
       logoutButton.addClass('hide');
+<<<<<<< Updated upstream
+=======
+
+      $('#crew').hide();
+      $('#hangar').hide();
+      $('#plane-collection').hide();
+>>>>>>> Stashed changes
     }
   });
 };

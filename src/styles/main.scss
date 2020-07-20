@@ -2,7 +2,35 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 body {
+<<<<<<< Updated upstream
   background-color: blue;
+=======
+  background-color: white;
+  color: #2767AD;
+  #homepage {
+    position: relative;
+    .main-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin-top: 2%;
+      margin-bottom: 3%;
+      img {
+        width: 500px;
+        height: auto;
+        border-radius: 5px;
+      }
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      align-content: center;
+      margin-bottom: 5%;
+    }
+  }
+>>>>>>> Stashed changes
 }
 
 .hide {
