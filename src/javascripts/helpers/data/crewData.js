@@ -17,11 +17,13 @@ const getCrew = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getCrewById = (crewId) => axios.get(`${baseUrl}/crew/${crewId}.json`);
 const deleteCrew = (crewId) => axios.delete(`${baseUrl}/crew/${crewId}.json`);
 const addCrew = (newCrewObj) => axios.post(`${baseUrl}/crew.json`, newCrewObj);
 const editCrew = (crewId, editedCrew) => axios.put(`${baseUrl}/crew/${crewId}.json`, editedCrew);
 
 export default {
+  getCrewById,
   getCrew,
   deleteCrew,
   addCrew,
