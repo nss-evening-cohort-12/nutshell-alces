@@ -18,14 +18,16 @@ const buildFoods = (e) => {
       foodData.getFoods()
         .then((foods) => {
           const headerString = `
-          <h2>Menu</h2>
-          <thead>
-          <thead class="colored">
-            <tr>
-              <th scope="col">Food</th>
-              <th scope="col">Price</th>
-            </tr>
-          </thead>
+          <div class="text-center">
+            <h2 class="text-center">Menu</h2>
+            <thead>
+            <thead class="colored">
+              <tr>
+                <th scope="col">Food</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+          </div>
           `;
           foods.forEach((food) => {
             if (food.isAvailable === true) {
