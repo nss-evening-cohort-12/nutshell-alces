@@ -1,0 +1,19 @@
+{
+  "food1": {
+      "name": "Greek Salad",
+      "price": 8,
+      "isAvailable": true
+  },
+
+  "food2": {
+      "name": "Chicken Kiev",
+      "price": 12,
+      "isAvailable": true
+  },
+  
+  "food3": {
+      "name": "Pot Roast",
+      "price": 13,
+      "isAvailable": false
+  }
+}
