@@ -4,6 +4,7 @@ import 'firebase/auth';
 import crewList from '../../components/crewList/crewList';
 import airportList from '../../components/airportList/airportList';
 import planesList from '../../components/planesList/planesList';
+import foodList from '../../components/foodList/foodList';
 
 const authDiv = $('#auth');
 const homeDiv = $('#homepage');
@@ -25,6 +26,7 @@ const checkLoginStatus = () => {
       crewList.buildCrew();
       airportList.buildHangar();
       planesList.showPlanes();
+      foodList.foodListEvents();
     } else {
       authDiv.removeClass('hide');
       homeDiv.addClass('hide');
@@ -32,11 +34,13 @@ const checkLoginStatus = () => {
       $('#crew').hide();
       $('#hangar').hide();
       $('#plane-collection').hide();
+      $('#food').hide();
       newAirportDiv.addClass('hide');
       editAirportDiv.addClass('hide');
       crewList.buildCrew();
       airportList.buildHangar();
       planesList.showPlanes();
+      foodList.foodListEvents();
     }
   });
 };
