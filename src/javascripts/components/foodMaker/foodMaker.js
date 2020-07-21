@@ -38,20 +38,22 @@ const authFood = () => {
   foodData.getFoods()
     .then((foods) => {
       const headerString = `
-      <h2>Menu</h2>
-      <div class="text-center" id="food-button">
-      <button type="button" id="add-food" class="btn btn-secondary">Add Food</button>
+      <div class="text-center">
+        <h2>Menu</h2>
+        <div class="text-center" id="food-button">
+        <button type="button" id="add-food" class="btn btn-secondary mt-2 mb-4">Add Food</button>
+        </div>
+        <thead>
+        <thead class="colored">
+          <tr>
+            <th scope="col">Food</th>
+            <th scope="col">Price</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          <th scope="col">Available</th>
+          </tr>
+        </thead>
       </div>
-      <thead>
-      <thead class="colored">
-        <tr>
-          <th scope="col">Food</th>
-          <th scope="col">Price</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
-        <th scope="col">Available</th>
-        </tr>
-      </thead>
       `;
       foods.forEach((food) => {
         rowString += foodMakerAuth(food);
