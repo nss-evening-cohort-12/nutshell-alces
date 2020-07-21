@@ -14,7 +14,6 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   myNavbar.logoutEvent();
-  planesList.showPlanes();
   helpers.clickEvents();
 };
 

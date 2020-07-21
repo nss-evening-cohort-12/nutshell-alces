@@ -26,6 +26,7 @@ const checkLoginStatus = () => {
       crewList.buildCrew();
       airportList.buildHangar();
       planesList.showPlanes();
+      planesList.planeEvents();
       foodList.foodListEvents();
     } else {
       authDiv.removeClass('hide');

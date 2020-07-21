@@ -11,7 +11,7 @@ const showPlanes = () => {
     .then((planes) => {
       let domString = `
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
-                        <button id="add-plane" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+                        <button id="add-plane" class="btn btn-light">
                         <i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
                         <div id="plane-card" class="d-flex flex-wrap">
                       `;
@@ -57,7 +57,7 @@ const editPlaneEvent = (e) => {
 
   const planeId = e.target.closest('.edit-plane').id;
   const editedPlane = {
-    imageUrl: $('#edit-plane-image').val(),
+    imgURL: $('#edit-plane-image').val(),
     name: $('#edit-plane-name').val(),
     type: $('#edit-plane-type').val(),
   };
@@ -79,7 +79,7 @@ const planeEvents = () => {
   $('body').on('click', '#add-plane', planeForm.addPlaneForm);
   $('body').on('click', '#create-plane', addPlaneEvent);
   $('body').on('click', '.edit-plane', showPlaneEditForm);
-  $('body').on('click', '#edit-plane', editPlaneEvent);
+  $('body').on('click', '#update-plane', editPlaneEvent);
 };
 
 export default { showPlanes, planeEvents };
