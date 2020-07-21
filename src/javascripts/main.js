@@ -7,8 +7,6 @@ import planesList from './components/planesList/planesList';
 import authData from './helpers/data/authData';
 
 import helpers from './helpers/clickEvents';
-
-import 'bootstrap';
 import '../styles/main.scss';
 
 const init = () => {
