@@ -12,8 +12,8 @@ const showPlanes = () => {
       let domString = `
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
                         <div class="container text-center">
-                          <div class="text-center"
-                          <button class="btn btn-light text-center mt-4" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Plane</button>                          </div>
+                          <div class="text-center">
+                          <button class="btn btn-light text-center mt-4" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Plane</button></div>
                           <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
