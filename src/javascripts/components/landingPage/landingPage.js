@@ -28,10 +28,15 @@ const clearViewer = () => {
   const domString = '<div></div>';
   utils.printToDom('#component-viewer', domString);
 };
+const hideLanding = () => {
+  const domString = '<div class="empty-landing"></div>';
+  utils.printToDom('#landingPage', domString);
+};
 
 const buildLandingPageButtons = () => {
+  hideLanding();
   const domString = `
-   <div class="main-section d-flex">
+   <div class="main-section d-flex justify-content-center">
     <div class="nav-buttons d-flex justify-content-sm-around">
       <div class="airport-nav">
         <button type="button" class="btn btn-primary btn-md lNav">Airports</button>
@@ -47,10 +52,6 @@ const buildLandingPageButtons = () => {
       </div>
     </div>
    `;
-  utils.printToDom('#landingPage', domString);
-};
-const hideLanding = () => {
-  const domString = '<div class="empty-landing"></div>';
   utils.printToDom('#landingPage', domString);
 };
 
