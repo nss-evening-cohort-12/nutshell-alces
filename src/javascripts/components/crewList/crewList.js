@@ -11,20 +11,28 @@ const buildCrew = () => {
   crewData.getCrew()
     .then((crews) => {
       let domString = `
-        <div id="crew-card">
           <h2 class="text-center">Pan Am Crew</h2>
-          <button class="btn btn-light" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Crew</button>
-          <div class="d-flex flex-wrap text-center">
+          <div class="container text-center">
+            <button class="btn btn-light text-center mt-4" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Crew</button>
+            <div class="d-flex flex-wrap text-center">
           `;
       crews.forEach((crew) => {
         domString += crewComponent.crewCardMaker(crew);
       });
 
-      domString += '</div>';
+      domString += `</div>
+                  </div>`;
 
-      utils.printToDom('#crew', domString);
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('no call no show', err));
+};
+
+const viewCrewEvent = (e) => {
+  e.preventDefault();
+  $('#homepage').addClass('hide');
+  buildCrew();
 };
 
 const addCrewEvent = (e) => {
@@ -83,6 +91,7 @@ const crewEvents = () => {
   $('body').on('click', '#crew-creator', addCrewEvent);
   $('body').on('click', '.edit-crew', showCrewEditForm);
   $('body').on('click', '#crew-editor', editCrewEvent);
+  $('body').on('click', '.crew-nav', viewCrewEvent);
 };
 
 export default { buildCrew, crewEvents };

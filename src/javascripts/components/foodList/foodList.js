@@ -7,9 +7,7 @@ import menu from '../foodMaker/foodMaker';
 import utils from '../../helpers/utils';
 import './foodList.scss';
 
-const buildFoods = (e) => {
-  e.preventDefault();
-  $('#food').removeClass('hide');
+const buildFoods = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       menu.authFood();
@@ -35,11 +33,18 @@ const buildFoods = (e) => {
             }
           });
           const domString = `<table class='table table-bordered'>` + headerString + rowString + `</table>` // eslint-disable-line
-          utils.printToDom('#food', domString);
+          utils.printToDom('#component-viewer', '');
+          utils.printToDom('#component-viewer', domString);
         });
     }
   })
     .catch((err) => console.error('it broke', err));
+};
+
+const viewFoodEvent = (e) => {
+  e.preventDefault();
+  $('#homepage').addClass('hide');
+  buildFoods();
 };
 
 const addFoodEvent = (e) => {
@@ -91,7 +96,7 @@ const editFoodEvent = (e) => {
 };
 
 const foodListEvents = () => {
-  $('body').on('click', '#see-foods', buildFoods);
+  $('body').on('click', '#see-foods', viewFoodEvent);
   $('body').on('click', '#food-adder', addFoodEvent);
   $('body').on('click', '#add-food', addFood.showAddFoodForm);
   $('body').on('click', '#food-delete', removeFoodEvent);
