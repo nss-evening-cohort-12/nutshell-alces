@@ -23,7 +23,8 @@ const showForm = () => {
     </form>
   `;
 
-  utils.printToDom('#new-airport', domString);
+  utils.printToDom('#component-editor', '');
+  utils.printToDom('#component-editor', domString);
 };
 
 export default { showForm };

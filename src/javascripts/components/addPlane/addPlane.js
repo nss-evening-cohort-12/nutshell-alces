@@ -21,7 +21,8 @@ const addPlaneForm = () => {
                       </form>
                     `;
 
-  utils.printToDom('#new-plane', domString);
+  utils.printToDom('#component-editor', '');
+  utils.printToDom('#component-editor', domString);
 };
 
 export default { addPlaneForm };

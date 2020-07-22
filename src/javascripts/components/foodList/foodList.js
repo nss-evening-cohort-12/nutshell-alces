@@ -57,7 +57,7 @@ const addFoodEvent = (e) => {
   foodData.addFood(newFood)
     .then(() => {
       menu.authFood();
-      utils.printToDom('#new-food', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not add food', err));
 };
@@ -72,7 +72,6 @@ const removeFoodEvent = (e) => {
 };
 
 const showEditFoodForm = (e) => {
-  $('#new-food').removeClass('hide');
   editFood.showFoodEditForm(e.target.closest('.modify-food').id);
 };
 
@@ -88,9 +87,8 @@ const editFoodEvent = (e) => {
 
   foodData.updateFood(foodId, editedFood)
     .then(() => {
-      utils.printToDom('#edit-food', '');
+      utils.printToDom('#component-editor', '');
       menu.authFood();
-      $('#new-food').addClass('hide');
     })
     .catch((err) => console.error('could not edit food', err));
 };

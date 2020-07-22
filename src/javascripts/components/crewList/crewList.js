@@ -47,7 +47,7 @@ const addCrewEvent = (e) => {
   crewData.addCrew(newCrew)
     .then(() => {
       buildCrew();
-      utils.printToDom('#new-crew', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('not hired', err));
 };
@@ -81,7 +81,7 @@ const editCrewEvent = (e) => {
   crewData.editCrew(crewId, editedCrew)
     .then(() => {
       buildCrew();
-      utils.printToDom('#new-crew', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not edit crew', err));
 };

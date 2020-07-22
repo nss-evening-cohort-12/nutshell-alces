@@ -47,7 +47,7 @@ const addAirportEvent = (e) => {
   airportData.addAirport(newAirport)
     .then(() => {
       buildHangar();
-      utils.printToDom('#new-airport', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not add airport', err));
 };
@@ -75,7 +75,7 @@ const editAirportEvent = (e) => {
   airportData.updateAirport(airportId, editedAirport)
     .then(() => {
       buildHangar();
-      utils.printToDom('#edit-airport', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not edit airport', err));
 };

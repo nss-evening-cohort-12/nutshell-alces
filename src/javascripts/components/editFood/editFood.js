@@ -22,7 +22,8 @@ const showFoodEditForm = (foodId) => {
         <button type="submit" class="btn btn-primary" id="food-editor">Update!</button>
       </form>
       `;
-      utils.printToDom('#new-food', domString);
+      utils.printToDom('#component-editor', '');
+      utils.printToDom('#component-editor', domString);
     })
     .catch((err) => console.error('get single food to edit failed', err));
 };
