@@ -5,9 +5,11 @@ import addFood from '../addFood/addFood';
 import editFood from '../editFood/editFood';
 import menu from '../foodMaker/foodMaker';
 import utils from '../../helpers/utils';
+import hideLanding from '../landingPage/landingPage';
 import './foodList.scss';
 
 const buildFoods = () => {
+  hideLanding.buildLandingPageButtons();
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       menu.authFood();

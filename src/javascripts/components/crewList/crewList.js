@@ -1,13 +1,14 @@
 import editCrew from '../editCrew/editCrew';
 import addCrew from '../addCrew/addCrew';
 import crewComponent from '../crew/crew';
-
+import hideLanding from '../landingPage/landingPage';
 import crewData from '../../helpers/data/crewData';
 
 import './crewList.scss';
 import utils from '../../helpers/utils';
 
 const buildCrew = () => {
+  hideLanding.buildLandingPageButtons();
   crewData.getCrew()
     .then((crews) => {
       let domString = `

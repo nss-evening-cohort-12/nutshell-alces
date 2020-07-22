@@ -6,7 +6,7 @@ const buildLandingPage = () => {
   const domString = `
    <div class="main-section">
       <img src="https://i.ibb.co/1fHqVpB/PAN-AM-LOGO.png" alt="PAN-AM-LOGO" border="0">    </div>
-    <div class="nav-buttons">
+    <div class="nav-buttons d-flex justify-content-sm-around">
       <div class="airport-nav">
         <button type="button" class="btn btn-primary btn-md lNav">Airports</button>
       </div>
@@ -23,10 +23,16 @@ const buildLandingPage = () => {
    `;
   utils.printToDom('#landingPage', domString);
 };
+
+const clearViewer = () => {
+  const domString = '<div></div>';
+  utils.printToDom('#component-viewer', domString);
+};
+
 const buildLandingPageButtons = () => {
   const domString = `
-   <div class="main-section">
-    <div class="nav-buttons">
+   <div class="main-section d-flex">
+    <div class="nav-buttons d-flex justify-content-sm-around">
       <div class="airport-nav">
         <button type="button" class="btn btn-primary btn-md lNav">Airports</button>
       </div>
@@ -52,7 +58,7 @@ const resetPage = () => {
   $('#test-home').click((e) => {
     e.preventDefault();
     buildLandingPage();
-    $('#test-hide').addClass('hide');
+    clearViewer();
   });
 };
 export default {

@@ -3,9 +3,11 @@ import airportData from '../../helpers/data/airportData';
 import addAirport from '../addAirport/addAirport';
 import editAirport from '../editAirport/editAirport';
 import utils from '../../helpers/utils';
+import hideLanding from '../landingPage/landingPage';
 import './airportList.scss';
 
 const buildHangar = () => {
+  hideLanding.buildLandingPageButtons();
   airportData.getAirports()
     .then((airports) => {
       let domString = `
