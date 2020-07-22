@@ -2,11 +2,13 @@ import planesData from '../../helpers/data/planesData';
 import planesComponent from '../planes/planes';
 import planeForm from '../addPlane/addPlane';
 import editPlane from '../editPlane/editPlane';
+import hideLanding from '../landingPage/landingPage';
 import './planesList.scss';
 
 import utils from '../../helpers/utils';
 
 const showPlanes = () => {
+  hideLanding.buildLandingPageButtons();
   planesData.getPlanes()
     .then((planes) => {
       let domString = `
@@ -30,7 +32,6 @@ const showPlanes = () => {
 
 const viewPlanesEvent = (e) => {
   e.preventDefault();
-  $('#homepage').addClass('hide');
   showPlanes();
 };
 
