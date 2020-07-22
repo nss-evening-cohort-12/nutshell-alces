@@ -32,7 +32,6 @@ const buildCrew = () => {
 
 const viewCrewEvent = (e) => {
   e.preventDefault();
-  $('#homepage').addClass('hide');
   buildCrew();
 };
 

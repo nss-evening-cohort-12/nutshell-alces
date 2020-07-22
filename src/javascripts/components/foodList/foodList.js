@@ -45,7 +45,6 @@ const buildFoods = () => {
 
 const viewFoodEvent = (e) => {
   e.preventDefault();
-  $('#homepage').addClass('hide');
   buildFoods();
 };
 

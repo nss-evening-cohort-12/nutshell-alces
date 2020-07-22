@@ -33,7 +33,6 @@ const showPlanes = () => {
 
 const viewPlanesEvent = (e) => {
   e.preventDefault();
-  $('#homepage').addClass('hide');
   showPlanes();
 };
 

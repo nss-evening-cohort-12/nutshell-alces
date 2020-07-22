@@ -32,7 +32,6 @@ const buildHangar = () => {
 
 const viewAirportEvent = (e) => {
   e.preventDefault();
-  $('#homepage').addClass('hide');
   buildHangar();
 };
 
