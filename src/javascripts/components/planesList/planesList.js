@@ -52,10 +52,15 @@ const addPlaneEvent = (e) => {
     .catch((err) => console.error('addPlane does not work', err));
 };
 
+const showPlaneEditForm = (e) => {
+  editPlane.editPlaneForm(e.target.closest('.plane-card').id);
+  console.warn(e.target.closest('.plane-card').id);
+};
+
 const editPlaneEvent = (e) => {
   e.preventDefault();
+  const planeId = e.target.closest('.plane-card').id;
 
-  const planeId = e.target.closest('.edit-plane').id;
   const editedPlane = {
     imgURL: $('#edit-plane-image').val(),
     name: $('#edit-plane-name').val(),
@@ -65,13 +70,9 @@ const editPlaneEvent = (e) => {
   planesData.editPlane(planeId, editedPlane)
     .then(() => {
       showPlanes();
-      utils.printToDom('#edited-plane', '');
+      utils.printToDom('#new-plane', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
-};
-
-const showPlaneEditForm = (e) => {
-  editPlane.editPlaneForm(e.target.closest('.plane-card').id);
 };
 
 const planeEvents = () => {

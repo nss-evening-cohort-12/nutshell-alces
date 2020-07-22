@@ -5,11 +5,10 @@ const editPlaneForm = (planeId) => {
   planesData.getPlaneById(planeId)
     .then((response) => {
       const plane = response.data;
-
       const domString = `
                           <h2> Edit Plane</h2>
-                          <form>
-                            <div id="${planeId}" class="edit-plane">
+                          <form class="plane-card" id="${planeId}">
+                            <div class="form-group">
                               <label for="edit-plane-image">Image:</label>
                               <input type="imageUrl" class="form-control" id="edit-plane-image" placeholder="Image Url" value=${plane.imgURL}>
                             </div>
@@ -24,7 +23,7 @@ const editPlaneForm = (planeId) => {
                             <button type="submit" class="btn btn-primary" id="update-plane">Update</button>
                           </form>
                         `;
-      utils.printToDom('#change-plane', domString);
+      utils.printToDom('#new-plane', domString);
     })
     .catch((err) => console.error('getPlaneForm failed', err));
 };
