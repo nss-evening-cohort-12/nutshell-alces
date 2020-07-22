@@ -23,7 +23,8 @@ const editPlaneForm = (planeId) => {
                             <button type="submit" class="btn btn-primary" id="update-plane">Update</button>
                           </form>
                         `;
-      utils.printToDom('#new-plane', domString);
+      utils.printToDom('#component-editor', '');
+      utils.printToDom('#component-editor', domString);
     })
     .catch((err) => console.error('getPlaneForm failed', err));
 };

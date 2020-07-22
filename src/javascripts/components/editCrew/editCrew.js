@@ -26,7 +26,8 @@ const showCrewForm = (crewId) => {
         </form>
       `;
 
-      utils.printToDom('#new-crew', domString);
+      utils.printToDom('#component-editor', '');
+      utils.printToDom('#component-editor', domString);
     })
     .catch((err) => console.error('get crew failed', err));
 };

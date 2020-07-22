@@ -28,7 +28,8 @@ const showForm = (airportId) => {
           <button type="submit" class="btn btn-primary" id="airport-editor">Update</button>
         </form>
       `;
-      utils.printToDom('#edit-airport', domString);
+      utils.printToDom('#component-editor', '');
+      utils.printToDom('#component-editor', domString);
     })
     .catch((err) => console.error('get airport failed', err));
 };

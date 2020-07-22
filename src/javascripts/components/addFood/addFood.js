@@ -22,9 +22,9 @@ const showAddFoodForm = () => {
   foodData.getFoods()
     .then((foods) => {
       const headerString = `
-      <h2>Menu</h2>
+      <h2 class="text-center mb-2">Menu</h2>
       <div class="text-center" id="food-button">
-      <button type="button" id="add-food" class="btn btn-secondary">Add Food</button>
+      <button type="button" id="add-food" class="btn btn-secondary mt-2 mb-4">Add Food</button>
       </div>
       <thead>
       <thead class="colored">
@@ -41,7 +41,8 @@ const showAddFoodForm = () => {
         rowString += table.foodMakerAuth(food);
       });
       const domString = `<table class='table table-bordered'>` + headerString + rowString + addString + `</table>` + `<div class="text-center"><button type="submit" class="btn btn-primary" id="food-adder">Add to the List!</button></div>` // eslint-disable-line
-      utils.printToDom('#food', domString);
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
     });
 };
 

@@ -11,11 +11,10 @@ const showPlanes = () => {
   hideLanding.buildLandingPageButtons();
   planesData.getPlanes()
     .then((planes) => {
-      let domString = `
+ let domString = `
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
-                        <div class="container text-center">
                           <div class="text-center">
-                          <button class="btn btn-light" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button></div>
+                          <button class="btn btn-light" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
                           <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
@@ -57,7 +56,7 @@ const addPlaneEvent = (e) => {
   planesData.addPlane(newPlane)
     .then(() => {
       showPlanes();
-      utils.printToDom('#new-plane', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('addPlane does not work', err));
 };
@@ -79,7 +78,7 @@ const editPlaneEvent = (e) => {
   planesData.editPlane(planeId, editedPlane)
     .then(() => {
       showPlanes();
-      utils.printToDom('#new-plane', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
 };
