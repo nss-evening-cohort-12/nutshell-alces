@@ -1,0 +1,27 @@
+.lNav {
+  background-color: white !important;
+  border-color: #185782 !important;
+  color: #185782 !important;
+}
+
+#landingPage{
+  .main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    img {
+      width: 50vw;
+      height: auto;
+    }
+  }
+  .nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 5%;
+  }
+}

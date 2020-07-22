@@ -7,14 +7,14 @@ import planesList from '../../components/planesList/planesList';
 import foodList from '../../components/foodList/foodList';
 
 const authDiv = $('#auth');
-const homeDiv = $('#homepage');
+// const homeDiv = $('#homepage');
 const logoutButton = $('#navbar-logout-button');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       authDiv.addClass('hide');
-      homeDiv.removeClass('hide');
+      // homeDiv.removeClass('hide');
       logoutButton.removeClass('hide');
 
       crewList.crewEvents();
