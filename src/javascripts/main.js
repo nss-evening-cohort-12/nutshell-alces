@@ -4,8 +4,6 @@ import auth from './components/auth/auth';
 import myNavbar from './components/myNavbar/myNavbar';
 
 import authData from './helpers/data/authData';
-
-import helpers from './helpers/clickEvents';
 import '../styles/main.scss';
 
 const init = () => {
@@ -13,7 +11,6 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   myNavbar.logoutEvent();
-  helpers.clickEvents();
 };
 
 init();

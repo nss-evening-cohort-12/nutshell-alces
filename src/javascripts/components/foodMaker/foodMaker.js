@@ -59,7 +59,8 @@ const authFood = () => {
         rowString += foodMakerAuth(food);
       });
     const domString = `<table class='table table-bordered'>` + headerString + rowString + `</table>` // eslint-disable-line
-      utils.printToDom('#food', domString);
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
     });
 };
 export default { foodMakerAuth, foodMakerNoAuth, authFood };
