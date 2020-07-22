@@ -55,10 +55,15 @@ const removeCrewEvent = (e) => {
     .catch((err) => console.error('not terminated', err));
 };
 
+const showCrewEditForm = (e) => {
+  editCrew.showCrewForm(e.target.closest('.crew-card').id);
+  console.warn(e.target.closest('.crew-card').id);
+};
+
 const editCrewEvent = (e) => {
   e.preventDefault();
+  const crewId = e.target.closest('.crew-card').id;
 
-  const crewId = e.target.closest('.edit-crew').id;
   const editedCrew = {
     imageUrl: $('#edit-crew-image').val(),
     name: $('#edit-crew-name').val(),
@@ -68,13 +73,9 @@ const editCrewEvent = (e) => {
   crewData.editCrew(crewId, editedCrew)
     .then(() => {
       buildCrew();
-      utils.printToDom('#edit-crew', '');
+      utils.printToDom('#new-crew', '');
     })
     .catch((err) => console.error('could not edit crew', err));
-};
-
-const showCrewEditForm = (e) => {
-  editCrew.showCrewForm(e.target.closest('.crew-card').id);
 };
 
 const crewEvents = () => {
