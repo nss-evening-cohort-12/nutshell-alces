@@ -95,7 +95,7 @@ const editFoodEvent = (e) => {
 };
 
 const foodListEvents = () => {
-  $('body').on('click', '#see-foods', viewFoodEvent);
+  $('body').on('click', '.food-nav', viewFoodEvent);
   $('body').on('click', '#food-adder', addFoodEvent);
   $('body').on('click', '#add-food', addFood.showAddFoodForm);
   $('body').on('click', '#food-delete', removeFoodEvent);

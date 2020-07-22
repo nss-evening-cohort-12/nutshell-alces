@@ -37,3 +37,9 @@ body {
 h2 {
   padding: 0;
 }
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
