@@ -14,7 +14,7 @@ const buildHangar = () => {
       <h2 class="text-center">Airports Serviced by Pan Am</h2>
         <div class="d-flex flex-wrap text-center container">
           <div id="airport" class="d-flex flex-wrap text-center">
-            <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Airport</button>
+            <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Airport</button>
             <div class="d-flex flex-wrap text-center">
       `;
 
@@ -48,7 +48,7 @@ const addAirportEvent = (e) => {
   airportData.addAirport(newAirport)
     .then(() => {
       buildHangar();
-      utils.printToDom('#new-airport', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not add airport', err));
 };
@@ -76,13 +76,14 @@ const editAirportEvent = (e) => {
   airportData.updateAirport(airportId, editedAirport)
     .then(() => {
       buildHangar();
-      utils.printToDom('#edit-airport', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not edit airport', err));
 };
 
 const showAirportForm = (e) => {
   editAirport.showForm(e.target.closest('.airport-card').id);
+  console.warn(e.target.closest('.airport-card').id);
 };
 
 const airportEvents = () => {

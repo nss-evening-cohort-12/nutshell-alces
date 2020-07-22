@@ -19,7 +19,8 @@ const showCrewAddForm = () => {
     </form>
   `;
 
-  utils.printToDom('#new-crew', domString);
+  utils.printToDom('#component-editor', '');
+  utils.printToDom('#component-editor', domString);
 };
 
 export default { showCrewAddForm };
