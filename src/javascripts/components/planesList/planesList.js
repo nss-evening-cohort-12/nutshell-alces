@@ -54,7 +54,6 @@ const addPlaneEvent = (e) => {
 
 const showPlaneEditForm = (e) => {
   editPlane.editPlaneForm(e.target.closest('.plane-card').id);
-  console.warn(e.target.closest('.plane-card').id);
 };
 
 const editPlaneEvent = (e) => {
