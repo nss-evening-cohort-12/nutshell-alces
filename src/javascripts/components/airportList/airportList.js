@@ -3,16 +3,18 @@ import airportData from '../../helpers/data/airportData';
 import addAirport from '../addAirport/addAirport';
 import editAirport from '../editAirport/editAirport';
 import utils from '../../helpers/utils';
+import hideLanding from '../landingPage/landingPage';
 import './airportList.scss';
 
 const buildHangar = () => {
+  hideLanding.buildLandingPageButtons();
   airportData.getAirports()
     .then((airports) => {
       let domString = `
       <h2 class="text-center">Airports Serviced by Pan Am</h2>
         <div class="d-flex flex-wrap text-center container">
           <div id="airport" class="d-flex flex-wrap text-center">
-            <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Airport</button>
+            <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Airport</button>
             <div class="d-flex flex-wrap text-center">
       `;
 
@@ -30,7 +32,6 @@ const buildHangar = () => {
 
 const viewAirportEvent = (e) => {
   e.preventDefault();
-  $('#homepage').addClass('hide');
   buildHangar();
 };
 
@@ -82,6 +83,7 @@ const editAirportEvent = (e) => {
 
 const showAirportForm = (e) => {
   editAirport.showForm(e.target.closest('.airport-card').id);
+  console.warn(e.target.closest('.airport-card').id);
 };
 
 const airportEvents = () => {

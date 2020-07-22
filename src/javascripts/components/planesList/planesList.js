@@ -2,17 +2,19 @@ import planesData from '../../helpers/data/planesData';
 import planesComponent from '../planes/planes';
 import planeForm from '../addPlane/addPlane';
 import editPlane from '../editPlane/editPlane';
+import hideLanding from '../landingPage/landingPage';
 import './planesList.scss';
 
 import utils from '../../helpers/utils';
 
 const showPlanes = () => {
+  hideLanding.buildLandingPageButtons();
   planesData.getPlanes()
     .then((planes) => {
       let domString = `
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
-                        <div class="container text-center">
-                            <button class="btn btn-light text-center mt-4" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Plane</button>
+                          <div class="text-center">
+                          <button class="btn btn-light" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
                           <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
@@ -30,7 +32,6 @@ const showPlanes = () => {
 
 const viewPlanesEvent = (e) => {
   e.preventDefault();
-  $('#homepage').addClass('hide');
   showPlanes();
 };
 

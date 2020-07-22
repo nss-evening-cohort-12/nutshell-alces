@@ -15,11 +15,11 @@ const showForm = (airportId) => {
           </div>
           <div class="form-group">
             <label for="edit-airport-name">Name</label>
-            <input type="text" class="form-control" id="edit-airport-name" value=${airport.name}>
+            <input type="text" class="form-control" id="edit-airport-name" value="${airport.name}">
           </div>
           <div class="form-group">
             <label for="edit-airport-location">Location</label>
-            <input type="text" class="form-control" id="edit-airport-location" value=${airport.location}>
+            <input type="text" class="form-control" id="edit-airport-location" value="${airport.location}">
           </div>
           <div class="form-group">
             <label for="edit-airport-website">Website</label>
