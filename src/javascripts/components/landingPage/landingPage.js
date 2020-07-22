@@ -6,7 +6,7 @@ const buildLandingPage = () => {
   const domString = `
    <div class="main-section">
       <img src="https://i.ibb.co/1fHqVpB/PAN-AM-LOGO.png" alt="PAN-AM-LOGO" border="0">    </div>
-    <div class="nav-buttons d-flex justify-content-sm-around">
+    <div class="nav-buttons jim">
       <div class="airport-nav">
         <button type="button" class="btn btn-primary btn-md lNav">Airports</button>
       </div>
