@@ -2,28 +2,37 @@ import planesData from '../../helpers/data/planesData';
 import planesComponent from '../planes/planes';
 import planeForm from '../addPlane/addPlane';
 import editPlane from '../editPlane/editPlane';
+import hideLanding from '../landingPage/landingPage';
 import './planesList.scss';
 
 import utils from '../../helpers/utils';
 
 const showPlanes = () => {
+  hideLanding.buildLandingPageButtons();
   planesData.getPlanes()
     .then((planes) => {
       let domString = `
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
-                        <button id="add-plane" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
-                        <i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
-                        <div id="plane-card" class="d-flex flex-wrap">
+                          <div class="text-center">
+                          <button class="btn btn-light" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
+                          <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
         domString += planesComponent.createPlaneCard(plane);
       });
 
-      domString += '</div>';
+      domString += `    </div>
+                      </div>`;
 
-      utils.printToDom('#plane-collection', domString);
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
+};
+
+const viewPlanesEvent = (e) => {
+  e.preventDefault();
+  showPlanes();
 };
 
 const removePlaneEvent = (e) => {
@@ -47,17 +56,21 @@ const addPlaneEvent = (e) => {
   planesData.addPlane(newPlane)
     .then(() => {
       showPlanes();
-      utils.printToDom('#new-plane', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('addPlane does not work', err));
 };
 
+const showPlaneEditForm = (e) => {
+  editPlane.editPlaneForm(e.target.closest('.plane-card').id);
+};
+
 const editPlaneEvent = (e) => {
   e.preventDefault();
+  const planeId = e.target.closest('.plane-card').id;
 
-  const planeId = e.target.closest('.edit-plane').id;
   const editedPlane = {
-    imageUrl: $('#edit-plane-image').val(),
+    imgURL: $('#edit-plane-image').val(),
     name: $('#edit-plane-name').val(),
     type: $('#edit-plane-type').val(),
   };
@@ -65,13 +78,9 @@ const editPlaneEvent = (e) => {
   planesData.editPlane(planeId, editedPlane)
     .then(() => {
       showPlanes();
-      utils.printToDom('#edited-plane', '');
+      utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
-};
-
-const showPlaneEditForm = (e) => {
-  editPlane.editPlaneForm(e.target.closest('.plane-card').id);
 };
 
 const planeEvents = () => {
@@ -79,7 +88,8 @@ const planeEvents = () => {
   $('body').on('click', '#add-plane', planeForm.addPlaneForm);
   $('body').on('click', '#create-plane', addPlaneEvent);
   $('body').on('click', '.edit-plane', showPlaneEditForm);
-  $('body').on('click', '#edit-plane', editPlaneEvent);
+  $('body').on('click', '#update-plane', editPlaneEvent);
+  $('body').on('click', '.plane-nav', viewPlanesEvent);
 };
 
 export default { showPlanes, planeEvents };
