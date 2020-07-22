@@ -74,6 +74,7 @@ const editAirportEvent = (e) => {
 
 const showAirportForm = (e) => {
   editAirport.showForm(e.target.closest('.airport-card').id);
+  console.warn(e.target.closest('.airport-card').id);
 };
 
 const airportEvents = () => {
