@@ -24,10 +24,10 @@ const checkLoginStatus = () => {
     } else {
       authDiv.removeClass('hide');
       logoutButton.addClass('hide');
-      $('#crew').hide();
-      $('#hangar').hide();
-      $('#plane-collection').hide();
-      $('#food').hide();
+      crewList.crewEvents();
+      airportList.airportEvents();
+      planesList.planeEvents();
+      foodList.foodListEvents();
     }
   });
 };
