@@ -11,19 +11,28 @@ const showPlanes = () => {
     .then((planes) => {
       let domString = `
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
-                        <button id="add-plane" class="btn btn-light">
-                        <i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
-                        <div id="plane-card" class="d-flex flex-wrap text-center">
+                        <div class="container text-center">
+                          <div class="text-center"
+                          <button class="btn btn-light text-center mt-4" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Plane</button>                          </div>
+                          <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
         domString += planesComponent.createPlaneCard(plane);
       });
 
-      domString += '</div>';
+      domString += `    </div>
+                      </div>`;
 
-      utils.printToDom('#plane-collection', domString);
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
+};
+
+const viewPlanesEvent = (e) => {
+  e.preventDefault();
+  $('#homepage').addClass('hide');
+  showPlanes();
 };
 
 const removePlaneEvent = (e) => {
@@ -54,7 +63,6 @@ const addPlaneEvent = (e) => {
 
 const showPlaneEditForm = (e) => {
   editPlane.editPlaneForm(e.target.closest('.plane-card').id);
-  console.warn(e.target.closest('.plane-card').id);
 };
 
 const editPlaneEvent = (e) => {
@@ -81,6 +89,7 @@ const planeEvents = () => {
   $('body').on('click', '#create-plane', addPlaneEvent);
   $('body').on('click', '.edit-plane', showPlaneEditForm);
   $('body').on('click', '#update-plane', editPlaneEvent);
+  $('body').on('click', '.plane-nav', viewPlanesEvent);
 };
 
 export default { showPlanes, planeEvents };

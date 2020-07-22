@@ -6,7 +6,6 @@ import myNavbar from './components/myNavbar/myNavbar';
 import authData from './helpers/data/authData';
 import landing from './components/landingPage/landingPage';
 
-import helpers from './helpers/clickEvents';
 import '../styles/main.scss';
 
 const init = () => {
@@ -14,7 +13,6 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   myNavbar.logoutEvent();
-  helpers.clickEvents();
   landing.buildLandingPage();
   landing.resetPage();
 };
