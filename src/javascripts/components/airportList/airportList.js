@@ -9,21 +9,29 @@ const buildHangar = () => {
   airportData.getAirports()
     .then((airports) => {
       let domString = `
-        <h2 class="text-center">Airports Serviced by Pan Am</h2>
-        <div id="airport" class="d-flex flex-wrap">
-        <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Airport</button>
-        <div class="d-flex flex-wrap text-center">
+      <h2 class="text-center">Airports Serviced by Pan Am</h2>
+        <div class="d-flex flex-wrap text-center container">
+          <div id="airport" class="d-flex flex-wrap text-center">
+            <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Airport</button>
+            <div class="d-flex flex-wrap text-center">
       `;
 
       airports.forEach((airport) => {
         domString += airportComponent.airportCardMaker(airport);
       });
 
-      domString += '</div>';
-
-      utils.printToDom('#hangar', domString);
+      domString += `</>
+                      </div>`;
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('get airports broke', err));
+};
+
+const viewAirportEvent = (e) => {
+  e.preventDefault();
+  $('#homepage').addClass('hide');
+  buildHangar();
 };
 
 const addAirportEvent = (e) => {
@@ -82,6 +90,7 @@ const airportEvents = () => {
   $('body').on('click', '#airport-creator', addAirportEvent);
   $('body').on('click', '#airport-editor', editAirportEvent);
   $('body').on('click', '#show-add-airport', addAirport.showForm);
+  $('body').on('click', '.airport-nav', viewAirportEvent);
 };
 
 export default { buildHangar, airportEvents };
