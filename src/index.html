@@ -7,8 +7,8 @@
   <title>Pan Am Airlines</title>
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg">
+<!-- old nav -->
+  <!-- <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pan_Am_Logo.svg/1200px-Pan_Am_Logo.svg.png" style="max-width: 5%;"> At Pan Am, the sky is no longer the limit.</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,29 +25,23 @@
         </li>
       </ul>
     </div>
+  </nav> -->
+<!-- old nav -->
+<!-- new nav -->
+<div id="nav">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand " href="#index.html" id="home">
+      <i class="fa fa-globe fa-2x" aria-hidden="true" ></i>
+    </a>
+    <a id="test-home" class="nav-item nav-link mr-auto" href="#">Home</a>
+    <div id="auth"></div>
+    <button class="nav-link btn btn-danger" id="navbar-logout-button">Logout!</button>
   </nav>
-
+</div>
+<!-- new nav -->
   <div id="auth"></div>
 
-  <div id="homepage" class="hide">
-    <div class="main-section">
-      <img src="https://www.dispatch.com/storyimage/OH/20191113/BUSINESS/191119328/AR/0/AR-191119328.jpg" alt="Pan Am Stewardess">
-    </div>
-    <div class="nav-buttons">
-      <div class="airport-nav">
-        <button type="button" class="btn btn-primary btn-lg">Airports</button>
-      </div>
-      <div class="plane-nav">
-        <button type="button" class="btn btn-primary btn-lg">Planes</button>
-      </div>
-      <div class="crew-nav">
-        <button type="button" class="btn btn-primary btn-lg">Crew</button>
-      </div>
-      <div class="food-nav">
-        <button id="see-foods" type="button" class="btn btn-primary btn-lg">Food</button>
-      </div>
-    </div>
-  </div>
+  <div id="homepage"></div>
 
   <div id="crew"></div>
   <div id="new-crew"></div>
@@ -61,6 +55,6 @@
   <div id="food" class="hide"></div>
   <div id="new-food" class="hide"></div>
   <div id="edit-food" class="hide"></div>
-  
+
 </body>
 </html>

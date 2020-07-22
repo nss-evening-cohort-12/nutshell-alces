@@ -2,9 +2,8 @@ import firebase from 'firebase/app';
 import apiKeys from './helpers/apiKeys.json';
 import auth from './components/auth/auth';
 import myNavbar from './components/myNavbar/myNavbar';
-import planesList from './components/planesList/planesList';
-
 import authData from './helpers/data/authData';
+import landing from './components/landingPage/landingPage';
 
 import helpers from './helpers/clickEvents';
 import '../styles/main.scss';
@@ -15,6 +14,8 @@ const init = () => {
   auth.loginButton();
   myNavbar.logoutEvent();
   helpers.clickEvents();
+  landing.buildLandingPage();
+  landing.resetPage();
 };
 
 init();
