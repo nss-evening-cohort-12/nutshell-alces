@@ -13,7 +13,7 @@ const showPlanes = () => {
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
                         <button id="add-plane" class="btn btn-light">
                         <i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
-                        <div id="plane-card" class="d-flex flex-wrap">
+                        <div id="plane-card" class="d-flex flex-wrap text-center">
                       `;
       planes.forEach((plane) => {
         domString += planesComponent.createPlaneCard(plane);
@@ -52,10 +52,15 @@ const addPlaneEvent = (e) => {
     .catch((err) => console.error('addPlane does not work', err));
 };
 
+const showPlaneEditForm = (e) => {
+  editPlane.editPlaneForm(e.target.closest('.plane-card').id);
+  console.warn(e.target.closest('.plane-card').id);
+};
+
 const editPlaneEvent = (e) => {
   e.preventDefault();
+  const planeId = e.target.closest('.plane-card').id;
 
-  const planeId = e.target.closest('.edit-plane').id;
   const editedPlane = {
     imgURL: $('#edit-plane-image').val(),
     name: $('#edit-plane-name').val(),
@@ -65,13 +70,9 @@ const editPlaneEvent = (e) => {
   planesData.editPlane(planeId, editedPlane)
     .then(() => {
       showPlanes();
-      utils.printToDom('#edited-plane', '');
+      utils.printToDom('#new-plane', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
-};
-
-const showPlaneEditForm = (e) => {
-  editPlane.editPlaneForm(e.target.closest('.plane-card').id);
 };
 
 const planeEvents = () => {

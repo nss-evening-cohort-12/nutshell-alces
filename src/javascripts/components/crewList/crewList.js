@@ -14,7 +14,7 @@ const buildCrew = () => {
         <div id="crew-card">
           <h2 class="text-center">Pan Am Crew</h2>
           <button class="btn btn-light" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Crew</button>
-          <div class="d-flex flex-wrap">
+          <div class="d-flex flex-wrap text-center">
           `;
       crews.forEach((crew) => {
         domString += crewComponent.crewCardMaker(crew);
