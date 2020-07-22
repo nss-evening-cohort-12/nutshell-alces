@@ -4,7 +4,7 @@ import './landingPage.scss';
 
 const buildLandingPage = () => {
   const domString = `
-   <div class="main-section">
+    <div class="main-section">
       <img src="https://i.ibb.co/1fHqVpB/PAN-AM-LOGO.png" alt="PAN-AM-LOGO" border="0">    </div>
     <div class="nav-buttons jim">
       <div class="airport-nav">
@@ -20,8 +20,9 @@ const buildLandingPage = () => {
         <button id="see-foods" type="button" class="btn btn-primary btn-md lNav">Food</button>
       </div>
     </div>
-   `;
+    `;
   utils.printToDom('#landingPage', domString);
+  utils.printToDom('#component-editor', '');
 };
 
 const clearViewer = () => {
