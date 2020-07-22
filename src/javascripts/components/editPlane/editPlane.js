@@ -14,7 +14,7 @@ const editPlaneForm = (planeId) => {
                             </div>
                             <div class="form-group">
                               <label for="edit-plane-name">Name:</label>
-                              <input type="text" class="form-control" id="edit-plane-name" placeholder="Name of Plane" value=${plane.name}>
+                              <input type="text" class="form-control" id="edit-plane-name" placeholder="Name of Plane" value="${plane.name}">
                             </div>
                             <div class="form-group">
                               <label for="edit-plane-type">Type:</label>
