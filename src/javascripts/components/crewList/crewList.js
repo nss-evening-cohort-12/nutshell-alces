@@ -65,7 +65,6 @@ const removeCrewEvent = (e) => {
 
 const showCrewEditForm = (e) => {
   editCrew.showCrewForm(e.target.closest('.crew-card').id);
-  console.warn(e.target.closest('.crew-card').id);
 };
 
 const editCrewEvent = (e) => {

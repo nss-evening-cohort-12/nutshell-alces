@@ -1,7 +1,10 @@
 import utils from '../../helpers/utils';
 
+import './addAirport.scss';
+
 const showForm = () => {
   const domString = `
+  <h2 class="text-center">Add Airport</h2>
     <form>
       <div class="form-group">
         <label for="airport-pic">Picture</label>

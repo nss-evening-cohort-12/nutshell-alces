@@ -7,7 +7,7 @@ const showForm = (airportId) => {
       const airport = response.data;
 
       const domString = `
-        <h2>Edit Airport</h2>
+        <h2 class="text-center">Edit Airport</h2>
         <form class="edit-airport" id=${airportId}>
           <div class="form-group">
             <label for="edit-airport-pic">Picture</label>

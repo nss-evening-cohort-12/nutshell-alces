@@ -54,6 +54,7 @@ const buildLandingPageButtons = () => {
     </div>
    `;
   utils.printToDom('#landingPage', domString);
+  utils.printToDom('#component-editor', '');
 };
 
 const resetPage = () => {
@@ -63,6 +64,7 @@ const resetPage = () => {
     clearViewer();
   });
 };
+
 export default {
   buildLandingPage,
   hideLanding,
