@@ -2,6 +2,8 @@ import table from '../foodMaker/foodMaker';
 import foodData from '../../helpers/data/foodData';
 import utils from '../../helpers/utils';
 
+import './addFood.scss';
+
 const showAddFoodForm = () => {
   const addString = `
   <tbody>

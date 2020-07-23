@@ -1,3 +1,6 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 import editCrew from '../editCrew/editCrew';
 import addCrew from '../addCrew/addCrew';
 import crewComponent from '../crew/crew';
@@ -7,18 +10,40 @@ import crewData from '../../helpers/data/crewData';
 import './crewList.scss';
 import utils from '../../helpers/utils';
 
-const buildCrew = () => {
+const buildCrewAuth = () => {
   hideLanding.buildLandingPageButtons();
   crewData.getCrew()
     .then((crews) => {
       let domString = `
           <h2 class="text-center">Pan Am Crew</h2>
           <div class="container text-center">
-            <button class="btn btn-light text-center mt-4" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i>New Crew</button>
+            <button class="btn btn-light text-center mt-4" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Crew</button>
             <div class="d-flex flex-wrap text-center">
           `;
       crews.forEach((crew) => {
-        domString += crewComponent.crewCardMaker(crew);
+        domString += crewComponent.crewCardMakerAuth(crew);
+      });
+
+      domString += `</div>
+                  </div>`;
+
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
+    })
+    .catch((err) => console.error('no call no show', err));
+};
+
+const buildCrewNoAuth = () => {
+  hideLanding.buildLandingPageButtons();
+  crewData.getCrew()
+    .then((crews) => {
+      let domString = `
+          <h2 class="text-center">Pan Am Crew</h2>
+          <div class="container text-center">
+            <div class="d-flex flex-wrap text-center">
+          `;
+      crews.forEach((crew) => {
+        domString += crewComponent.crewCardMakerNoAuth(crew);
       });
 
       domString += `</div>
@@ -32,7 +57,13 @@ const buildCrew = () => {
 
 const viewCrewEvent = (e) => {
   e.preventDefault();
-  buildCrew();
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      buildCrewAuth();
+    } else {
+      buildCrewNoAuth();
+    }
+  });
 };
 
 const addCrewEvent = (e) => {
@@ -46,7 +77,7 @@ const addCrewEvent = (e) => {
 
   crewData.addCrew(newCrew)
     .then(() => {
-      buildCrew();
+      buildCrewAuth();
       utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('not hired', err));
@@ -58,14 +89,13 @@ const removeCrewEvent = (e) => {
     .then((response) => {
       console.warn('crew terminated', response);
 
-      buildCrew();
+      buildCrewAuth();
     })
     .catch((err) => console.error('not terminated', err));
 };
 
 const showCrewEditForm = (e) => {
   editCrew.showCrewForm(e.target.closest('.crew-card').id);
-  console.warn(e.target.closest('.crew-card').id);
 };
 
 const editCrewEvent = (e) => {
@@ -80,7 +110,7 @@ const editCrewEvent = (e) => {
 
   crewData.editCrew(crewId, editedCrew)
     .then(() => {
-      buildCrew();
+      buildCrewAuth();
       utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not edit crew', err));
@@ -95,4 +125,4 @@ const crewEvents = () => {
   $('body').on('click', '.crew-nav', viewCrewEvent);
 };
 
-export default { buildCrew, crewEvents };
+export default { buildCrewAuth, buildCrewNoAuth, crewEvents };

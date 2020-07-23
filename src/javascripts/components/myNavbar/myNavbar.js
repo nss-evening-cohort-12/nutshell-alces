@@ -5,7 +5,6 @@ const logoutEvent = () => {
   $('#navbar-logout-button').click((e) => {
     e.preventDefault();
     firebase.auth().signOut();
-    console.warn('yeah you click');
   });
 };
 
