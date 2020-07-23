@@ -1,3 +1,6 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 import planesData from '../../helpers/data/planesData';
 import planesComponent from '../planes/planes';
 import planeForm from '../addPlane/addPlane';
@@ -7,7 +10,7 @@ import './planesList.scss';
 
 import utils from '../../helpers/utils';
 
-const showPlanes = () => {
+const showPlanesAuth = () => {
   hideLanding.buildLandingPageButtons();
   planesData.getPlanes()
     .then((planes) => {
@@ -18,7 +21,29 @@ const showPlanes = () => {
                           <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
-        domString += planesComponent.createPlaneCard(plane);
+        domString += planesComponent.createPlaneCardAuth(plane);
+      });
+
+      domString += `    </div>
+                      </div>`;
+
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
+    })
+    .catch((err) => console.error('getPlanes does not work', err));
+};
+
+const showPlanesNoAuth = () => {
+  hideLanding.buildLandingPageButtons();
+  planesData.getPlanes()
+    .then((planes) => {
+      let domString = `
+                        <h2 class="text-center">Planes Serviced by Pan Am</h2>
+                          <div class="text-center">
+                          <div id="plane-card" class="d-flex flex-wrap">
+                      `;
+      planes.forEach((plane) => {
+        domString += planesComponent.createPlaneCardNoAuth(plane);
       });
 
       domString += `    </div>
@@ -32,14 +57,20 @@ const showPlanes = () => {
 
 const viewPlanesEvent = (e) => {
   e.preventDefault();
-  showPlanes();
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      showPlanesAuth();
+    } else {
+      showPlanesNoAuth();
+    }
+  });
 };
 
 const removePlaneEvent = (e) => {
   const planeId = e.target.closest('.plane-card').id;
   planesData.deletePlane(planeId)
     .then(() => {
-      showPlanes();
+      showPlanesAuth();
     })
     .catch((err) => console.error('removePlane did not work', err));
 };
@@ -55,7 +86,7 @@ const addPlaneEvent = (e) => {
 
   planesData.addPlane(newPlane)
     .then(() => {
-      showPlanes();
+      showPlanesAuth();
       utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('addPlane does not work', err));
@@ -77,7 +108,7 @@ const editPlaneEvent = (e) => {
 
   planesData.editPlane(planeId, editedPlane)
     .then(() => {
-      showPlanes();
+      showPlanesAuth();
       utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
@@ -92,4 +123,4 @@ const planeEvents = () => {
   $('body').on('click', '.plane-nav', viewPlanesEvent);
 };
 
-export default { showPlanes, planeEvents };
+export default { showPlanesAuth, showPlanesNoAuth, planeEvents };

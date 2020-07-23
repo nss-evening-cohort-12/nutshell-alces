@@ -1,12 +1,16 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 import airportComponent from '../airport/airport';
 import airportData from '../../helpers/data/airportData';
 import addAirport from '../addAirport/addAirport';
 import editAirport from '../editAirport/editAirport';
 import utils from '../../helpers/utils';
 import hideLanding from '../landingPage/landingPage';
+
 import './airportList.scss';
 
-const buildHangar = () => {
+const buildHangarAuth = () => {
   hideLanding.buildLandingPageButtons();
   airportData.getAirports()
     .then((airports) => {
@@ -19,7 +23,30 @@ const buildHangar = () => {
       `;
 
       airports.forEach((airport) => {
-        domString += airportComponent.airportCardMaker(airport);
+        domString += airportComponent.airportCardMakerAuth(airport);
+      });
+
+      domString += `</>
+                      </div>`;
+      utils.printToDom('#component-viewer', '');
+      utils.printToDom('#component-viewer', domString);
+    })
+    .catch((err) => console.error('get airports broke', err));
+};
+
+const buildHangarNoAuth = () => {
+  hideLanding.buildLandingPageButtons();
+  airportData.getAirports()
+    .then((airports) => {
+      let domString = `
+      <h2 class="text-center">Airports Serviced by Pan Am</h2>
+        <div class="d-flex flex-wrap text-center container">
+          <div id="airport" class="d-flex flex-wrap text-center">
+            <div class="d-flex flex-wrap text-center">
+      `;
+
+      airports.forEach((airport) => {
+        domString += airportComponent.airportCardMakerNoAuth(airport);
       });
 
       domString += `</>
@@ -32,7 +59,13 @@ const buildHangar = () => {
 
 const viewAirportEvent = (e) => {
   e.preventDefault();
-  buildHangar();
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      buildHangarAuth();
+    } else {
+      buildHangarNoAuth();
+    }
+  });
 };
 
 const addAirportEvent = (e) => {
@@ -47,7 +80,7 @@ const addAirportEvent = (e) => {
 
   airportData.addAirport(newAirport)
     .then(() => {
-      buildHangar();
+      buildHangarAuth();
       utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not add airport', err));
@@ -57,7 +90,7 @@ const removeAirportEvent = (e) => {
   const airportId = e.target.closest('.airport-card').id;
   airportData.deleteAirport(airportId)
     .then(() => {
-      buildHangar();
+      buildHangarAuth();
     })
     .catch((err) => console.error('did not delete airport', err));
 };
@@ -75,7 +108,7 @@ const editAirportEvent = (e) => {
   };
   airportData.updateAirport(airportId, editedAirport)
     .then(() => {
-      buildHangar();
+      buildHangarAuth();
       utils.printToDom('#component-editor', '');
     })
     .catch((err) => console.error('could not edit airport', err));
@@ -94,4 +127,4 @@ const airportEvents = () => {
   $('body').on('click', '.airport-nav', viewAirportEvent);
 };
 
-export default { buildHangar, airportEvents };
+export default { buildHangarAuth, airportEvents };
