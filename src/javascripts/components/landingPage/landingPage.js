@@ -26,6 +26,7 @@ const buildLandingPageButtons = () => {
    <div class="main-section d-flex justify-content-center">
    `;
   utils.printToDom('#landingPage', domString);
+  utils.printToDom('#component-editor', '');
 };
 
 const resetPage = () => {
@@ -35,6 +36,7 @@ const resetPage = () => {
     clearViewer();
   });
 };
+
 export default {
   buildLandingPage,
   hideLanding,

@@ -1,6 +1,6 @@
 import './crew.scss';
 
-const crewCardMaker = (crew) => {
+const crewCardMakerAuth = (crew) => {
   const domString = `
     <div class="crew-card" id=${crew.id}>
       <img class="card-img-top" src=${crew.imageUrl}>
@@ -16,4 +16,18 @@ const crewCardMaker = (crew) => {
   return domString;
 };
 
-export default { crewCardMaker };
+const crewCardMakerNoAuth = (crew) => {
+  const domString = `
+    <div class="crew-card" id=${crew.id}>
+      <img class="card-img-top" src=${crew.imageUrl}>
+        <div class="crew-body">
+          <h4 class "card-title">${crew.name}</h4>
+          <h5 class "card-title">${crew.title}</h5>
+        </div>
+    </div>
+`;
+
+  return domString;
+};
+
+export default { crewCardMakerAuth, crewCardMakerNoAuth };
