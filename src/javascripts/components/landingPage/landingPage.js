@@ -2,6 +2,16 @@ import utils from '../../helpers/utils';
 
 import './landingPage.scss';
 
+const viewDashboard = () => {
+  const domString = `
+    <a id="test-home" class="nav-item nav-link mr-auto flight-nav" href="#">Flights</a>`;
+  utils.printToDom('#locateFlights', domString);
+};
+const viewNoDashboard = () => {
+  const domString = '';
+  utils.printToDom('#locateFlights', domString);
+};
+
 const buildLandingPage = () => {
   const domString = `
     <div class="main-section">
@@ -42,4 +52,6 @@ export default {
   hideLanding,
   resetPage,
   buildLandingPageButtons,
+  viewDashboard,
+  viewNoDashboard,
 };
