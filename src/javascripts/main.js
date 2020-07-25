@@ -7,6 +7,7 @@ import authData from './helpers/data/authData';
 import landing from './components/landingPage/landingPage';
 
 import '../styles/main.scss';
+import 'bootstrap';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
