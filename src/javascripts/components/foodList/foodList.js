@@ -36,6 +36,7 @@ const buildFoods = () => {
           });
           const domString = `<table class='table table-bordered'>` + headerString + rowString + `</table>` // eslint-disable-line
           utils.printToDom('#component-viewer', '');
+          utils.printToDom('#crew', '');
           utils.printToDom('#component-viewer', domString);
         });
     }
@@ -59,6 +60,7 @@ const addFoodEvent = (e) => {
     .then(() => {
       menu.authFood();
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not add food', err));
 };
@@ -89,6 +91,7 @@ const editFoodEvent = (e) => {
   foodData.updateFood(foodId, editedFood)
     .then(() => {
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
       menu.authFood();
     })
     .catch((err) => console.error('could not edit food', err));

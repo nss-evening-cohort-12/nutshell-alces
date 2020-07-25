@@ -29,6 +29,7 @@ const buildHangarAuth = () => {
       domString += `</>
                       </div>`;
       utils.printToDom('#component-viewer', '');
+      utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('get airports broke', err));
@@ -52,6 +53,7 @@ const buildHangarNoAuth = () => {
       domString += `</>
                       </div>`;
       utils.printToDom('#component-viewer', '');
+      utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('get airports broke', err));
@@ -82,6 +84,7 @@ const addAirportEvent = (e) => {
     .then(() => {
       buildHangarAuth();
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not add airport', err));
 };
@@ -110,6 +113,7 @@ const editAirportEvent = (e) => {
     .then(() => {
       buildHangarAuth();
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not edit airport', err));
 };

@@ -19,6 +19,7 @@ const buildLandingPage = () => {
     `;
   utils.printToDom('#landingPage', domString);
   utils.printToDom('#component-editor', '');
+  utils.printToDom('#crew', '');
 };
 
 const clearViewer = () => {

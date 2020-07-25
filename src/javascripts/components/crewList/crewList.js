@@ -28,6 +28,7 @@ const buildCrewAuth = () => {
                   </div>`;
 
       utils.printToDom('#component-viewer', '');
+      utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('no call no show', err));
@@ -50,6 +51,7 @@ const buildCrewNoAuth = () => {
                   </div>`;
 
       utils.printToDom('#component-viewer', '');
+      utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('no call no show', err));
@@ -79,6 +81,7 @@ const addCrewEvent = (e) => {
     .then(() => {
       buildCrewAuth();
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('not hired', err));
 };
@@ -112,6 +115,7 @@ const editCrewEvent = (e) => {
     .then(() => {
       buildCrewAuth();
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not edit crew', err));
 };
