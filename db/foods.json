@@ -1,19 +1,38 @@
 {
-  "food1": {
-      "name": "Greek Salad",
-      "price": 8,
-      "isAvailable": true
-  },
-
-  "food2": {
-      "name": "Chicken Kiev",
-      "price": 12,
-      "isAvailable": true
-  },
-  
-  "food3": {
-      "name": "Pot Roast",
-      "price": 13,
-      "isAvailable": false
-  }
+    "food1": {
+        "name": "Greek Salad",
+        "price": 8,
+        "Type": "meal",
+        "isAvailable": true
+    },
+    "food2": {
+        "name": "Chicken Kiev",
+        "price": 12,
+        "Type": "meal",
+        "isAvailable": true
+    },
+    "food3": {
+        "name": "Pot Roast",
+        "price": 13,
+        "Type": "meal",
+        "isAvailable": false
+    },
+    "food4": {
+        "name": "Peanuts",
+        "price": 1,
+        "type": "snack",
+        "isAvaiable": true
+    },
+    "food5": {
+        "name": "Cookie",
+        "price": 1,
+        "type": "snack",
+        "isAvailable": true
+    },
+    "food6": {
+        "name": "Chips",
+        "price": 1,
+        "type": "snack",
+        "isAvailable": true
+    }
 }

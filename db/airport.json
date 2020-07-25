@@ -3,36 +3,63 @@
     "imgURL": "https://media.licdn.com/dms/image/C4D1BAQEM_PS14tla_w/company-background_10000/0?e=2159024400&v=beta&t=hzvgo2APwkwTJ60dM5vV7ARFIKfQ8BV-Hx9kOr-m2ho",
     "name": "Nashville International Airport (BNA)",
     "location": "Nashville, TN",
-    "webURL": "https://flynashville.com/"
+    "webURL": "https://flynashville.com/",
+    "international": false
   },
   "airport2": {
     "imgURL": "https://www.som.com/FILE/15270/jfkterminal4_1575x900_jeffgoldberg_01jpg.jpg",
     "name": "John F. Kennedy International Airport (JFK)",
     "location": "New York, NY",
-    "webURL": "https://www.jfkairport.com/"
+    "webURL": "https://www.jfkairport.com/",
+    "international": false
   },
   "airport3": {
     "imgURL": "https://xpressshuttles.com/wp-content/uploads/2015/01/lax-los-angeles-airport.jpg",
     "name": "Los Angeles International Airport (LAX)",
     "location": "Los Angeles, CA",
-    "webURL": "https://www.flylax.com/"
+    "webURL": "https://www.flylax.com/",
+    "international": false
   },
   "airport4": {
     "imgURL": "https://cdn.vox-cdn.com/thumbor/hWQL_8rB8g7xvqr2HYFDjswlH28=/0x0:960x639/1520x1013/filters:focal(335x155:487x307):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/59812915/dulles-photo-guide-intro.0.0.0.0.jpg",
     "name": "Washington Dulles International Airport (Dulles)",
     "location": "Washington D.C",
-    "webURL": "https://www.flydulles.com/iad/dulles-international-airport"
+    "webURL": "https://www.flydulles.com/iad/dulles-international-airport",
+    "international": false
   },
   "airport5": {
     "imgURL": "https://3acujq5da9i3we40i1od3kl1-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/chicago.jpg",
     "name": "O’Hare International Airport (O’Hare)",
     "location": "Chicago, IL",
-    "webURL": "https://www.flychicago.com/ohare/home/pages/default.aspx"
+    "webURL": "https://www.flychicago.com/ohare/home/pages/default.aspx",
+    "international": false
   },
   "airport6": {
     "imgURL": "https://www.cottoncpa.com/wp-content/uploads/2016/04/POJV-vs-Miami-Dade-project.jpg",
     "name": "Miami International Airport (MIA)",
     "location": "Miami, FL",
-    "webURL": "http://www.miami-airport.com/"
+    "webURL": "http://www.miami-airport.com/",
+    "international": false
+  },
+  "airport7": {
+    "imgURL": "[https://www.passengerterminaltoday.com/wp-content/uploads/2019/08/Manila-Exterior-2.jpg](https://www.passengerterminaltoday.com/wp-content/uploads/2019/08/Manila-Exterior-2.jpg)",
+    "name": "Manila Ninoy Aquino International Airport (MNL)",
+    "location": "Manila, Philippines",
+    "webURL": "[https://www.manila-airport.net/](https://www.manila-airport.net/)",
+    "international": true
+  },
+  "airport8": {
+    "imgURL": "[https://www.landrum-brown.com/wp-content/uploads/2017/05/01.jpg](https://www.landrum-brown.com/wp-content/uploads/2017/05/01.jpg)",
+    "name": "Incheon International Airport",
+    "location": "Incheon, South Korea",
+    "webURL": "[https://www.airport.kr/ap/en/index.do](https://www.airport.kr/ap/en/index.do)",
+    "international": true
+  },
+  "airport9": {
+    "imgURL": "[https://inmoinvestments.com//media/images/news/thumbnails/o_1cudnpmu7jp910k61k0057nro1m_w_1000x800.jpg](https://inmoinvestments.com//media/images/news/thumbnails/o_1cudnpmu7jp910k61k0057nro1m_w_1000x800.jpg)",
+    "name": "Región de Murcia International Airport",
+    "location": "Murcia, Spain",
+    "webURL": "[http://www.aena.es/](http://www.aena.es/)",
+    "international": true
   }
 }

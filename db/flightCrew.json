@@ -1,0 +1,26 @@
+{
+  "flightCrew1": {
+    "crewId": "crew1",
+    "flightId": "flight1"
+  },
+  "flightCrew2": {
+    "crewId": "crew2",
+    "flightId": "flight1"
+  },
+  "flightCrew3": {
+    "crewId": "crew3",
+    "flightId": "flight1"
+  },
+  "flightCrew4": {
+    "crewId": "crew4",
+    "flightId": "flight1"
+  },
+  "flightCrew5": {
+    "crewId": "crew8",
+    "flightId": "flight1"
+  },
+  "flightCrew6": {
+    "crewId": "crew10",
+    "flightId": "flight1"
+  }
+}
