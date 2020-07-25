@@ -1,0 +1,11 @@
+
+{
+  "flightFood1": {
+    "foodId": "food4",
+    "flightId": "flight1"
+  },
+  "flightFood2": {
+    "foodId": "food6",
+    "flightId": "flight1"
+  }
+}
