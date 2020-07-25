@@ -24,17 +24,17 @@
     "title": "Flight Captain",
     "imageUrl": "https://ichef.bbci.co.uk/images/ic/896xn/p01z045t.jpg"
   },
-   "crew6": {
-  "name": "Ted Vanderway",
-  "title": "First Officer",
-  "imageUrl": "https://ichef.bbci.co.uk/images/ic/896xn/p01z044d.jpg"
+  "crew6": {
+    "name": "Ted Vanderway",
+    "title": "First Officer",
+    "imageUrl": "https://ichef.bbci.co.uk/images/ic/896xn/p01z044d.jpg"
   },
   "crew7": {
     "name": "Sarah Smith",
     "title": "Pilot",
     "imageUrl": "https://i.pinimg.com/originals/e3/e9/bd/e3e9bd7eabf3eebc48a450f536348747.png"
     },
-   "crew8": {
+  "crew8": {
     "name": "David Avila",
     "title": "Pilot",
     "imageUrl": "https://bizjetjobs.com/wp-content/uploads/1569972252-Uniform-Headshot-250x250.jpg"
@@ -42,7 +42,7 @@
   "crew9": {
     "name": "Amy Cho",
     "title": "Air Stewardess",
-    "imageUrl": "https://bizjetjobs.com/wp-content/uploads/1569972252-Uniform-Headshot-250x250.jpg"
+    "imageUrl": "https://bizjetjobs.com/wp-content/uploads/2015/09/1428527706-Untitled-copy-250x250.jpg"
     },
   "crew10": {
     "name": "James Thompson",
