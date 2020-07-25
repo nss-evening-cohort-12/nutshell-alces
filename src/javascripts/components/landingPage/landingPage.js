@@ -23,8 +23,8 @@ const hideLanding = () => {
 const buildLandingPageButtons = () => {
   hideLanding();
   const domString = `
-   <div class="main-section d-flex justify-content-center">
-   `;
+    <div class="main-section d-flex justify-content-center">
+    `;
   utils.printToDom('#landingPage', domString);
   utils.printToDom('#component-editor', '');
 };
