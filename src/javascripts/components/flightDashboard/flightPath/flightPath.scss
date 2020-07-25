@@ -1,0 +1,30 @@
+.flightPath {
+position: absolute;
+height: 50%;
+width: 50%;
+border: solid black 3px;
+};
+
+.path-container-fluid {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  text-align: center;
+}
+
+.originDiv {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.destinationDiv {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.header {
+  grid-column: 3;
+  grid-row: 1;
+}

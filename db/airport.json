@@ -42,24 +42,24 @@
     "international": false
   },
   "airport7": {
-    "imgURL": "[https://www.passengerterminaltoday.com/wp-content/uploads/2019/08/Manila-Exterior-2.jpg](https://www.passengerterminaltoday.com/wp-content/uploads/2019/08/Manila-Exterior-2.jpg)",
+    "imgURL": "https://www.passengerterminaltoday.com/wp-content/uploads/2019/08/Manila-Exterior-2.jpg",
     "name": "Manila Ninoy Aquino International Airport (MNL)",
     "location": "Manila, Philippines",
-    "webURL": "[https://www.manila-airport.net/](https://www.manila-airport.net/)",
+    "webURL": "https://www.manila-airport.net/",
     "international": true
   },
   "airport8": {
-    "imgURL": "[https://www.landrum-brown.com/wp-content/uploads/2017/05/01.jpg](https://www.landrum-brown.com/wp-content/uploads/2017/05/01.jpg)",
+    "imgURL": "https://www.landrum-brown.com/wp-content/uploads/2017/05/01.jpg",
     "name": "Incheon International Airport",
     "location": "Incheon, South Korea",
-    "webURL": "[https://www.airport.kr/ap/en/index.do](https://www.airport.kr/ap/en/index.do)",
+    "webURL": "https://www.airport.kr/ap/en/index.do",
     "international": true
   },
   "airport9": {
-    "imgURL": "[https://inmoinvestments.com//media/images/news/thumbnails/o_1cudnpmu7jp910k61k0057nro1m_w_1000x800.jpg](https://inmoinvestments.com//media/images/news/thumbnails/o_1cudnpmu7jp910k61k0057nro1m_w_1000x800.jpg)",
+    "imgURL": "https://inmoinvestments.com//media/images/news/thumbnails/o_1cudnpmu7jp910k61k0057nro1m_w_1000x800.jpg",
     "name": "Región de Murcia International Airport",
     "location": "Murcia, Spain",
-    "webURL": "[http://www.aena.es/](http://www.aena.es/)",
+    "webURL": "http://www.aena.es/",
     "international": true
   }
 }
