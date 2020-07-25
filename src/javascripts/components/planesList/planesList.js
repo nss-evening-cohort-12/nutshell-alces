@@ -28,6 +28,7 @@ const showPlanesAuth = () => {
                       </div>`;
 
       utils.printToDom('#component-viewer', '');
+      utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
@@ -50,6 +51,7 @@ const showPlanesNoAuth = () => {
                       </div>`;
 
       utils.printToDom('#component-viewer', '');
+      utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
@@ -88,6 +90,7 @@ const addPlaneEvent = (e) => {
     .then(() => {
       showPlanesAuth();
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('addPlane does not work', err));
 };
@@ -110,6 +113,7 @@ const editPlaneEvent = (e) => {
     .then(() => {
       showPlanesAuth();
       utils.printToDom('#component-editor', '');
+      utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
 };
