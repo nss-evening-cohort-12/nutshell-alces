@@ -5,7 +5,7 @@ const buildDestinationDiv = () => {
   const domString = `
                   <div class="flightPath">
                     <div class="path-container-fluid">
-                      <h2 class="text-center">Flight Path</h2>
+                      <h2 class="text-center header">Flight Path</h2>
                       <div class="originDiv">
                         <div class="dropdown">
                           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
