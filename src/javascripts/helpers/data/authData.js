@@ -7,6 +7,7 @@ import planesList from '../../components/planesList/planesList';
 import foodList from '../../components/foodList/foodList';
 import landing from '../../components/landingPage/landingPage';
 import dash from '../../components/flightDashboard/dashBoardList';
+import flights from '../../components/flightsList/flightsList';
 
 const authDiv = $('#auth');
 // const homeDiv = $('#homepage');
@@ -24,6 +25,7 @@ const checkLoginStatus = () => {
       planesList.planeEvents();
       foodList.foodListEvents();
       dash.dashEvents();
+      flights.flightEvents();
     } else {
       landing.viewNoDashboard();
       authDiv.removeClass('hide');
