@@ -9,7 +9,7 @@ const showDashboard = (e) => {
 };
 
 const dashEvents = () => {
-  $('body').on('click', showDashboard);
+  $('body').on('click', '.flight-nav', showDashboard);
 };
 
 export default {
