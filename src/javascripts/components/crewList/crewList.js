@@ -6,6 +6,7 @@ import addCrew from '../addCrew/addCrew';
 import crewComponent from '../crew/crew';
 import hideLanding from '../landingPage/landingPage';
 import crewData from '../../helpers/data/crewData';
+import addFlights from '../flightDashboard/addFlights/addFlightLanding';
 
 import './crewList.scss';
 import utils from '../../helpers/utils';
@@ -28,7 +29,10 @@ const buildCrewAuth = () => {
                   </div>`;
 
       utils.printToDom('#component-viewer', '');
-      utils.printToDom('#crew', '');
+      utils.printToDom('#flightDashboard', '');
+      addFlights.hideAddFlights();
+
+      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('no call no show', err));
@@ -51,7 +55,10 @@ const buildCrewNoAuth = () => {
                   </div>`;
 
       utils.printToDom('#component-viewer', '');
-      utils.printToDom('#crew', '');
+      utils.printToDom('#flightDashboard', '');
+      addFlights.hideAddFlights();
+
+      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('no call no show', err));
@@ -81,7 +88,7 @@ const addCrewEvent = (e) => {
     .then(() => {
       buildCrewAuth();
       utils.printToDom('#component-editor', '');
-      utils.printToDom('#crew', '');
+      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('not hired', err));
 };
@@ -115,7 +122,7 @@ const editCrewEvent = (e) => {
     .then(() => {
       buildCrewAuth();
       utils.printToDom('#component-editor', '');
-      utils.printToDom('#crew', '');
+      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not edit crew', err));
 };

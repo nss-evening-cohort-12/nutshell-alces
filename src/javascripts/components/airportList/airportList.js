@@ -7,6 +7,7 @@ import addAirport from '../addAirport/addAirport';
 import editAirport from '../editAirport/editAirport';
 import utils from '../../helpers/utils';
 import hideLanding from '../landingPage/landingPage';
+import addFlights from '../flightDashboard/addFlights/addFlightLanding';
 
 import './airportList.scss';
 
@@ -29,7 +30,10 @@ const buildHangarAuth = () => {
       domString += `</>
                       </div>`;
       utils.printToDom('#component-viewer', '');
-      utils.printToDom('#crew', '');
+      utils.printToDom('#flightDashboard', '');
+      addFlights.hideAddFlights();
+
+      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('get airports broke', err));
@@ -53,7 +57,10 @@ const buildHangarNoAuth = () => {
       domString += `</>
                       </div>`;
       utils.printToDom('#component-viewer', '');
-      utils.printToDom('#crew', '');
+      utils.printToDom('#flightDashboard', '');
+      addFlights.hideAddFlights();
+
+      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('get airports broke', err));
@@ -84,7 +91,7 @@ const addAirportEvent = (e) => {
     .then(() => {
       buildHangarAuth();
       utils.printToDom('#component-editor', '');
-      utils.printToDom('#crew', '');
+      utils.printToDom('', '');
     })
     .catch((err) => console.error('could not add airport', err));
 };
@@ -113,7 +120,7 @@ const editAirportEvent = (e) => {
     .then(() => {
       buildHangarAuth();
       utils.printToDom('#component-editor', '');
-      utils.printToDom('#crew', '');
+      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not edit airport', err));
 };

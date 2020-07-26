@@ -1,5 +1,6 @@
 import foodData from '../../helpers/data/foodData';
 import utils from '../../helpers/utils';
+import addFlights from '../flightDashboard/addFlights/addFlightLanding';
 
 const foodMakerAuth = (food) => {
   const domString = `
@@ -60,6 +61,8 @@ const authFood = () => {
       });
     const domString = `<table class='table table-bordered'>` + headerString + rowString + `</table>` // eslint-disable-line
       utils.printToDom('#component-viewer', '');
+      utils.printToDom('#flightDashboard', '');
+      addFlights.hideAddFlights();
       utils.printToDom('#component-viewer', domString);
     });
 };

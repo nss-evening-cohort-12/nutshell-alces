@@ -1,19 +1,27 @@
-// import utils from '../../helpers/utils';
 import hideLanding from '../landingPage/landingPage';
-import flightPath from './flightPath/flightPath';
-import pilotDiv from './crew/pilots';
+// import flightPath from './flightPath/flightPath';
+// import pilotDiv from './crew/pilots';
+import addFlights from './addFlights/addFlightLanding';
 import './dashBoard.scss';
-
+import utils from '../../helpers/utils';
 
 const showDashboard = (e) => {
   e.preventDefault();
+  utils.printToDom('#component-viewer', '');
+  utils.printToDom('#component-editor', '');
+  addFlights.hideAddFlights();
   hideLanding.hideLanding();
-  pilotDiv.buildPilotDiv();
-  flightPath.buildDestinationDiv();
+};
+
+const showAddFlight = (e) => {
+  e.preventDefault();
+  utils.printToDom('#flightDashboard', '');
+  addFlights.buildAddFlightLanding();
 };
 
 const dashEvents = () => {
   $('body').on('click', '.flight-nav', showDashboard);
+  $('body').on('click', '#show-add-flight', showAddFlight);
 };
 
 export default {
