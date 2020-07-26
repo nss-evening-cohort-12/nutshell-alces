@@ -18,7 +18,7 @@ const seeFlights = () => {
       domString += `</div>
                   </div>`;
 
-      utils.printToDom('#all-flights', domString);
+      utils.printToDom('#flightDashboard', domString);
     })
     .catch((err) => console.error('could not print all flights', err));
 };

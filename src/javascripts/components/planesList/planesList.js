@@ -6,6 +6,7 @@ import planesComponent from '../planes/planes';
 import planeForm from '../addPlane/addPlane';
 import editPlane from '../editPlane/editPlane';
 import hideLanding from '../landingPage/landingPage';
+import addFlights from '../flightDashboard/addFlights/addFlightLanding';
 import './planesList.scss';
 
 import utils from '../../helpers/utils';
@@ -28,7 +29,9 @@ const showPlanesAuth = () => {
                       </div>`;
 
       utils.printToDom('#component-viewer', '');
-      utils.printToDom('#crew', '');
+      utils.printToDom('#flightDashboard', '');
+      addFlights.hideAddFlights();
+      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
@@ -51,7 +54,9 @@ const showPlanesNoAuth = () => {
                       </div>`;
 
       utils.printToDom('#component-viewer', '');
-      utils.printToDom('#crew', '');
+      utils.printToDom('#flightDashboard', '');
+      addFlights.hideAddFlights();
+      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
@@ -90,7 +95,7 @@ const addPlaneEvent = (e) => {
     .then(() => {
       showPlanesAuth();
       utils.printToDom('#component-editor', '');
-      utils.printToDom('#crew', '');
+      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('addPlane does not work', err));
 };
@@ -113,7 +118,7 @@ const editPlaneEvent = (e) => {
     .then(() => {
       showPlanesAuth();
       utils.printToDom('#component-editor', '');
-      utils.printToDom('#crew', '');
+      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
 };

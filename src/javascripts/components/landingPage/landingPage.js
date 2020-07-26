@@ -1,4 +1,5 @@
 import utils from '../../helpers/utils';
+import addFlights from '../flightDashboard/addFlights/addFlightLanding';
 
 import './landingPage.scss';
 
@@ -19,7 +20,8 @@ const buildLandingPage = () => {
     `;
   utils.printToDom('#landingPage', domString);
   utils.printToDom('#component-editor', '');
-  utils.printToDom('#crew', '');
+  utils.printToDom('#flightDashboard', '');
+  addFlights.hideAddFlights();
 };
 
 const clearViewer = () => {
