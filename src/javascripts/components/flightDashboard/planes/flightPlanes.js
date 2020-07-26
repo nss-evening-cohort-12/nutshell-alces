@@ -18,7 +18,7 @@ const buildPlanesDiv = () => {
 
       planes.forEach((plane) => {
         domString += `
-        <a class="dropdown-item" href="#">${plane.type}</a>
+        <a class="dropdown-item" id="${plane.id}" href="#">${plane.type}</a>
       `;
       });
       domString += `
