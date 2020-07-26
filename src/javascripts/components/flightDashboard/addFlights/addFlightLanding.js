@@ -1,6 +1,7 @@
 import utils from '../../../helpers/utils';
 import flightPath from '../flightPath/flightPath';
 import pilots from '../crew/pilots';
+import fas from '../crew/flightAtten';
 
 // THIS FUNCTION WILL HIDE ALL DIVS RELATED TO ADD FLIGHTS
 const hideAddFlights = () => {
@@ -16,6 +17,7 @@ const buildAddFlightLanding = () => {
   utils.printToDom('#add-flights', domString);
 
   // ADD NEW DIVS TO ADDFLIGHTS HERE
+  fas.buildFlightAttenDiv();
   pilots.buildPilotDiv();
   flightPath.buildDestinationDiv();
 };
