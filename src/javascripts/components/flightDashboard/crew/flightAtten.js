@@ -7,7 +7,7 @@ const buildFaDiv = () => {
     .then((crew) => {
       let domString = `
       <div class="crewFas">
-      <h2 class="text-center">Pilots</h2>
+      <h2 class="text-center"> Flight Attendants</h2>
        <div class="d-flex justify-content-center flex-column">
        <div class="input-group mb-3">
        <div class="input-group-prepend">
