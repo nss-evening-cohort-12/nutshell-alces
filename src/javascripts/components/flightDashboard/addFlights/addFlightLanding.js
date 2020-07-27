@@ -19,7 +19,7 @@ const buildAddFlightLanding = () => {
   utils.printToDom('#add-flights', domString);
 
   // ADD NEW DIVS TO ADDFLIGHTS HERE
-  fas.buildFlightAttenDiv();
+  fas.buildFaDiv();
   pilots.buildPilotDiv();
   flightPath.buildDestinationDiv();
   planes.buildPlanesDiv();
