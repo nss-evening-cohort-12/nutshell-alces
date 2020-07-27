@@ -10,6 +10,7 @@ const hideAddFlights = () => {
   utils.printToDom('#destination', '');
   utils.printToDom('#crew', '');
   utils.printToDom('#planes', '');
+  utils.printToDom('#crewF', '');
 };
 
 const buildAddFlightLanding = () => {
