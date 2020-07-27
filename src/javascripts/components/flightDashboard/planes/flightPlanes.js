@@ -8,53 +8,28 @@ const buildPlanesDiv = () => {
   getPlanes.getPlanes()
     .then((planes) => {
       let domString = `
-  <div class="flightPlanes">
-    <h2 class="text-center header">Airplane</h2>
-    <div class="text-center dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="planeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Select
-      </button>
-      <div class="dropdown-menu" aria-labelledby="planeDropdown">`;
+      <div class="flightPlanes">
+      <h2 class="text-center">Airplanes</h2>
+       <div class="d-flex justify-content-center flex-column plane-dropdown">
+       <div class="input-group mb-3">
+       <div class="input-group-prepend">
+         <label class="input-group-text" for="inputGroupSelect01">Plane</label>
+       </div>
+       <select class="custom-select" id="inputGroupSelect01">
+         <option selected>Choose...</option>`;
 
       planes.forEach((plane) => {
         domString += `
-        <a class="dropdown-item" id="${plane.id}" href="#">${plane.type}</a>
+          <option value="${plane.id}">${plane.type}</option>
       `;
       });
       domString += `
+        </select>
       </div>
-    </div>
-  </div>
   `;
       utils.printToDom('#planes', domString);
     })
     .catch((err) => console.error(err));
 };
-
-const showSelectedPlaneEvent = (planeId) => {
-  getPlanes.getPlaneById(planeId)
-    .then((response) => {
-      const plane = response.data;
-      console.warn(response.data);
-      const domString = `
-                      <div id="${planeId}" class="plane-card">
-                        <img class="card-img-top" src="${plane.imgURL}" alt="Card image cap">
-                        <div class="plane-body">
-                          <h5 class="plane-name">Name: ${plane.name}</h5>
-                          <p class="plane-type">Type: ${plane.type}</p>
-                          <p class="card-text"><small class="text-muted">Last Serviced: </small></p>
-                        </div>
-                      </div>
-                      `;
-      utils.printToDom('#planeItem', domString);
-    })
-    .catch((err) => console.error('could not display single plane', err));
-};
-
-const planeItems = document.querySelectorAll('.dropdown-item');
-// eslint-disable-next-line no-restricted-syntax
-for (const planeItem of planeItems) {
-  planeItem.addEventListener('click', showSelectedPlaneEvent());
-}
 
 export default { buildPlanesDiv };
