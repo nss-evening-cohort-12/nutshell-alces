@@ -15,12 +15,12 @@ const buildPlanesDiv = () => {
        <div class="input-group-prepend">
          <label class="input-group-text" for="inputGroupSelect01">Plane</label>
        </div>
-       <select class="custom-select" id="inputGroupSelect01">
+       <select class="custom-select">
          <option selected>Choose...</option>`;
 
       planes.forEach((plane) => {
         domString += `
-          <option value="${plane.id}">${plane.type}</option>
+          <option class="plane-list-item" id="${plane.id}">${plane.type}</option>
       `;
       });
       domString += `
@@ -32,4 +32,14 @@ const buildPlanesDiv = () => {
     .catch((err) => console.error(err));
 };
 
-export default { buildPlanesDiv };
+const getSelectedPlaneId = (e) => {
+  console.warn('you clicked');
+  const selectedPlaneId = e.target.closest.id;
+  console.warn(selectedPlaneId);
+};
+
+const flightPlaneEvents = () => {
+  $('body').on('click', '.plane-list-item', getSelectedPlaneId);
+};
+
+export default { buildPlanesDiv, getSelectedPlaneId, flightPlaneEvents };
