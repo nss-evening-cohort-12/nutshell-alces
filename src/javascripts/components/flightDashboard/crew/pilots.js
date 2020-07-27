@@ -1,22 +1,47 @@
 import utils from '../../../helpers/utils';
 import './crew.scss';
+import pilots from '../../../helpers/data/crewData';
 
 const buildPilotDiv = () => {
-  const domString = `
-  <div class="crewPilots">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Pilots
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+  pilots.getCrew()
+    .then((crew) => {
+      let domString = `
+      <div class="crewPilots">
+      <h2 class="text-center">Pilots</h2>
+       <div class="d-flex justify-content-center flex-column">
+       <div class="input-group mb-3">
+       <div class="input-group-prepend">
+         <label class="input-group-text" for="inputGroupSelect01">Pilot</label>
+       </div>
+       <select class="custom-select" id="inputGroupSelect01">
+         <option selected>Choose...</option>`;
+      crew.forEach((member) => {
+        if (`${member.title}` === 'Pilot') {
+          domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;
+        }
+      });
+      domString += `  </select>
+      
+      </div>`;
+      domString += `
+      <div class="input-group mb-3">
+       <div class="input-group-prepend">
+         <label class="input-group-text" for="inputGroupSelect01">Pilot</label>
+       </div>
+       <select class="custom-select" id="inputGroupSelect01">
+         <option selected>Choose...</option>`;
+      crew.forEach((member) => {
+        if (`${member.title}` === 'Pilot') {
+          domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;
+        }
+      });
+      domString += `  </select>
+      
       </div>
-    </div>
-  </div>
-  `;
-  utils.printToDom('#crew', domString);
+         </div>
+       </div>`;
+      utils.printToDom('#crew', domString);
+    });
 };
 
 export default {
