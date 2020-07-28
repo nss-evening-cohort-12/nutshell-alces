@@ -7,43 +7,62 @@ const buildDestinationDiv = () => {
                     <div class="path-container-fluid">
                       <h2 class="text-center header">Flight Path</h2>
                       <div class="originDiv">
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Origin
-                          </button>
-                          <div class="dropdown-menu" id="origin-dropdown" aria-labelledby="dropdownMenuButton">
-  `;
+                        <div class="d-flex justify-content-center flex-column origin-dropdown">
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" id="origin-input-text" for="inputGroupSelect01">Origin</label>
+                            </div>
+                            <select class="custom-select" id="origin-selector">
+                              <option selected>Choose...</option>`;
   airportData.getAirports()
     .then((airports) => {
       airports.forEach((airport) => {
         domString += `
-                            <a class="dropdown-item" href="#">${airport.name}</a>`;
+                              <option class="origin-value" value="${airport.id}">${airport.name}</option>`;
       });
       domString += `
+                            </select>
                           </div>
                         </div>
-                      </div>
-                      <div class="destinationDiv">
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Destination
-                          </button>
-                          <div class="dropdown-menu" id="destination-dropdown" aria-labelledby="dropdownMenuButton">`;
+                        <div class="destinationDiv">
+                          <div class="d-flex justify-content-center flex-column destination-dropdown">
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Destination</label>
+                              </div>
+                              <select class="custom-select" id="destination-selector">
+                                <option selected>Choose...</option> `;
 
       airports.forEach((airport) => {
         domString += `
-                            <a class="dropdown-item" href="#">${airport.name}</a>`;
+                                <option class="destination-value" value="${airport.id}">${airport.name}</option>`;
       });
       domString += `
+                              </select>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>`;
+                    </div>`;
 
       utils.printToDom('#destination', domString);
     })
     .catch((err) => console.error(err));
 };
 
-export default { buildDestinationDiv };
+// const addFlightOrigin = (e) => {
+//   e.preventDefault();
+//   const origin = e.target.value;
+// };
+
+// const addFlightDestination = (e) => {
+//   e.preventDefault();
+//   const destination = e.target.value;
+// };
+
+const flightPathEvents = () => {
+  // $('body').on('change', '#origin-selector', addFlightOrigin);
+  // $('body').on('change', '#destination-selector', addFlightDestination);
+};
+
+export default { buildDestinationDiv, flightPathEvents };

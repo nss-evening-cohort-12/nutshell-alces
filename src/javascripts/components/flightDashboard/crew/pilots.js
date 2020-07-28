@@ -8,13 +8,13 @@ const buildPilotDiv = () => {
       let domString = `
       <div class="crewPilots">
       <h2 class="text-center">Pilots</h2>
-       <div class="d-flex justify-content-center flex-column">
-       <div class="input-group mb-3">
-       <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Pilot</label>
-       </div>
-       <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>`;
+        <div class="d-flex justify-content-center flex-column">
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Pilot</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Pilot') {
           domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;

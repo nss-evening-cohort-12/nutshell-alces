@@ -57,8 +57,6 @@ const buildCrewNoAuth = () => {
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();
-
-      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('no call no show', err));
