@@ -8,6 +8,8 @@ import foodList from '../../components/foodList/foodList';
 import landing from '../../components/landingPage/landingPage';
 import dash from '../../components/flightDashboard/dashBoardList';
 import flights from '../../components/flightsList/flightsList';
+import flightPath from '../../components/flightDashboard/flightPath/flightPath';
+import addFlights from '../../components/flightDashboard/addFlights/addFlightLanding';
 import flightPlanes from '../../components/flightDashboard/planes/flightPlanes';
 
 const authDiv = $('#auth');
@@ -27,6 +29,8 @@ const checkLoginStatus = () => {
       foodList.foodListEvents();
       dash.dashEvents();
       flights.flightEvents();
+      flightPath.flightPathEvents();
+      addFlights.addFlightEvents();
       flightPlanes.flightPlaneEvents();
     } else {
       landing.viewNoDashboard();

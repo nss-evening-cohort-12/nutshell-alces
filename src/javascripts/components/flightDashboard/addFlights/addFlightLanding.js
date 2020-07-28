@@ -3,6 +3,7 @@ import flightPath from '../flightPath/flightPath';
 import pilots from '../crew/pilots';
 import fas from '../crew/flightAtten';
 import planes from '../planes/flightPlanes';
+import flightsData from '../../../helpers/data/flightsData';
 
 // THIS FUNCTION WILL HIDE ALL DIVS RELATED TO ADD FLIGHTS
 const hideAddFlights = () => {
@@ -15,8 +16,8 @@ const hideAddFlights = () => {
 
 const buildAddFlightLanding = () => {
   const domString = `<div class="text-center">
-                      <h1>Add A New Flight</h1>
-                      </div>`;
+                      <button type="submit" class="btn btn-secondary" type="submit" id="flight-adder">Add Flight!</button>
+                    </div>`;
   utils.printToDom('#add-flights', domString);
 
   // ADD NEW DIVS TO ADDFLIGHTS HERE
@@ -26,4 +27,28 @@ const buildAddFlightLanding = () => {
   planes.buildPlanesDiv();
 };
 
-export default { buildAddFlightLanding, hideAddFlights };
+const addFlight = (e) => {
+  e.preventDefault();
+
+  const originId = $('#origin-selector').val();
+  const destinationId = $('#destination-selector').val();
+  const planeId = $('#plane-select').val();
+
+  const newFlightObj = {
+    originId,
+    destinationId,
+    planeId,
+  };
+
+  flightsData.addFlight(newFlightObj)
+    .then(() => {
+      utils.printToDom('#add-flights', '');
+      buildAddFlightLanding();
+    })
+    .catch((err) => console.error(err));
+};
+
+const addFlightEvents = () => {
+  $('body').on('click', '#flight-adder', addFlight);
+};
+export default { buildAddFlightLanding, hideAddFlights, addFlightEvents };

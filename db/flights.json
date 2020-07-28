@@ -1,8 +1,8 @@
 {
   "flight1": {
-    "origin": "airport1",
-    "destination": "airport2",
-    "plane": "plane1",
+    "originId": "airport1",
+    "destinationId": "airport2",
+    "planeId": "plane1",
     "crew": ["crew1", "crew2", "crew3", "crew4", "crew8", "crew10"],
     "foods": ["food4", "food6"]
   }
