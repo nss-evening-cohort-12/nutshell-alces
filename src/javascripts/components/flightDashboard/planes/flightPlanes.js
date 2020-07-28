@@ -1,5 +1,4 @@
 import getPlanes from '../../../helpers/data/planesData';
-
 import utils from '../../../helpers/utils';
 
 import './flightPlanes.scss';
@@ -15,12 +14,12 @@ const buildPlanesDiv = () => {
        <div class="input-group-prepend">
          <label class="input-group-text" for="inputGroupSelect01">Plane</label>
        </div>
-       <select class="custom-select">
+       <select id="plane-select" class="custom-select">
          <option selected>Choose...</option>`;
 
       planes.forEach((plane) => {
         domString += `
-          <option class="plane-list-item" id="${plane.id}">${plane.type}</option>
+          <option class="plane-list-item" value=${plane.id}>${plane.type}</option>
       `;
       });
       domString += `
@@ -33,13 +32,12 @@ const buildPlanesDiv = () => {
 };
 
 const getSelectedPlaneId = (e) => {
-  console.warn('you clicked');
-  const selectedPlaneId = e.target.closest.id;
+  const selectedPlaneId = e.target.value;
   console.warn(selectedPlaneId);
 };
 
 const flightPlaneEvents = () => {
-  $('body').on('click', '.plane-list-item', getSelectedPlaneId);
+  $('body').on('change', '#plane-select', getSelectedPlaneId);
 };
 
 export default { buildPlanesDiv, getSelectedPlaneId, flightPlaneEvents };
