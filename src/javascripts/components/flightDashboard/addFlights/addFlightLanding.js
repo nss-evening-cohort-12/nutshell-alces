@@ -3,7 +3,7 @@ import flightPath from '../flightPath/flightPath';
 import pilots from '../crew/pilots';
 import fas from '../crew/flightAtten';
 import planes from '../planes/flightPlanes';
-import airportData from '../../../helpers/data/airportData';
+import flightsData from '../../../helpers/data/flightsData';
 
 // THIS FUNCTION WILL HIDE ALL DIVS RELATED TO ADD FLIGHTS
 const hideAddFlights = () => {
@@ -27,23 +27,25 @@ const buildAddFlightLanding = () => {
   planes.buildPlanesDiv();
 };
 
-const getOriginAirport = (originId) => {
-  airportData.getAirportById(originId)
-    .then((response) => {
-      const originAirport = response.data;
-      return originAirport;
-    })
-    .catch((err) => console.error(err));
-};
-
 const addFlight = (e) => {
   e.preventDefault();
-  const originId = $('#origin-selector').val();
-  const originAirport = getOriginAirport(originId);
-  console.error(originAirport);
 
-  // const destination = $('#destination-selector').val();
-  // const plane = $('#plane-select').val();
+  const originId = $('#origin-selector').val();
+  const destinationId = $('#destination-selector').val();
+  const planeId = $('#plane-select').val();
+
+  const newFlightObj = {
+    originId,
+    destinationId,
+    planeId,
+  };
+
+  flightsData.addFlight(newFlightObj)
+    .then(() => {
+      utils.printToDom('#add-flights', '');
+      buildAddFlightLanding();
+    })
+    .catch((err) => console.error(err));
 };
 
 const addFlightEvents = () => {
