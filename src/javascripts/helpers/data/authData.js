@@ -10,6 +10,7 @@ import dash from '../../components/flightDashboard/dashBoardList';
 import flights from '../../components/flightsList/flightsList';
 import flightPath from '../../components/flightDashboard/flightPath/flightPath';
 import addFlights from '../../components/flightDashboard/addFlights/addFlightLanding';
+import flightPlanes from '../../components/flightDashboard/planes/flightPlanes';
 
 const authDiv = $('#auth');
 // const homeDiv = $('#homepage');
@@ -30,6 +31,7 @@ const checkLoginStatus = () => {
       flights.flightEvents();
       flightPath.flightPathEvents();
       addFlights.addFlightEvents();
+      flightPlanes.flightPlaneEvents();
     } else {
       landing.viewNoDashboard();
       authDiv.removeClass('hide');
