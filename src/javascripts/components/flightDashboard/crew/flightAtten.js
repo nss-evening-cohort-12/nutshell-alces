@@ -14,7 +14,7 @@ const buildFaDiv = () => {
               <label class="input-group-text" for="fa1">Attendant</label>
             </div>
             <select class="custom-select" id="fa1-selector">
-              <option selected>Choose...</option>`;
+              <option value="" selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
           domString += `
@@ -31,7 +31,7 @@ const buildFaDiv = () => {
                 <label class="input-group-text" for="fa2">Attendant</label>
               </div>
               <select class="custom-select" id="fa2-selector">
-                <option selected>Choose...</option>`;
+                <option value="" selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
           domString += `
@@ -48,7 +48,7 @@ const buildFaDiv = () => {
                 <label class="input-group-text" for="fa3">Attendant</label>
               </div>
               <select class="custom-select" id="fa3-selector">
-                <option selected>Choose...</option>`;
+                <option value="" selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
           domString += `
@@ -64,7 +64,7 @@ const buildFaDiv = () => {
                 <label class="input-group-text" for="fa4">Attendant</label>
               </div>
               <select class="custom-select" id="fa4-selector">
-                <option selected>Choose...</option>`;
+                <option value="" selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
           domString += `

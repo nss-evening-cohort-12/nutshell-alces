@@ -14,7 +14,7 @@ const buildPilotDiv = () => {
           <label class="input-group-text" for="pilot1">Pilot</label>
         </div>
         <select class="custom-select" id="pilot1-selector">
-          <option selected>Choose...</option>`;
+          <option value="" selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Pilot') {
           domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;
@@ -29,7 +29,7 @@ const buildPilotDiv = () => {
          <label class="input-group-text" for="pilot2">Pilot</label>
        </div>
        <select class="custom-select" id="pilot2-selector">
-         <option selected>Choose...</option>`;
+         <option value="" selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Pilot') {
           domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;

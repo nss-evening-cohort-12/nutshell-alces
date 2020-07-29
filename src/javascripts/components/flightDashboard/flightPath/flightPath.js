@@ -13,7 +13,7 @@ const buildDestinationDiv = () => {
                               <label class="input-group-text" id="origin-input-text" for="inputGroupSelect01">Origin</label>
                             </div>
                             <select class="custom-select" id="origin-selector">
-                              <option selected>Choose...</option>`;
+                              <option value="" selected>Choose...</option>`;
   airportData.getAirports()
     .then((airports) => {
       airports.forEach((airport) => {
@@ -31,7 +31,7 @@ const buildDestinationDiv = () => {
                                 <label class="input-group-text" for="inputGroupSelect01">Destination</label>
                               </div>
                               <select class="custom-select" id="destination-selector">
-                                <option selected>Choose...</option> `;
+                                <option value="" selected>Choose...</option> `;
 
       airports.forEach((airport) => {
         domString += `
