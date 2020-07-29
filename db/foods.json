@@ -21,7 +21,7 @@
         "name": "Peanuts",
         "price": 1,
         "type": "snack",
-        "isAvaiable": true
+        "isAvailable": true
     },
     "food5": {
         "name": "Cookie",

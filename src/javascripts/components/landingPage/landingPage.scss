@@ -13,10 +13,13 @@
     align-content: center;
     margin-top: 2%;
     margin-bottom: 3%;
+   
     .panLogo {
       width: 70vw;
       height: auto;
+      padding-bottom: 10%;
     }
+    
     
   }
   .nav-buttons {
@@ -25,4 +28,21 @@
     align-items: center;
     align-content: center;
   }
+}
+.cardL {
+  margin: 10px;
+  img {
+    height: 10rem;
+  }
+  .card-body{
+    background-color: #3D5A80;
+    color: white;
+    height: 10rem;
+  }
+}
+.landingCardsContainer{
+  display: flex;
+  place-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }

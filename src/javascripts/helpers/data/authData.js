@@ -11,6 +11,7 @@ import flights from '../../components/flightsList/flightsList';
 import flightPath from '../../components/flightDashboard/flightPath/flightPath';
 import addFlights from '../../components/flightDashboard/addFlights/addFlightLanding';
 import flightPlanes from '../../components/flightDashboard/planes/flightPlanes';
+import singleFlight from '../../components/flightDashboard/singleFlight/singleFlight';
 
 const authDiv = $('#auth');
 // const homeDiv = $('#homepage');
@@ -32,6 +33,7 @@ const checkLoginStatus = () => {
       flightPath.flightPathEvents();
       addFlights.addFlightEvents();
       flightPlanes.flightPlaneEvents();
+      singleFlight.singleFlightEvents();
     } else {
       landing.viewNoDashboard();
       authDiv.removeClass('hide');

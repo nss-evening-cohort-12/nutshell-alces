@@ -13,11 +13,13 @@ const hideAddFlights = () => {
   utils.printToDom('#crew', '');
   utils.printToDom('#planes', '');
   utils.printToDom('#crewF', '');
+  utils.printToDom('#singleFlight', '');
 };
 
 const buildAddFlightLanding = () => {
-  const domString = `<div class="text-center">
+  const domString = `<div class="text-center" id="add-button">
                       <button type="submit" class="btn btn-secondary" type="submit" id="flight-adder">Add Flight!</button>
+                      <p id="new-flight-validate"></p>
                     </div>`;
   utils.printToDom('#add-flights', domString);
 
@@ -28,9 +30,34 @@ const buildAddFlightLanding = () => {
   planes.buildPlanesDiv();
 };
 
+const selectCheck = () => {
+  const originId = $('#origin-selector').val();
+  const destinationId = $('#destination-selector').val();
+  const planeId = $('#plane-select').val();
+  const pilot1 = $('#pilot1-selector').val();
+  const pilot2 = $('#pilot2-selector').val();
+  const fa1 = $('#fa1-selector').val();
+  const fa2 = $('#fa2-selector').val();
+  const fa3 = $('#fa3-selector').val();
+  const fa4 = $('#fa4-selector').val();
+
+  if (!pilot1 || !pilot2 || !fa1 || !fa2 || !fa3 || !fa4 || !originId || !destinationId || !planeId) {
+    $('#new-flight-validate').fadeIn();
+    $('#new-flight-validate').html('*All fields are required*');
+    setTimeout(() => {
+      $('#new-flight-validate').fadeOut();
+    }, 2000);
+    return false;
+  }
+  return true;
+};
+
 const addFlight = (e) => {
   e.preventDefault();
 
+  if (selectCheck() === false) {
+    return;
+  }
   const originId = $('#origin-selector').val();
   const destinationId = $('#destination-selector').val();
   const planeId = $('#plane-select').val();
