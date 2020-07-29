@@ -1,6 +1,7 @@
 import flightsList from '../../flightsList/flightsList';
 import smash from '../../../helpers/data/smash';
 import utils from '../../../helpers/utils';
+import './singleFlight.scss';
 
 const viewSingleFlight = (e) => {
   const flightId = e.target.closest('.flight-card').id;
@@ -8,7 +9,7 @@ const viewSingleFlight = (e) => {
     .then((flight) => {
       const domString = `
       <div class="row">
-      <div class="card" id=${flightId} style="width: 18rem;">
+      <div class="card text-center" id=${flightId} style="width: 18rem;">
       <img class="card-img-top" src="https://i.pinimg.com/564x/c2/1b/3d/c21b3d039d9c50ce5f337d8be9d531c1.jpg" alt="Card image cap">
       <div class="card-body">
     <h5 class="card-title">Flight # 1234</h5>
