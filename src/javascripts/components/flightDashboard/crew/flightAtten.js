@@ -8,66 +8,74 @@ const buildFaDiv = () => {
       let domString = `
       <div class="crewFas">
       <h2 class="text-center"> Flight Attendants</h2>
-       <div class="d-flex justify-content-center flex-column">
-       <div class="input-group mb-3">
-       <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Attendant</label>
-       </div>
-       <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>`;
+        <div class="d-flex justify-content-center flex-column">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="fa1">Attendant</label>
+            </div>
+            <select class="custom-select" id="fa1-selector">
+              <option selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
-          domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;
+          domString += `
+              <option value="${member.id}">${member.name}: ${member.title}</option>`;
         }
       });
-      domString += `  </select>
+      domString += `  
+            </select>
       
-      </div>`;
+            </div>`;
       domString += `
-      <div class="input-group mb-3">
-       <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Attendant</label>
-       </div>
-       <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>`;
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="fa2">Attendant</label>
+              </div>
+              <select class="custom-select" id="fa2-selector">
+                <option selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
-          domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;
+          domString += `
+                <option value="${member.id}">${member.name}: ${member.title}</option>`;
         }
       });
-      domString += `  </select>
+      domString += `  
+              </select>
       
-      </div>`;
+            </div>`;
       domString += `
-      <div class="input-group mb-3">
-       <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Attendant</label>
-       </div>
-       <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>`;
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="fa3">Attendant</label>
+              </div>
+              <select class="custom-select" id="fa3-selector">
+                <option selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
-          domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;
+          domString += `
+                <option value="${member.id}">${member.name}: ${member.title}</option>`;
         }
       });
-      domString += `  </select>
-      </div>`;
+      domString += `  
+              </select>
+            </div>`;
       domString += `
-      <div class="input-group mb-3">
-       <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Attendant</label>
-       </div>
-       <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>`;
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="fa4">Attendant</label>
+              </div>
+              <select class="custom-select" id="fa4-selector">
+                <option selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Air Stewardess') {
-          domString += `<option value="${member.id}">${member.name}: ${member.title}</option>`;
+          domString += `
+                <option value="${member.id}">${member.name}: ${member.title}</option>`;
         }
       });
-      domString += `  </select>
-          </div>
-         </div>
-       </div>`;
+      domString += `  
+              </select>
+            </div>
+        </div>
+      </div>`;
       utils.printToDom('#crewF', domString);
     });
 };
