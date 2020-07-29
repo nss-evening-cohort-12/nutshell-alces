@@ -17,7 +17,7 @@ const getFlights = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-const getFlightsById = (flightId) => axios.get(`{baseUrl}/flights/${flightId}.json`);
+const getFlightsById = (flightId) => axios.get(`${baseUrl}/flights/${flightId}.json`);
 
 const deleteFlight = (flightId) => axios.delete(`${baseUrl}/flights/${flightId}.json`);
 

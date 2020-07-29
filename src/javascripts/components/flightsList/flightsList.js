@@ -23,19 +23,8 @@ const seeFlights = () => {
     .catch((err) => console.error('could not print all flights', err));
 };
 
-// const createFlightEvent = () => {
-//   const newFlight = {
-//     plane: $('#plane-select').val(),
-//   };
-//   flightsData.addFlight(newFlight)
-//     .then(() => {
-//       seeFlights();
-//     })
-//     .catch((err) => console.error('could not add plane', err));
-// };
-
 const flightEvents = () => {
   $('body').on('click', '.flight-nav', seeFlights);
 };
 
-export default { flightEvents };
+export default { flightEvents, seeFlights };
