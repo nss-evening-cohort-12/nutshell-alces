@@ -14,6 +14,8 @@ const viewSingleFlight = (e) => {
     <h5 class="card-title">Flight # 1234</h5>
   </div>
   <ul class="list-group list-group-flush">
+    <li class="list-group-item">Origin: ${flight.origin.data.name}</li>
+    <li class="list-group-item">Destination: ${flight.destination.data.name}</li>
     <li class="list-group-item">Plane: ${flight.plane.data.type}</li>
   </ul>
   <div class="card-body">
