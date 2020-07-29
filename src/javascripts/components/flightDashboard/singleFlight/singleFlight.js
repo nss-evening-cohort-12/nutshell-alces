@@ -6,6 +6,7 @@ const viewSingleFlight = (e) => {
   const flightId = e.target.closest('.flight-card').id;
   smash.getSingleFlightInfo(flightId)
     .then((flight) => {
+      console.error(flight);
       const domString = `
       <div class="row">
       <div class="card" id=${flightId} style="width: 18rem;">
