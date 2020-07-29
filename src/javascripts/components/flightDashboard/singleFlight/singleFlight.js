@@ -1,13 +1,11 @@
-import flightData from '../../../helpers/data/flightsData';
 import flightsList from '../../flightsList/flightsList';
+import smash from '../../../helpers/data/smash';
 import utils from '../../../helpers/utils';
 
 const viewSingleFlight = (e) => {
   const flightId = e.target.closest('.flight-card').id;
-  console.warn(flightId);
-  flightData.getFlightsById(flightId)
+  smash.getSingleFlightInfo(flightId)
     .then((flight) => {
-      console.warn(flight);
       const domString = `
       <div class="row">
       <div class="card" id=${flightId} style="width: 18rem;">
@@ -16,11 +14,7 @@ const viewSingleFlight = (e) => {
     <h5 class="card-title">Flight # 1234</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Origin: ${flight.data.originId}</li>
-    <li class="list-group-item">Destination: ${flight.data.destinationId}</li>
-    <li class="list-group-item">Plane: ${flight.data.planeId}</li>
-    <li class="list-group-item">Crew: ${flight.data.crew}</li>
-    <li class="list-group-item">Food Options: ${flight.data.foods}</li>
+    <li class="list-group-item">Plane: ${flight.plane.data.type}</li>
   </ul>
   <div class="card-body">
     <a href="#flightDashboard" class="flight-home card-link">Return to All Flights</a>
@@ -30,7 +24,6 @@ const viewSingleFlight = (e) => {
       `;
       utils.printToDom('#singleFlight', domString);
       utils.printToDom('#flightDashboard', '');
-      console.warn(domString);
     })
     .catch((err) => console.error('could not show single flight', err));
 };
