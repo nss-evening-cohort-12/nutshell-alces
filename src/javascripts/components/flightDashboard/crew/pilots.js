@@ -11,9 +11,9 @@ const buildPilotDiv = () => {
         <div class="d-flex justify-content-center flex-column">
         <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Pilot</label>
+          <label class="input-group-text" for="pilot1">Pilot</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="pilot1-selector">
           <option selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Pilot') {
@@ -26,9 +26,9 @@ const buildPilotDiv = () => {
       domString += `
       <div class="input-group mb-3">
        <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Pilot</label>
+         <label class="input-group-text" for="pilot2">Pilot</label>
        </div>
-       <select class="custom-select" id="inputGroupSelect01">
+       <select class="custom-select" id="pilot2-selector">
          <option selected>Choose...</option>`;
       crew.forEach((member) => {
         if (`${member.title}` === 'Pilot') {
