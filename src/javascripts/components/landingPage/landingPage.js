@@ -16,18 +16,12 @@ const viewNoDashboard = () => {
 const buildLandingPage = () => {
   const domString = `
     <div class="main-section d-flex flex-column">
-      <img src="https://i.ibb.co/1fHqVpB/PAN-AM-LOGO.png" alt="PAN-AM-LOGO" border="0">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="https://i.insider.com/5e0f64c3855cc26263105d26?width=1100&format=jpeg&auto=webp" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="..." alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="..." alt="Third slide">
-          </div>
+      <img class="panLogo" src="https://i.ibb.co/1fHqVpB/PAN-AM-LOGO.png" alt="PAN-AM-LOGO" border="0">
+      <div class="card" style="width: 40rem;">
+        <img class="card-img-top" src="https://cdn.businesstraveller.com/wp-content/uploads/fly-images/992965/2.enhancedcleaninganddisinfection-airvents-e1583757719393-916x515.jpg"
+         alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
     </div>
