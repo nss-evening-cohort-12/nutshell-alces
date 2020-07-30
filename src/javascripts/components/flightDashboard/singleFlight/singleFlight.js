@@ -7,7 +7,7 @@ const viewSingleFlight = (e) => {
   smash.getSingleFlightInfo(flightId)
     .then((flight) => {
       console.error(flight);
-      const domString = `
+      let domString = `
       <div class="row">
       <div class="card" id=${flightId} style="width: 18rem;">
       <img class="card-img-top" src="https://i.pinimg.com/564x/c2/1b/3d/c21b3d039d9c50ce5f337d8be9d531c1.jpg" alt="Card image cap">
@@ -17,13 +17,22 @@ const viewSingleFlight = (e) => {
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Origin: ${flight.origin.data.name}</li>
     <li class="list-group-item">Destination: ${flight.destination.data.name}</li>
-    <li class="list-group-item">Plane: ${flight.plane.data.type}</li>
-  </ul>
-  <div class="card-body">
-    <a href="#flightDashboard" class="flight-home card-link">Return to All Flights</a>
-  </div>
-</div>
-</div>
+    <li class="list-group-item">Plane: ${flight.plane.data.type}</li>`;
+
+      // flight.crew.forEach((crew) => {
+      //   if (crew.title === 'Pilot') {
+      //     domString += `<li class="list-group-item">pilot: ${flight.crew.name}</li>`;
+      //   } else if (crew.title === 'Air Stewardess') {
+      //     domString += `<li class="list-group-item">Air Stewardess: ${flight.crew.name}</li>`;
+      //   }
+      // });
+      domString += `
+      </ul>
+      <div class="card-body">
+        <a href="#flightDashboard" class="flight-home card-link">Return to All Flights</a>
+      </div>
+    </div>
+    </div>
       `;
       utils.printToDom('#singleFlight', domString);
       utils.printToDom('#flightDashboard', '');

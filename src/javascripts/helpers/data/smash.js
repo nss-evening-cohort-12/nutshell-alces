@@ -20,18 +20,22 @@ const getSingleFlightInfo = (flightId) => new Promise((resolve, reject) => {
 
             crewData.getCrew().then((allCrew) => {
               flightCrewData.getFlightCrew().then((allFlightCrew) => {
-                const finalFlightCrew = [];
-                const flightCrew = allFlightCrew.filter((crewMember) => crewMember.flightId === flight.id);
+                flight.crew = [];
+                const flightCrew = allFlightCrew.filter((crewMember) => crewMember.flightId === flightId);
 
                 allCrew.forEach((oneCrew) => {
                   const crew = { ...oneCrew };
                   const isEmployed = flightCrew.find((crewMember) => crewMember.crewId === crew.id);
+                  if (isEmployed === undefined) {
+                    crew.flightId = '';
+                  } else {
+                    crew.flightId = isEmployed.flightId;
+                  }
 
-                  crew.isEmployed = isEmployed.id;
-
-                  crew.isEmployed = undefined ? `Not Employed by Flight: ${flight.id}` : finalFlightCrew.push(crew);
+                  if (crew.flightId === flightId) {
+                    flight.crew.push(crew);
+                  }
                 });
-                flight.crew.push(finalFlightCrew);
               });
               resolve(flight);
             });
