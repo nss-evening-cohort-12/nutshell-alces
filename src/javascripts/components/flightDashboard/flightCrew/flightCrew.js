@@ -11,7 +11,7 @@ const createFlightCrewTable = (flightId) => {
 
   flightCrew.push(pilot1, pilot2, fa1, fa2, fa3, fa4);
 
-  console.error(flightCrew);
+  // console.error(flightCrew);
 
   flightCrew.forEach((member) => {
     const newFlightCrewObj = {
@@ -20,7 +20,7 @@ const createFlightCrewTable = (flightId) => {
     };
 
     flightCrewData.addFlightCrew(newFlightCrewObj)
-      .then((response) => console.error(response.data))
+      .then(() => console.error('test'))
       .catch((err) => console.error(err));
   });
 };

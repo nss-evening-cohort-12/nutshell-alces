@@ -43,8 +43,8 @@ const buildDestinationDiv = () => {
                             <div class="form-check">
                               <input type="checkbox" class="form-check-input" id="domestic">
                               <label class="form-check-label" for="domestic">Domestic</label>
-                              <input type="checkbox" class="form-check-input" id="international">
-                              <label class="form-check-label" for="international">International</label>
+                              <input type="checkbox" class="form-check-input" id="international-flight-foods">
+                              <label class="form-check-label" for="international-flight-foods">International</label>
                             </div>
                           </div>
                         </div>
