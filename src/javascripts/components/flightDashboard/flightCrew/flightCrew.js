@@ -11,8 +11,6 @@ const createFlightCrewTable = (flightId) => {
 
   flightCrew.push(pilot1, pilot2, fa1, fa2, fa3, fa4);
 
-  console.error(flightCrew);
-
   flightCrew.forEach((member) => {
     const newFlightCrewObj = {
       flightId,
