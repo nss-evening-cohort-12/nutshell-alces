@@ -7,16 +7,16 @@ const createFlightFoodsTable = (flightId) => {
   foodData.getFoods()
     .then((foods) => {
       foods.forEach((food) => {
-        console.warn(food);
+        const foodObj = food.id;
         if (food.isAvailable === true && document.getElementById('international-flight').checked === true) {
-          flightFoods.push(foods);
+          flightFoods.push(foodObj);
           console.warn(flightFoods);
           flightFoods.forEach((foodItem) => {
             const newFlightFoodObj = {
               flightId,
               foodId: foodItem,
             };
-            console.warn(newFlightFoodObj);
+            // console.warn(newFlightFoodObj);
 
             flightFoodData.addFlightFoods(newFlightFoodObj)
               .then((response) => console.error(response.data))
