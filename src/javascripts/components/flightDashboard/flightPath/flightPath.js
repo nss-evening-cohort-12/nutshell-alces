@@ -40,6 +40,12 @@ const buildDestinationDiv = () => {
       domString += `
                               </select>
                             </div>
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="domestic">
+                              <label class="form-check-label" for="domestic">Domestic</label>
+                              <input type="checkbox" class="form-check-input" id="international">
+                              <label class="form-check-label" for="international">International</label>
+                            </div>
                           </div>
                         </div>
                       </div>
