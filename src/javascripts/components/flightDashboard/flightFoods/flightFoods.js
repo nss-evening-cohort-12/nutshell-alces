@@ -11,18 +11,17 @@ const createFlightFoodsTable = (flightId) => {
         if (food.isAvailable === true && document.getElementById('international-flight').checked === true) {
           flightFoods.push(foodObj);
           console.warn(flightFoods);
-          flightFoods.forEach((foodItem) => {
-            const newFlightFoodObj = {
-              flightId,
-              foodId: foodItem,
-            };
-            // console.warn(newFlightFoodObj);
-
-            flightFoodData.addFlightFoods(newFlightFoodObj)
-              .then((response) => console.error(response.data))
-              .catch((err) => console.error(err));
-          });
         }
+      });
+      flightFoods.forEach((foodItem) => {
+        const newFlightFoodObj = {
+          flightId,
+          foodId: foodItem,
+        };
+        console.warn(newFlightFoodObj);
+        flightFoodData.addFlightFoods(newFlightFoodObj)
+          .then((response) => console.error(response.data))
+          .catch((err) => console.error(err));
       });
     })
     .catch((err) => console.error('could not get foods', err));
