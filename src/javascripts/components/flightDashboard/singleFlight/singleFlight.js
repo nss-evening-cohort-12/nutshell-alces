@@ -6,7 +6,7 @@ const viewSingleFlight = (e) => {
   const flightId = e.target.closest('.flight-card').id;
   smash.getSingleFlightInfo(flightId)
     .then((flight) => {
-      console.error(flight);
+      console.error(flight.crew);
       let domString = `
       <div class="row">
       <div class="card" id=${flightId} style="width: 18rem;">
@@ -19,13 +19,13 @@ const viewSingleFlight = (e) => {
     <li class="list-group-item">Destination: ${flight.destination.data.name}</li>
     <li class="list-group-item">Plane: ${flight.plane.data.type}</li>`;
 
-      // flight.crew.forEach((crew) => {
-      //   if (crew.title === 'Pilot') {
-      //     domString += `<li class="list-group-item">pilot: ${flight.crew.name}</li>`;
-      //   } else if (crew.title === 'Air Stewardess') {
-      //     domString += `<li class="list-group-item">Air Stewardess: ${flight.crew.name}</li>`;
-      //   }
-      // });
+      flight.crew.forEach((crew) => {
+        if (crew.title === 'Pilot') {
+          domString += `<li class="list-group-item">pilot: ${crew.name}</li>`;
+        } else if (crew.title === 'Air Stewardess') {
+          domString += `<li class="list-group-item">Air Stewardess: ${crew.name}</li>`;
+        }
+      });
       domString += `
       </ul>
       <div class="card-body">

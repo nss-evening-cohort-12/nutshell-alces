@@ -36,8 +36,8 @@ const getSingleFlightInfo = (flightId) => new Promise((resolve, reject) => {
                     flight.crew.push(crew);
                   }
                 });
+                resolve(flight);
               });
-              resolve(flight);
             });
           });
         });
