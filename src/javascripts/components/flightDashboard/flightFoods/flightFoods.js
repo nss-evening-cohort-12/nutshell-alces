@@ -7,7 +7,8 @@ const createFlightFoodsTable = (flightId) => {
   foodData.getFoods()
     .then((foods) => {
       foods.forEach((food) => {
-        if (food.isAvailable === true && $('#international-flight-foods').checked === true) {
+        console.warn(food);
+        if (food.isAvailable === true && document.getElementById('international-flight').checked === true) {
           flightFoods.push(foods);
           console.warn(flightFoods);
           flightFoods.forEach((foodItem) => {
