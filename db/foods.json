@@ -2,19 +2,19 @@
     "food1": {
         "name": "Greek Salad",
         "price": 8,
-        "Type": "meal",
+        "type": "meal",
         "isAvailable": true
     },
     "food2": {
         "name": "Chicken Kiev",
         "price": 12,
-        "Type": "meal",
+        "type": "meal",
         "isAvailable": true
     },
     "food3": {
         "name": "Pot Roast",
         "price": 13,
-        "Type": "meal",
+        "type": "meal",
         "isAvailable": false
     },
     "food4": {

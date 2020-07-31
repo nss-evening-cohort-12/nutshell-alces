@@ -1,13 +1,14 @@
 import flightsList from '../../flightsList/flightsList';
 import smash from '../../../helpers/data/smash';
 import utils from '../../../helpers/utils';
+import flightCrewData from '../../../helpers/data/flightCrewData';
 import './singleFlight.scss';
 
 const viewSingleFlight = (e) => {
   const flightId = e.target.closest('.flight-card').id;
   smash.getSingleFlightInfo(flightId)
     .then((flight) => {
-      console.error(flight.crew);
+      console.error(flight);
       let domString = `
       <div class="row-single">
       <div class="card text-center" id=${flightId} style="width: 18rem;">
@@ -23,23 +24,45 @@ const viewSingleFlight = (e) => {
 
       flight.crew.forEach((crew) => {
         if (crew.title === 'Pilot') {
-          domString += `<li class="list-group-item">pilot: ${crew.name}</li>`;
+          domString += `
+            <li class="list-group-item crew-quarters" id="${crew.id}">pilot: ${crew.name} <br><button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
         } else if (crew.title === 'Air Stewardess') {
-          domString += `<li class="list-group-item">Air Stewardess: ${crew.name}</li>`;
+          domString += `
+            <li class="list-group-item crew-quarters" id="${crew.id}">Air Stewardess: ${crew.name} <button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
         }
       });
       domString += `
-      </ul>
-      <div class="card-body">
-        <a href="#flightDashboard" class="flight-home card-link">Return to All Flights</a>
+          </ul>
+          <div class="card-body">
+            <a href="#flightDashboard" class="flight-home card-link">Return to All Flights</a>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
       `;
       utils.printToDom('#singleFlight', domString);
       utils.printToDom('#flightDashboard', '');
     })
     .catch((err) => console.error('could not show single flight', err));
+};
+
+const removeCrewFromFlight = (e) => {
+  e.preventDefault();
+  const crewId = e.target.closest('.crew-quarters').id;
+  const flightId = e.target.closest('.flight-card').id;
+
+  flightCrewData.getFlightCrew()
+    .then((flightCrew) => {
+      flightCrew.forEach((crewMember) => {
+        if (crewMember.crewId === crewId && crewMember.flightId === flightId) {
+          flightCrewData.deleteFlightCrew(crewMember.id)
+            .then(() => {
+              utils.printToDom('#singleFlight', '');
+              viewSingleFlight(e);
+            });
+        }
+      });
+    })
+    .catch((err) => console.error(err));
 };
 
 const resetDashboard = (e) => {
@@ -51,6 +74,7 @@ const resetDashboard = (e) => {
 const singleFlightEvents = () => {
   $('body').on('click', '.flight-card', viewSingleFlight);
   $('body').on('click', '.flight-home', resetDashboard);
+  $('body').on('click', '.remove-crew', removeCrewFromFlight);
 };
 
 export default { viewSingleFlight, singleFlightEvents };

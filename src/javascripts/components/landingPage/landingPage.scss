@@ -4,7 +4,11 @@
   color: #185782 !important;
   margin: 20px;
 }
-
+.panLogo{
+  height: auto;
+  width: 8rem;
+  margin-right: 60px;
+}
 #landingPage{
   .main-section {
     display: flex;
@@ -15,7 +19,7 @@
     margin-bottom: 3%;
    
     .panLogo {
-      width: 70vw;
+      width: 30vw;
       height: auto;
       padding-bottom: 10%;
     }
@@ -45,4 +49,18 @@
   place-items: center;
   flex-wrap: wrap;
   justify-content: center;
+}
+.middle{
+  background-color: #3D5A80 !important;
+  height: 20em;
+  width: 81%;
+  display: flex;
+  justify-content: center;
+  margin:10px 0 10px 0;
+  
+  img{
+    // object-fit: cover;
+    height: 20em;
+    width: 100%;
+  }
 }

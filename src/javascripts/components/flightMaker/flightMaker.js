@@ -1,6 +1,7 @@
 import './flightMaker.scss';
 
 const buildFlights = (flight) => {
+  console.warn(flight.flightNumber);
   const domString = `
     <div class="flight-card" id=${flight.id}>
     <img class="panLogo" src="https://i.ibb.co/1fHqVpB/PAN-AM-LOGO.png" alt="PAN-AM-LOGO" border="0">
