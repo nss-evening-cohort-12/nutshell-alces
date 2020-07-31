@@ -17,20 +17,6 @@ const getPlanes = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-// const getFlightPlanesByPlaneId = (planeId) => new Promise((resolve, reject) => {
-//   axios.get(`${baseUrl}/flights.json?orderBy="planeId"&equalTo="${planeId}"`)
-//     .then((response) => {
-//       const flightPlaneObj = response.data;
-//       const flights = [];
-//       Object.keys(flightPlaneObj).forEach((flightPlaneId) => {
-//         flightPlaneObj[flightPlaneId].id = flightPlaneId;
-//         flights.push(flightPlaneObj[flightPlaneId]);
-//       });
-//       resolve(flights);
-//     })
-//     .catch((err) => reject(err));
-// });
-
 const deletePlane = (planeId) => axios.delete(`${baseUrl}/planes/${planeId}.json`);
 
 const addPlane = (newPlaneObject) => axios.post(`${baseUrl}/planes.json`, newPlaneObject);

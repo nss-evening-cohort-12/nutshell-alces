@@ -3,6 +3,8 @@ import flightsData from './flightsData';
 import planesData from './planesData';
 import crewData from './crewData';
 import flightCrewData from './flightCrewData';
+import foodData from './foodData';
+import flightFoodData from './flightFoodData';
 
 const getSingleFlightInfo = (flightId) => new Promise((resolve, reject) => {
   flightsData.getFlightsById(flightId)
@@ -31,9 +33,28 @@ const getSingleFlightInfo = (flightId) => new Promise((resolve, reject) => {
                   } else {
                     crew.flightId = isEmployed.flightId;
                   }
-
                   if (crew.flightId === flightId) {
                     flight.crew.push(crew);
+                  }
+                });
+              });
+            });
+            foodData.getFoods().then((allFoods) => {
+              flightFoodData.getFlightFoods().then((allFlightFoods) => {
+                flight.foods = [];
+                const flightFoods = allFlightFoods.filter((foodItem) => foodItem.flightId === flightId);
+                console.warn(flightFoods);
+                allFoods.forEach((oneFood) => {
+                  const food = { ...oneFood };
+                  const isOnMenu = flightFoods.find((foodItem) => foodItem.foodId === food.id);
+                  console.warn(isOnMenu);
+                  if (isOnMenu === undefined) {
+                    food.flightId = '';
+                  } else {
+                    food.flightId = isOnMenu.flightId;
+                  }
+                  if (food.flightId === flightId) {
+                    flight.foods.push(food);
                   }
                 });
                 resolve(flight);
