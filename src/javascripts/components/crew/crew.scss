@@ -1,4 +1,17 @@
 .crew-card {
-  width: 25%;
+  width: 18rem;
   margin: 40px;
+  img{
+    height: 10rem;
+  }
+  .crew-body{
+    background-color: #185782;
+    color: white;
+    padding: 10px;
+    .crew-button {
+      background-color: #185782 !important;
+      width: 4rem;
+      border: none;
+    } 
+  }
 }

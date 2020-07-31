@@ -1,9 +1,12 @@
+import './flightMaker.scss';
+
+const number = () => Math.floor(Math.random() * 20000);
 const buildFlights = (flight) => {
   const domString = `
     <div class="flight-card" id=${flight.id}>
-      <img class="card-img-top" src="https://i.pinimg.com/564x/c2/1b/3d/c21b3d039d9c50ce5f337d8be9d531c1.jpg">
+    <img class="panLogo" src="https://i.ibb.co/1fHqVpB/PAN-AM-LOGO.png" alt="PAN-AM-LOGO" border="0">
         <div class="flight-body">
-          <h4 class "card-title">Flight # 1234</h4>
+          <h4 class "card-title">Flight PA${number()}</h4>
           <h5 class "card-title">Click to see flight details</h5>
         </div>
     </div>

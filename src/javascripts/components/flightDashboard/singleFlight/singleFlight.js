@@ -9,13 +9,14 @@ const viewSingleFlight = (e) => {
     .then((flight) => {
       console.error(flight.crew);
       let domString = `
-      <div class="row">
+      <div class="row-single">
       <div class="card text-center" id=${flightId} style="width: 18rem;">
-      <img class="card-img-top" src="https://i.pinimg.com/564x/c2/1b/3d/c21b3d039d9c50ce5f337d8be9d531c1.jpg" alt="Card image cap">
-      <div class="card-body">
-    <h5 class="card-title">Flight # 1234</h5>
-  </div>
+      <img class="card-img-top" src="${flight.plane.data.imgURL}" alt="Card image cap">
+      
+    
+  
   <ul class="list-group list-group-flush">
+  <h5 class="card-title">Flight # 1234</h5>
     <li class="list-group-item">Origin: ${flight.origin.data.name}</li>
     <li class="list-group-item">Destination: ${flight.destination.data.name}</li>
     <li class="list-group-item">Plane: ${flight.plane.data.type}</li>`;

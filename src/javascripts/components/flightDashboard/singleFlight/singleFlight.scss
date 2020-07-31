@@ -4,3 +4,19 @@
   justify-content: center;
   margin: 5%;
 }
+.row-single{
+  .card-title{
+    border: 3px solid #185782;
+    background-color: #185782;
+    margin: 0;
+  }
+  h5{
+    color: white;
+  }
+  li{
+    
+    color: white;
+    background-color: #185782;
+    border: 1px solid white;
+  }
+}
