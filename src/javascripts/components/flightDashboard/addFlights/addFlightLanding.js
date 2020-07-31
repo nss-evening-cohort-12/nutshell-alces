@@ -41,8 +41,10 @@ const selectCheck = () => {
   const fa2 = $('#fa2-selector').val();
   const fa3 = $('#fa3-selector').val();
   const fa4 = $('#fa4-selector').val();
+  const domestic = $('#domestic-flight').prop('checked');
+  const international = $('#international-flight').prop('checked');
 
-  if (!pilot1 || !pilot2 || !fa1 || !fa2 || !fa3 || !fa4 || !originId || !destinationId || !planeId) {
+  if (!pilot1 || !pilot2 || !fa1 || !fa2 || !fa3 || !fa4 || !originId || !destinationId || !planeId || (domestic === false && international === false)) {
     $('#new-flight-validate').fadeIn();
     $('#new-flight-validate').html('*All fields are required*');
     setTimeout(() => {
