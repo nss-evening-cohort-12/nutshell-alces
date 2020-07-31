@@ -37,26 +37,6 @@ const getSingleFlightInfo = (flightId) => new Promise((resolve, reject) => {
                     flight.crew.push(crew);
                   }
                 });
-              });
-            });
-            foodData.getFoods().then((allFoods) => {
-              flightFoodData.getFlightFoods().then((allFlightFoods) => {
-                flight.foods = [];
-                const flightFoods = allFlightFoods.filter((foodItem) => foodItem.flightId === flightId);
-                console.warn(flightFoods);
-                allFoods.forEach((oneFood) => {
-                  const food = { ...oneFood };
-                  const isOnMenu = flightFoods.find((foodItem) => foodItem.foodId === food.id);
-                  console.warn(isOnMenu);
-                  if (isOnMenu === undefined) {
-                    food.flightId = '';
-                  } else {
-                    food.flightId = isOnMenu.flightId;
-                  }
-                  if (food.flightId === flightId) {
-                    flight.foods.push(food);
-                  }
-                });
                 resolve(flight);
               });
             });
@@ -67,4 +47,34 @@ const getSingleFlightInfo = (flightId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getSingleFlightInfo };
+const getFoodFlightInfo = (flightId) => new Promise((resolve, reject) => {
+  flightsData.getFlightsById(flightId)
+    .then((response) => {
+      const flight = response.data;
+
+      foodData.getFoods().then((allFoods) => {
+        flightFoodData.getFlightFoods().then((allFlightFoods) => {
+          flight.foods = [];
+          const flightFoods = allFlightFoods.filter((foodItem) => foodItem.flightId === flightId);
+          console.warn(flightFoods);
+          allFoods.forEach((oneFood) => {
+            const food = { ...oneFood };
+            const isOnMenu = flightFoods.find((foodItem) => foodItem.foodId === food.id);
+            console.warn(isOnMenu);
+            if (isOnMenu === undefined) {
+              food.flightId = '';
+            } else {
+              food.flightId = isOnMenu.flightId;
+            }
+            if (food.flightId === flightId) {
+              flight.foods.push(food);
+            }
+          });
+          resolve(flight);
+        });
+      });
+    })
+    .catch((err) => reject(err));
+});
+
+export default { getSingleFlightInfo, getFoodFlightInfo };

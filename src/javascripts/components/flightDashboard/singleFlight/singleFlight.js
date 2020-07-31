@@ -28,15 +28,6 @@ const viewSingleFlight = (e) => {
         }
       });
 
-      flight.foods.forEach((food) => {
-        console.warn(food.name);
-        if (food.type === 'meal') {
-          domString += `<li class="list-group-item">Meal: ${food.name} $${food.price}</li>`;
-        } else if (food.type === 'snack') {
-          domString += `<li class="list-group-item">Snack: ${food.name} $${food.price}</li>`;
-        }
-      });
-
       domString += `
       </ul>
       <div class="card-body">
@@ -51,15 +42,53 @@ const viewSingleFlight = (e) => {
     .catch((err) => console.error('could not show single flight', err));
 };
 
+const viewSingleFlightMenu = (e) => {
+  const flightId = e.target.closest('.flight-card').id;
+  smash.getFoodFlightInfo(flightId)
+    .then((flight) => {
+      console.error(flight);
+      let domString = `
+      <div class="row">
+      <div class="card text-center" id=${flightId} style="width: 18rem;">
+      <img class="card-img-top" src="https://i.pinimg.com/564x/c2/1b/3d/c21b3d039d9c50ce5f337d8be9d531c1.jpg" alt="Card image cap">
+      <div class="card-body">
+    <h5 class="card-title">Flight # 1234</h5>
+  </div>
+  <ul class="list-group list-group-flush">`;
+
+      flight.foods.forEach((food) => {
+        console.warn(food.name);
+        if (food.type === 'meal') {
+          domString += `<li class="list-group-item">Meal: ${food.name} $${food.price}</li>`;
+        } else if (food.type === 'snack') {
+          domString += `<li class="list-group-item">Snack: ${food.name} $${food.price}</li>`;
+        }
+      });
+
+      domString += `
+      </ul>
+      <div class="card-body">
+      </div>
+    </div>
+    </div>
+      `;
+      utils.printToDom('#singleFlightMenu', domString);
+      utils.printToDom('#flightDashboard', '');
+    })
+    .catch((err) => console.error('could not show single flight', err));
+};
+
 const resetDashboard = (e) => {
   e.preventDefault();
   utils.printToDom('#singleFlight', '');
+  utils.printToDom('#singleFlightMenu', '');
   flightsList.seeFlights();
 };
 
 const singleFlightEvents = () => {
   $('body').on('click', '.flight-card', viewSingleFlight);
+  $('body').on('click', '.flight-card', viewSingleFlightMenu);
   $('body').on('click', '.flight-home', resetDashboard);
 };
 
-export default { viewSingleFlight, singleFlightEvents };
+export default { viewSingleFlight, singleFlightEvents, viewSingleFlightMenu };
