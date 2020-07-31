@@ -58,11 +58,13 @@ const addFlight = (e) => {
   if (selectCheck() === false) {
     return;
   }
+  const flightNumber = Math.floor(Math.random() * 20000);
   const originId = $('#origin-selector').val();
   const destinationId = $('#destination-selector').val();
   const planeId = $('#plane-select').val();
 
   const newFlightObj = {
+    flightNumber,
     originId,
     destinationId,
     planeId,

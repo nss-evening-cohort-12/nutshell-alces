@@ -8,8 +8,8 @@ const foodMakerAuth = (food) => {
     <tr id="${food.id}" class="modify-food">
       <th scope="row">${food.name}</th>
       <td>$${food.price}</td>
-      <td class="edit"><button type="button" id="${food.id}" class="btn btn-dark"><i class="fas fa-user-edit"></i></button></td>
-      <td><button type="button" id="food-delete" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></td>
+      <td class="edit"><button type="button" id="${food.id}" class="btn btn-dark edit-food-item"><i class="fas fa-user-edit"></i></button></td>
+      <td><button type="button" id="food-delete" class="btn btn-dark del-food-item"><i class="fas fa-trash-alt"></i></button></td>
      <td><div>
      <input type="checkbox" id="food" ${food.isAvailable ? 'checked' : ''} name="food">
       <label for="food"></label>
