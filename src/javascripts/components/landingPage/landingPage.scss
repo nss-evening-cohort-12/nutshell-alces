@@ -28,7 +28,9 @@
       height: auto;
       padding-bottom: 10%;
     }
-    
+    .heading{
+      width: 40rem;
+    }
     
   }
   .nav-buttons {
@@ -85,4 +87,8 @@
 .carousel{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   width: 70vw;
+}
+#locator{
+  display: flex;
+  justify-content: space-between;
 }
