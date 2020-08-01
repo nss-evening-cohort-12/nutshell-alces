@@ -3,13 +3,15 @@ import 'firebase/auth';
 
 import planesData from '../../helpers/data/planesData';
 import planesComponent from '../planes/planes';
-import planeForm from '../addPlane/addPlane';
+// import planeForm from '../addPlane/addPlane';
+import modals from '../modals/modals';
 import editPlane from '../editPlane/editPlane';
 import hideLanding from '../landingPage/landingPage';
 import addFlights from '../flightDashboard/addFlights/addFlightLanding';
 import './planesList.scss';
 
 import utils from '../../helpers/utils';
+import 'bootstrap';
 
 const showPlanesAuth = () => {
   hideLanding.buildLandingPageButtons();
@@ -18,7 +20,7 @@ const showPlanesAuth = () => {
       let domString = `
                         <h2 class="text-center">Planes Serviced by Pan Am</h2>
                           <div class="text-center">
-                          <button class="btn btn-light" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
+                          <button class="btn btn-light" data-toggle="modal" data-target="#exampleModal" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
                           <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
@@ -126,7 +128,7 @@ const editPlaneEvent = (e) => {
 
 const planeEvents = () => {
   $('body').on('click', '.delete-plane', removePlaneEvent);
-  $('body').on('click', '#add-plane', planeForm.addPlaneForm);
+  $('body').on('click', '#add-plane', modals.addPlanePopup);
   $('body').on('click', '#create-plane', addPlaneEvent);
   $('body').on('click', '.edit-plane', showPlaneEditForm);
   $('body').on('click', '#update-plane', editPlaneEvent);
