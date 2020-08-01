@@ -4,10 +4,14 @@
   justify-content: center;
 }
 
+.details-card {
+  border: 0;
+}
 .card-deck {
   margin: 5%;
+  border: 0px;
 }
-.crew-card {
+.flightCrew-card {
   margin: 0;
 }
 .card-body {

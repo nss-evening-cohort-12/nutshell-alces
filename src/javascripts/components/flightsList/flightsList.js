@@ -26,8 +26,19 @@ const seeFlights = () => {
     .catch((err) => console.error('could not print all flights', err));
 };
 
+const removeFlight = (e) => {
+  e.preventDefault();
+  const flightId = e.target.closest('.flight-card').id;
+  flightsData.deleteFlight(flightId)
+    .then(() => {
+      seeFlights();
+    })
+    .catch((err) => console.error(err));
+};
+
 const flightEvents = () => {
   $('body').on('click', '.flight-nav', seeFlights);
+  $('body').on('click', '.delete-flight', removeFlight);
 };
 
 export default { flightEvents, seeFlights };

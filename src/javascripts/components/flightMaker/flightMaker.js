@@ -8,6 +8,7 @@ const buildFlights = (flight) => {
         <div class="flight-body">
           <h4 class "card-title">Flight PA${flight.flightNumber}</h4>
           <h5 class "card-title">Click to see flight details</h5>
+          <a class="nav-item nav-link mr-auto delete-flight" href="#flightDashboard">Remove Flight</a>
         </div>
     </div>
 `;
