@@ -60,6 +60,37 @@ footer {
     color: black;
   }
 }
+
+#exampleModal{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  
+}
+.modal-header{
+  text-align: center !important;
+}
+.modal-content{
+  display: flex;
+  justify-content: center !important;
+  color: #185782;
+  .modal-body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .form-group{
+      margin:10px;
+    }
+  }
+  .modal-footer{
+    display: flex;
+    justify-content: center;
+  }
+  button{
+    
+  }
+  box-shadow: 0 14px 1000px rgba(0,0,200,0.25), 0 10px 1000px rgba(0,0,200,0.22);
+}
 // // nav
 // /* Add a black background color to the top navigation */
 // .topnav {

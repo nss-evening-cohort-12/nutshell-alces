@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const printToDom = (selector, text) => {
   $(selector).html(text);
 };
@@ -16,4 +18,6 @@ const convertFirebaseCollection = (data) => {
   return arrayCollection;
 };
 
-export default { printToDom, convertFirebaseCollection };
+const getDate = () => moment().format('L');
+
+export default { printToDom, getDate, convertFirebaseCollection };
