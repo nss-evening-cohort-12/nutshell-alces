@@ -6,6 +6,7 @@ import planes from '../planes/flightPlanes';
 import flightsData from '../../../helpers/data/flightsData';
 import flightCrew from '../flightCrew/flightCrew';
 import flightFoods from '../flightFoods/flightFoods';
+import flightsList from '../../flightsList/flightsList';
 
 // THIS FUNCTION WILL HIDE ALL DIVS RELATED TO ADD FLIGHTS
 const hideAddFlights = () => {
@@ -79,8 +80,8 @@ const addFlight = (e) => {
       const flightId = response.data.name;
       flightCrew.createFlightCrewTable(flightId);
       flightFoods.createFlightFoodsTable(flightId);
-      utils.printToDom('#add-flights', '');
-      buildAddFlightLanding();
+      utils.printToDom('#flightCreate', '');
+      flightsList.seeFlights();
     })
     .catch((err) => console.error(err));
 };

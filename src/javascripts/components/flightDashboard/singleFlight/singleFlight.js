@@ -11,7 +11,7 @@ const viewSingleFlight = (flightId) => {
       <div class="single-flight text-center">
         <button class="btn btn-light text-center mt-4 flight-home" id="return-button">Return to All Flights</button>
         <div class="card-deck">
-          <div class="card text-center singleFlightCard" id=${flightId} style="width: 18rem;">
+          <div class="card text-center singleFlightCard details-card" id=${flightId} style="width: 18rem; border: 0;">
             <img class="card-img-top" src="${flight.plane.data.imgURL}" alt="Card image cap">
             <ul class="list-group list-group-flush">
               <h5 class="card-title">Flight ${flight.flightNumber}</h5>
@@ -28,7 +28,7 @@ const viewSingleFlight = (flightId) => {
         .then((flightWithCrew) => {
           domString += `
             <div class="row-single">
-              <div class="card text-center crew-card singleFlightCard" id=${flightId} style="width: 18rem;">
+              <div class="card text-center flightCrew-card singleFlightCard" id=${flightId} style="width: 18rem;">
                 <div class="card-body p-0">
                   <ul class="list-group list-group-flush">`;
           flightWithCrew.crew.forEach((crew) => {
