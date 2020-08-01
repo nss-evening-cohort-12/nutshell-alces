@@ -86,9 +86,10 @@ const addPlaneEvent = (e) => {
   e.preventDefault();
 
   const newPlane = {
-    imageUrl: $('#add-plane-image').val(),
+    imgURL: $('#add-plane-image').val(),
     name: $('#add-plane-name').val(),
     type: $('#add-plane-type').val(),
+    service: utils.getDate(),
   };
 
   planesData.addPlane(newPlane)

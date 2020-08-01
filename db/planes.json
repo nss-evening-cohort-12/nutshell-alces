@@ -2,43 +2,43 @@
   "plane1": {
     "imgURL": "https://i.pinimg.com/originals/07/d5/8a/07d58a10f5dcb9b249e0091e5e3322e8.jpg",
     "name": "Douglas",
-    "service": "",
+    "service": "06/23/2020",
     "type": "DC-10"
   },
   "plane2": {
     "imgURL": "https://worldairlinenews.files.wordpress.com/2014/04/pan-am-4th-737-800-wl-pan-amlr.jpg",
     "name": "Bo",
-    "service": "",
+    "service": "05/13/2020",
     "type": "Boeing 737"
   },
   "plane3": {
     "imgURL": "https://cdn.jetphotos.com/full/6/53974_1512416838.jpg",
     "name": "Nancy",
-    "service": "",
+    "service": "07/10/2020",
     "type": "Boeing 747"
   },
   "plane4": {
     "imgURL": "https://i.pinimg.com/originals/3f/8a/7d/3f8a7d2e41a0d0e9c269c31217b09333.jpg",
     "name": "Betty",
-    "service": "",
+    "service": "07/01/2020",
     "type": "Boeing 707"
   },
   "plane5": {
     "imgURL": "https://flyawaysimulation.com/media/images1/images/pan-am-airbus-A310-324-fsx2.jpg",
     "name": "Ben",
-    "service": "",
+    "service": "07/31/2020",
     "type": "Airbus 310"
   },
   "plane6": {
     "imgURL": "https://upload.wikimedia.org/wikipedia/commons/0/09/Airbus_A300B4-203%2C_Pan_American_World_Airways_-_Pan_Am_AN0076290.jpg",
     "name": "Ash",
-    "service": "",
+    "service": "07/28/2020",
     "type": "Airbus 300"
   },
   "plane7": {
     "imgURL": "https://i.pinimg.com/originals/42/77/f0/4277f0cb1b65d38ee30fe288ff8106ae.jpg",
     "name": "Albert",
-    "service": "",
+    "service": "07/14/2020",
     "type": "Boeing 727"
   }
 }
