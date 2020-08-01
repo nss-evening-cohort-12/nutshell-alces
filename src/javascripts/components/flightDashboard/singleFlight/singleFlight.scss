@@ -2,10 +2,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 5%;
-
 }
-.row-single{
+
+.card-deck {
+  margin: 5%;
+}
+.crew-card {
+  margin: 0;
+}
+.card-body {
+  padding: 0px;
+}
+
+#return-button {
+  color: #3D5A80;
+}
+.singleFlightCard {
   .card-title{
     background-color: white;
     margin: 0;
