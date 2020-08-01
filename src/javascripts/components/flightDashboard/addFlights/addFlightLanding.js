@@ -15,6 +15,7 @@ const hideAddFlights = () => {
   utils.printToDom('#planes', '');
   utils.printToDom('#crewF', '');
   utils.printToDom('#singleFlight', '');
+  utils.printToDom('#singleFlightMenu', '');
 };
 
 const buildAddFlightLanding = () => {
