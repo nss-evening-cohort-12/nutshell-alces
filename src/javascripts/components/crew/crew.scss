@@ -26,8 +26,22 @@
 #show-add-crew{
   background-color: #185782 !important;
   color: white !important;
+  i{
+    color: white !important;
+  }
 }
 #show-add-crew:hover{
   background-color: #185782 !important;
   color: red !important;
+  i{
+    color: red !important;
+  }
+}
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  button{
+    background-color: #185782 !important;
+  }
 }

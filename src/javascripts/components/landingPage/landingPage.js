@@ -16,6 +16,7 @@ const viewNoDashboard = () => {
 const buildLandingPage = () => {
   const domString = `
     <div class="main-section d-flex flex-column">
+    <img class="heading" src="https://i.ibb.co/ThKG1DJ/Pan-Am-Title.png" alt="Pan-Am-Title" border="0">
       <div class="middle">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -25,13 +26,13 @@ const buildLandingPage = () => {
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="https://www.ncl.com/sites/default/files/shutterstock_727121656.jpg" alt="First slide">
+                <img class="d-block w-100" src="https://specials-images.forbesimg.com/imageserve/1255842693/960x0.jpg?fit=scale" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="https://afar-production.imgix.net/uploads/destination/headers/images/fvRicKMN1f/original_Alaska_Banner_Crop_2019.jpg" alt="Second slide">
+                <img class="d-block w-100" src="https://s3-us-west-1.amazonaws.com/flightfox/images/blog/first-class-challenge-air-canada.jpg" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="https://www.wheretherebedragons.com/wp-content/uploads/2017/04/Madagascar_2013_022_banner2.jpg" alt="Third slide">
+                <img class="d-block w-100" src="https://www.westjet.com/assets/wj-web/images/2018/wj/180927-inflight-economy-737x426.png" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
