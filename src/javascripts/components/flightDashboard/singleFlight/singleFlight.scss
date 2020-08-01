@@ -3,27 +3,29 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 5%;
+
 }
 .row-single{
   .card-title{
-    border: 3px solid #185782;
-    background-color: #185782;
+    background-color: white;
     margin: 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
   h5{
-    color: white;
+    color: #3D5A80;
     
   }
   li{
     
-    color: white;
-    background-color: #185782;
-    border: 1px solid white;
+    color: #3D5A80;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
 }
-i{
-  color: white !important;
+li i{
+  color: #3D5A80 !important;
 }
-i:hover{
+li i:hover{
   color: red !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

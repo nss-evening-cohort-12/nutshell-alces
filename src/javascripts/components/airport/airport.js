@@ -10,8 +10,8 @@ const airportCardMakerAuth = (airport) => {
         <div class="mb-2">
           <a href="${airport.webURL}">Visit Site</a>
         </div>
-        <button class="airport-button btn btn-light delete-airport"><i class="fas fa-trash" style="color:#2767AD;"></i>  Destroy</button>
-        <button class="airport-button btn btn-light edit-airport"><i class="far fa-edit" style="color:#2767AD;"></i>Edit</button>      
+        <button class="airport-button btn delete-airport"><i class="fas fa-trash" style="color:#2767AD;"></i></button>
+        <button class="airport-button btn edit-airport"><i class="far fa-edit" style="color:#2767AD;"></i></button>      
       </div>
     </div>
   `;

@@ -17,10 +17,10 @@ const buildHangarAuth = () => {
     .then((airports) => {
       let domString = `
       <h2 class="text-center">Airports Serviced by Pan Am</h2>
-        <div class="d-flex flex-wrap text-center container">
-          <div id="airport" class="d-flex flex-wrap text-center">
+        <div class="d-flex flex-wrap text-center container justify-content-center align-items-center">
+          <div id="airport" class="d-flex flex-wrap text-center justify-content-center">
             <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Airport</button>
-            <div class="d-flex flex-wrap text-center">
+            <div class="d-flex flex-wrap text-center justify-content-center align-items-center">
       `;
 
       airports.forEach((airport) => {
