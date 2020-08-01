@@ -3,7 +3,23 @@
   height: 180px;
   margin: 40px 40px 200px;
   img {
-    height: 250px;
+    height: 10rem;
     object-fit: cover;
   }
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.airport-body{
+  background-color: white;
+  color: #185782;
+  height: 10rem;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  a{
+    color: #185782;
+  }
+  a:hover{
+    color: red;
+  }
+}
+.airport-button{
+  background-color: none !important;
 }

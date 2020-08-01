@@ -19,7 +19,7 @@ const buildCrewAuth = () => {
           <h2 class="text-center">Pan Am Crew</h2>
           <div class="container text-center">
             <button class="btn btn-light text-center mt-4" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Crew</button>
-            <div class="d-flex flex-wrap text-center">
+            <div class="d-flex flex-wrap justify-content-center text-center">
           `;
       crews.forEach((crew) => {
         domString += crewComponent.crewCardMakerAuth(crew);

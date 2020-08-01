@@ -10,24 +10,25 @@ const viewSingleFlight = (e) => {
     .then((flight) => {
       console.error(flight);
       let domString = `
-      <div class="row">
-        <div class="card text-center flight-card" id=${flightId} style="width: 18rem;">
-          <img class="card-img-top" src="https://i.pinimg.com/564x/c2/1b/3d/c21b3d039d9c50ce5f337d8be9d531c1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Flight # 1234</h5>
-        </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Origin: ${flight.origin.data.name}</li>
-            <li class="list-group-item">Destination: ${flight.destination.data.name}</li>
-            <li class="list-group-item">Plane: ${flight.plane.data.type}</li>`;
+      <div class="row-single">
+      <div class="card text-center" id=${flightId} style="width: 18rem;">
+      <img class="card-img-top" src="${flight.plane.data.imgURL}" alt="Card image cap">
+      
+    
+  
+  <ul class="list-group list-group-flush">
+  <h5 class="card-title">Flight ${flight.flightNumber}</h5>
+    <li class="list-group-item">Origin: ${flight.origin.data.name}</li>
+    <li class="list-group-item">Destination: ${flight.destination.data.name}</li>
+    <li class="list-group-item">Plane: ${flight.plane.data.type}</li>`;
 
       flight.crew.forEach((crew) => {
         if (crew.title === 'Pilot') {
           domString += `
-            <li class="list-group-item crew-quarters" id="${crew.id}">pilot: ${crew.name} <br><button class="btn remove-crew"><i class="fas fa-xs fa-minus-circle"></i></button></li>`;
+            <li class="list-group-item crew-quarters" id="${crew.id}">pilot: ${crew.name} <br><button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
         } else if (crew.title === 'Air Stewardess') {
           domString += `
-            <li class="list-group-item crew-quarters" id="${crew.id}">Air Stewardess: ${crew.name} <button class="btn remove-crew"><i class="fas fa-xs fa-minus-circle"></i></button></li>`;
+            <li class="list-group-item crew-quarters" id="${crew.id}">Air Stewardess: ${crew.name} <button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
         }
       });
 

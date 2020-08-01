@@ -3,4 +3,29 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 5%;
+
+}
+.row-single{
+  .card-title{
+    background-color: white;
+    margin: 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  h5{
+    color: #3D5A80;
+    
+  }
+  li{
+    
+    color: #3D5A80;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+li i{
+  color: #3D5A80 !important;
+}
+li i:hover{
+  color: red !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

@@ -41,14 +41,12 @@
   display: flex;
   justify-content: center;
   width: 100px;
-  background-color: #3D5A80 !important;
+  background-color: white !important;
   font-size: Medium  !important;
-  color: white !important;
+  color: #3D5A80 !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .custom-select {
   cursor: progress !important;
   background: white !important;
 }
-// #destination {
-  
-// }

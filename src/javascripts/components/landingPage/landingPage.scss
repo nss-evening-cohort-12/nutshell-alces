@@ -4,7 +4,16 @@
   color: #185782 !important;
   margin: 20px;
 }
-
+.navbar{
+  a{
+    margin: 0 !important;
+  }
+}
+.panLogo{
+  height: auto;
+  width: 8rem;
+  // margin-right:10rem;
+}
 #landingPage{
   .main-section {
     display: flex;
@@ -15,7 +24,7 @@
     margin-bottom: 3%;
    
     .panLogo {
-      width: 70vw;
+      width: 30vw;
       height: auto;
       padding-bottom: 10%;
     }
@@ -31,13 +40,16 @@
 }
 .cardL {
   margin: 10px;
+  width: 18rem;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   img {
     height: 10rem;
   }
   .card-body{
-    background-color: #3D5A80;
-    color: white;
+    background-color: white;
+    color: #3D5A80;
     height: 10rem;
+    
   }
 }
 .landingCardsContainer{
@@ -45,4 +57,32 @@
   place-items: center;
   flex-wrap: wrap;
   justify-content: center;
+}
+.middle{
+  
+  height: 20em;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin:10px 0 10px 0;
+  
+  img{
+    // object-fit: cover;
+    height: 20em;
+    width: 20rem;
+  }
+}
+#navbar-logout-button i{
+  color: #3D5A80 !important;
+  border: none !important;
+}
+#navbar-logout-button i:hover{
+  color: red !important;
+}
+.home-nav{
+  margin-left: 10px;
+}
+.carousel{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  width: 70vw;
 }

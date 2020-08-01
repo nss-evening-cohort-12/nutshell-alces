@@ -1,4 +1,33 @@
 .crew-card {
-  width: 25%;
+  width: 18rem;
   margin: 40px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+ 
+  img{
+    height: 10rem;
+  }
+  .crew-body{
+    background-color: white;
+    color: #185782;
+    padding: 10px;
+    .crew-button {
+      background-color: white !important;
+      width: 4rem;
+      border: none;
+      i{
+        color: #185782 !important;
+      }
+      i:hover{
+        color: red !important;
+      }
+    } 
+  }
+}
+#show-add-crew{
+  background-color: #185782 !important;
+  color: white !important;
+}
+#show-add-crew:hover{
+  background-color: #185782 !important;
+  color: red !important;
 }
