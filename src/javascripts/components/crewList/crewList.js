@@ -2,11 +2,11 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import editCrew from '../editCrew/editCrew';
-import addCrew from '../addCrew/addCrew';
 import crewComponent from '../crew/crew';
 import hideLanding from '../landingPage/landingPage';
 import crewData from '../../helpers/data/crewData';
 import addFlights from '../flightDashboard/addFlights/addFlightLanding';
+import modals from '../modals/modals';
 
 import './crewList.scss';
 import utils from '../../helpers/utils';
@@ -18,7 +18,7 @@ const buildCrewAuth = () => {
       let domString = `
           <h2 class="text-center">Pan Am Crew</h2>
           <div class="container text-center">
-            <button class="btn btn-light text-center mt-4" id="show-add-crew"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Crew</button>
+            <button class="btn btn-light text-center mt-4" id="show-add-crew" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Crew</button>
             <div class="d-flex flex-wrap justify-content-center text-center">
           `;
       crews.forEach((crew) => {
@@ -86,7 +86,6 @@ const addCrewEvent = (e) => {
     .then(() => {
       buildCrewAuth();
       utils.printToDom('#component-editor', '');
-      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('not hired', err));
 };
@@ -120,18 +119,18 @@ const editCrewEvent = (e) => {
     .then(() => {
       buildCrewAuth();
       utils.printToDom('#component-editor', '');
-      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not edit crew', err));
 };
 
 const crewEvents = () => {
   $('body').on('click', '.delete-crew', removeCrewEvent);
-  $('body').on('click', '#show-add-crew', addCrew.showCrewAddForm);
+  $('body').on('click', '#show-add-crew', modals.addCrewPopup);
   $('body').on('click', '#crew-creator', addCrewEvent);
   $('body').on('click', '.edit-crew', showCrewEditForm);
   $('body').on('click', '#crew-editor', editCrewEvent);
   $('body').on('click', '.crew-nav', viewCrewEvent);
+  $('body').on('click', '#crew-creator', modals.resetCrewModal);
 };
 
 export default { buildCrewAuth, buildCrewNoAuth, crewEvents };

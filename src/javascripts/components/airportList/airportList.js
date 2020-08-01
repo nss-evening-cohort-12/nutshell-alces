@@ -3,11 +3,11 @@ import 'firebase/auth';
 
 import airportComponent from '../airport/airport';
 import airportData from '../../helpers/data/airportData';
-import addAirport from '../addAirport/addAirport';
 import editAirport from '../editAirport/editAirport';
 import utils from '../../helpers/utils';
 import hideLanding from '../landingPage/landingPage';
 import addFlights from '../flightDashboard/addFlights/addFlightLanding';
+import modals from '../modals/modals';
 
 import './airportList.scss';
 
@@ -19,7 +19,7 @@ const buildHangarAuth = () => {
       <h2 class="text-center">Airports Serviced by Pan Am</h2>
         <div class="d-flex flex-wrap text-center container justify-content-center align-items-center">
           <div id="airport" class="d-flex flex-wrap text-center justify-content-center">
-            <button class="btn btn-light" id="show-add-airport"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Airport</button>
+            <button class="btn btn-light" id="show-add-airport" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Airport</button>
             <div class="d-flex flex-wrap text-center justify-content-center align-items-center">
       `;
 
@@ -32,8 +32,6 @@ const buildHangarAuth = () => {
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();
-
-      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('get airports broke', err));
@@ -60,7 +58,6 @@ const buildHangarNoAuth = () => {
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();
 
-      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('get airports broke', err));
@@ -120,7 +117,6 @@ const editAirportEvent = (e) => {
     .then(() => {
       buildHangarAuth();
       utils.printToDom('#component-editor', '');
-      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not edit airport', err));
 };
@@ -134,8 +130,9 @@ const airportEvents = () => {
   $('body').on('click', '.edit-airport', showAirportForm);
   $('body').on('click', '#airport-creator', addAirportEvent);
   $('body').on('click', '#airport-editor', editAirportEvent);
-  $('body').on('click', '#show-add-airport', addAirport.showForm);
+  $('body').on('click', '#show-add-airport', modals.addAirportPopup);
   $('body').on('click', '.airport-nav', viewAirportEvent);
+  $('body').on('click', '#airport-creator', modals.resetAirportModal);
 };
 
 export default { buildHangarAuth, airportEvents };
