@@ -40,7 +40,6 @@ const buildFoods = () => {
           utils.printToDom('#flightDashboard', '');
           addFlights.hideAddFlights();
 
-          // utils.printToDom('#crew', '');
           utils.printToDom('#component-viewer', domString);
         });
     }
@@ -65,8 +64,6 @@ const addFoodEvent = (e) => {
       menu.authFood();
       utils.printToDom('#component-editor', '');
       addFlights.hideAddFlights();
-
-      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('could not add food', err));
 };

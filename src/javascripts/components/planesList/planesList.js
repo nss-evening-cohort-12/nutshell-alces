@@ -3,7 +3,6 @@ import 'firebase/auth';
 
 import planesData from '../../helpers/data/planesData';
 import planesComponent from '../planes/planes';
-// import planeForm from '../addPlane/addPlane';
 import modals from '../modals/modals';
 import editPlane from '../editPlane/editPlane';
 import hideLanding from '../landingPage/landingPage';
@@ -33,7 +32,6 @@ const showPlanesAuth = () => {
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();
-      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
@@ -58,7 +56,6 @@ const showPlanesNoAuth = () => {
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();
-      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('getPlanes does not work', err));
@@ -98,7 +95,6 @@ const addPlaneEvent = (e) => {
     .then(() => {
       showPlanesAuth();
       utils.printToDom('#component-editor', '');
-      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('addPlane does not work', err));
 };
@@ -121,7 +117,6 @@ const editPlaneEvent = (e) => {
     .then(() => {
       showPlanesAuth();
       utils.printToDom('#component-editor', '');
-      // utils.printToDom('#crew', '');
     })
     .catch((err) => console.error('editPlane did not work', err));
 };
@@ -133,6 +128,7 @@ const planeEvents = () => {
   $('body').on('click', '.edit-plane', showPlaneEditForm);
   $('body').on('click', '#update-plane', editPlaneEvent);
   $('body').on('click', '.plane-nav', viewPlanesEvent);
+  $('body').on('click', '#create-plane', modals.resetPlaneModal);
 };
 
 export default { showPlanesAuth, showPlanesNoAuth, planeEvents };

@@ -20,4 +20,8 @@ const convertFirebaseCollection = (data) => {
 
 const getDate = () => moment().format('L');
 
-export default { printToDom, getDate, convertFirebaseCollection };
+export default {
+  printToDom,
+  getDate,
+  convertFirebaseCollection,
+};
