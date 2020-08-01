@@ -5,7 +5,6 @@ import flightCrewData from '../../../helpers/data/flightCrewData';
 import './singleFlight.scss';
 
 const viewSingleFlight = (flightId) => {
-  // const flightId = e.target.closest('.flight-card').id;
   smash.getSingleFlightInfo(flightId)
     .then((flight) => {
       let domString = `
@@ -79,66 +78,6 @@ const viewSingleFlight = (flightId) => {
     .catch((err) => console.error('could not show single flight', err));
 };
 
-// const viewSingleFlightMenu = (flightId) => {
-//   smash.getFoodFlightInfo(flightId)
-//     .then((flight) => {
-//       console.error(flight);
-//       let domString = `
-//       <div class="row-single">
-//         <div class="card text-center" id=${flightId} style="width: 18rem;">
-//           <div class="card-body">
-//             <ul class="list-group list-group-flush">`;
-
-//       flight.foods.forEach((food) => {
-//         console.warn(food.name);
-//         if (food.type === 'meal') {
-//           domString += `<li class="list-group-item">Meal: ${food.name} $${food.price}</li>`;
-//         } else if (food.type === 'snack') {
-//           domString += `<li class="list-group-item">Snack: ${food.name} $${food.price}</li>`;
-//         }
-//       });
-
-//       domString += `
-//             </ul>
-//           </div>
-//         </div>
-//       </div>
-//       `;
-//       // utils.printToDom('#singleFlight', domString);
-//       // utils.printToDom('#flightDashboard', '');
-//       return domString;
-//     })
-//     .catch((err) => console.error('could not show single flight', err));
-// };
-
-// const viewSingleFlightCrew = (flightId) => {
-//   smash.getFlightCrewInfo(flightId)
-//     .then((flight) => {
-//       let domString = `
-//                     <div class="row-single">
-//                       <div class="card text-center" id=${flightId} style="width: 18rem;">
-//                         <div class="card-body">
-//                           <ul class="list-group list-group-flush">`;
-//       flight.crew.forEach((crew) => {
-//         if (crew.title === 'Pilot') {
-//           domString += `
-//                           <li class="list-group-item crew-quarters" id="${crew.id}">pilot: ${crew.name} <br><button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
-//         } else if (crew.title === 'Air Stewardess') {
-//           domString += `
-//                           <li class="list-group-item crew-quarters" id="${crew.id}">Air Stewardess: ${crew.name} <button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
-//         }
-//       });
-//       domString += `
-//                           </ul>
-//                         </div>
-//                       </div>
-//                     </div>`;
-//       // utils.printToDom('#singleFlight', domString);
-//       // utils.printToDom('#flightDashboard', '');
-//     })
-//     .catch((err) => console.error(err));
-// };
-
 const removeCrewFromFlight = (e) => {
   e.preventDefault();
   console.error(e);
@@ -173,8 +112,6 @@ const resetDashboard = (e) => {
 
 const singleFlightEvents = () => {
   $('body').on('click', '.flight-card', viewEvent);
-  // $('body').on('click', '.flight-card', viewSingleFlightCrew);
-  // $('body').on('click', '.flight-card', viewSingleFlightMenu);
   $('body').on('click', '.flight-home', resetDashboard);
   $('body').on('click', '.remove-crew', removeCrewFromFlight);
 };
