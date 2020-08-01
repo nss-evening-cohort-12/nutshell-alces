@@ -8,9 +8,10 @@ const createFlightFoodsTable = (flightId) => {
     .then((foods) => {
       foods.forEach((food) => {
         const foodObj = food.id;
-        if (food.isAvailable === true && document.getElementById('international-flight').checked === true) {
+        console.warn(foodObj);
+        if (food.isAvailable === true && $('#domestic-flight').prop('checked', true) && food.type === 'snack') {
           flightFoods.push(foodObj);
-        } else if (food.isAvailable === true && document.getElementById('domestic-flight').checked === true && food.type === 'snack') {
+        } else if (food.isAvailable === true) {
           flightFoods.push(foodObj);
         }
       });
@@ -19,6 +20,7 @@ const createFlightFoodsTable = (flightId) => {
           flightId,
           foodId: foodItem,
         };
+        console.warn(newFlightFoodObj);
         flightFoodData.addFlightFoods(newFlightFoodObj)
           .then((response) => console.error(response.data))
           .catch((err) => console.error(err));

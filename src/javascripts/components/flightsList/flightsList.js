@@ -7,7 +7,6 @@ import './flightList.scss';
 const seeFlights = () => {
   flightsData.getFlights()
     .then((flights) => {
-      console.warn(flights);
       let domString = `
         <h2 class="text-center">FLIGHT DASHBOARD</h2>
         <div class="container text-center">
