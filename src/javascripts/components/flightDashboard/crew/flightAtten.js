@@ -3,7 +3,6 @@ import './crew.scss';
 import pilots from '../../../helpers/data/crewData';
 
 const buildFaDiv = () => {
-  console.error('in flight attendantDiv');
   pilots.getCrew()
     .then((crew) => {
       let domString = `

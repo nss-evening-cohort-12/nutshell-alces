@@ -81,7 +81,7 @@ const removeCrewFromFlight = (e) => {
   e.preventDefault();
   console.error(e);
   const crewId = e.target.closest('.crew-quarters').id;
-  const flightId = e.target.closest('.crew-card').id;
+  const flightId = e.target.closest('.flightCrew-card').id;
 
   flightCrewData.getFlightCrew()
     .then((flightCrew) => {
@@ -98,6 +98,9 @@ const removeCrewFromFlight = (e) => {
 };
 
 const viewEvent = (e) => {
+  if (e.target.classList.contains('delete-flight')) {
+    return;
+  }
   const flightId = e.target.closest('.flight-card').id;
   viewSingleFlight(flightId);
 };

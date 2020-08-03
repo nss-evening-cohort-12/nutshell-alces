@@ -22,7 +22,6 @@ const createFlightFoodsTable = (flightId) => {
           foodId: foodItem,
         };
         flightFoodData.addFlightFoods(newFlightFoodObj)
-          .then((response) => console.error(response.data))
           .catch((err) => console.error(err));
       });
     })

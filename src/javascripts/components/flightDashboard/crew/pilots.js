@@ -3,7 +3,6 @@ import './crew.scss';
 import pilots from '../../../helpers/data/crewData';
 
 const buildPilotDiv = () => {
-  console.error('in pilot Div');
   pilots.getCrew()
     .then((crew) => {
       let domString = `
