@@ -10,7 +10,7 @@ const showCrewForm = (crewId) => {
 
       const domString = `
         <h2 class="text-center"> Edit Crew Member</h2>
-        <form class="crew-card" id=${crewId}> 
+        <form class="editting-crew" id=${crewId}> 
           <div class="form-group">
             <label for "edit-crew-image">Image:</label>
             <input type="imageUrl" class="form-control" id="edit-crew-image" placeholder="Image Url" value=${crew.imageUrl}>
