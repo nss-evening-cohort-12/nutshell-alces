@@ -37,11 +37,9 @@ const getFoodFlightInfo = (flightId) => new Promise((resolve, reject) => {
         flightFoodData.getFlightFoods().then((allFlightFoods) => {
           flight.foods = [];
           const flightFoods = allFlightFoods.filter((foodItem) => foodItem.flightId === flightId);
-          console.warn(flightFoods);
           allFoods.forEach((oneFood) => {
             const food = { ...oneFood };
             const isOnMenu = flightFoods.find((foodItem) => foodItem.foodId === food.id);
-            console.warn(isOnMenu);
             if (isOnMenu === undefined) {
               food.flightId = '';
             } else {
