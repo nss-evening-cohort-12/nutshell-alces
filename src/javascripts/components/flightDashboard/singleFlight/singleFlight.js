@@ -33,7 +33,7 @@ const viewSingleFlight = (flightId) => {
                   <ul class="list-group list-group-flush">`;
           flightWithCrew.crew.forEach((crew) => {
             if (crew.title === 'Pilot') {
-              domString += `<li class="list-group-item crew-quarters" id="${crew.id}">pilot: ${crew.name} <br><button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
+              domString += `<li class="list-group-item crew-quarters" id="${crew.id}">Pilot: ${crew.name} <br><button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
             } else if (crew.title === 'Air Stewardess') {
               domString += `<li class="list-group-item crew-quarters" id="${crew.id}">Air Stewardess: ${crew.name} <button class="btn remove-crew"><i class="fas fa-user-times"></i></i></button></li>`;
             }

@@ -3,15 +3,17 @@ import foodData from '../../../helpers/data/foodData';
 
 const createFlightFoodsTable = (flightId) => {
   const flightFoods = [];
+  const domestic = $('#domestic-flight').prop('checked');
+  const international = $('#international-flight').prop('checked');
 
   foodData.getFoods()
     .then((foods) => {
       foods.forEach((food) => {
         const foodObj = food.id;
         console.warn(foodObj);
-        if (food.isAvailable === true && $('#domestic-flight').prop('checked', true) && food.type === 'snack') {
+        if (food.isAvailable === true && international === true) {
           flightFoods.push(foodObj);
-        } else if (food.isAvailable === true) {
+        } else if (food.isAvailable === true && domestic === true && food.type === 'snack') {
           flightFoods.push(foodObj);
         }
       });
