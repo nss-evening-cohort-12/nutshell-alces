@@ -26,7 +26,6 @@ const buildAddFlightLanding = () => {
                     </div>`;
   utils.printToDom('#add-flights', domString);
 
-  console.error('im in addFlightLanding');
   // ADD NEW DIVS TO ADDFLIGHTS HERE
   fas.buildFaDiv();
   pilots.buildPilotDiv();

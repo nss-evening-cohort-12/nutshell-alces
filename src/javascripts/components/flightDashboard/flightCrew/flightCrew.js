@@ -18,7 +18,6 @@ const createFlightCrewTable = (flightId) => {
     };
 
     flightCrewData.addFlightCrew(newFlightCrewObj)
-      .then(() => console.error('test'))
       .catch((err) => console.error(err));
   });
 };
