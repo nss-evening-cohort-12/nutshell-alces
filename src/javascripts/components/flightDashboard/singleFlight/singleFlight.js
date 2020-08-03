@@ -53,7 +53,6 @@ const viewSingleFlight = (flightId) => {
                       <ul class="list-group list-group-flush">`;
 
               flightWithFood.foods.forEach((food) => {
-                console.warn(food.name);
                 if (food.type === 'meal') {
                   domString += `<li class="list-group-item">Meal: ${food.name} $${food.price}</li>`;
                 } else if (food.type === 'snack') {

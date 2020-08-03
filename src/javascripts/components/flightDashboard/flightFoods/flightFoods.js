@@ -10,7 +10,6 @@ const createFlightFoodsTable = (flightId) => {
     .then((foods) => {
       foods.forEach((food) => {
         const foodObj = food.id;
-        console.warn(foodObj);
         if (food.isAvailable === true && international === true) {
           flightFoods.push(foodObj);
         } else if (food.isAvailable === true && domestic === true && food.type === 'snack') {
@@ -22,7 +21,6 @@ const createFlightFoodsTable = (flightId) => {
           flightId,
           foodId: foodItem,
         };
-        console.warn(newFlightFoodObj);
         flightFoodData.addFlightFoods(newFlightFoodObj)
           .then((response) => console.error(response.data))
           .catch((err) => console.error(err));
