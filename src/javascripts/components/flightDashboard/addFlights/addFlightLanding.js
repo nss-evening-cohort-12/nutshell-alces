@@ -26,6 +26,7 @@ const buildAddFlightLanding = () => {
                     </div>`;
   utils.printToDom('#add-flights', domString);
 
+  console.error('im in addFlightLanding');
   // ADD NEW DIVS TO ADDFLIGHTS HERE
   fas.buildFaDiv();
   pilots.buildPilotDiv();
@@ -80,7 +81,11 @@ const addFlight = (e) => {
       const flightId = response.data.name;
       flightCrew.createFlightCrewTable(flightId);
       flightFoods.createFlightFoodsTable(flightId);
-      utils.printToDom('#flightCreate', '');
+      utils.printToDom('#destination', '');
+      utils.printToDom('#planes', '');
+      utils.printToDom('#crew', '');
+      utils.printToDom('#crewF', '');
+      utils.printToDom('#add-flights', '');
       flightsList.seeFlights();
     })
     .catch((err) => console.error(err));
