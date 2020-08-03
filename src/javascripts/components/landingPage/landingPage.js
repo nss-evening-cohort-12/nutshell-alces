@@ -16,7 +16,7 @@ const viewNoDashboard = () => {
 const buildLandingPage = () => {
   const domString = `
     <div class="main-section d-flex flex-column">
-    <img class="heading" src="https://i.ibb.co/ThKG1DJ/Pan-Am-Title.png" alt="Pan-Am-Title" border="0">
+    <img class="heading" src="https://i.ibb.co/BZGxbSR/Pan-am2.png" alt="Pan-am2" border="0">
       <div class="middle">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
