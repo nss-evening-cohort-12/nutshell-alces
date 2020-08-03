@@ -4,6 +4,7 @@ import utils from '../../../helpers/utils';
 import './flightPlanes.scss';
 
 const buildPlanesDiv = () => {
+  console.error('in planes div');
   getPlanes.getPlanes()
     .then((planes) => {
       let domString = `
