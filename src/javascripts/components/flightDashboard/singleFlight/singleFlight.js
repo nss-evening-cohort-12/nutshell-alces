@@ -79,7 +79,6 @@ const viewSingleFlight = (flightId) => {
 
 const removeCrewFromFlight = (e) => {
   e.preventDefault();
-  console.error(e);
   const crewId = e.target.closest('.crew-quarters').id;
   const flightId = e.target.closest('.flightCrew-card').id;
 

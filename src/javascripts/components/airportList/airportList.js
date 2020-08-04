@@ -27,8 +27,10 @@ const buildHangarAuth = () => {
         domString += airportComponent.airportCardMakerAuth(airport);
       });
 
-      domString += `</>
-                      </div>`;
+      domString += `
+            </div>
+          </div>
+        </div>`;
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();
@@ -52,8 +54,10 @@ const buildHangarNoAuth = () => {
         domString += airportComponent.airportCardMakerNoAuth(airport);
       });
 
-      domString += `</>
-                      </div>`;
+      domString += `
+            </div>
+          </div>
+        </div>`;
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();

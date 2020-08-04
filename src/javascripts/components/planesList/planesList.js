@@ -17,17 +17,18 @@ const showPlanesAuth = () => {
   planesData.getPlanes()
     .then((planes) => {
       let domString = `
-                        <h2 class="text-center">Planes Serviced by Pan Am</h2>
-                          <div class="text-center">
-                          <button class="btn btn-light" data-toggle="modal" data-target="#exampleModal" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
-                          <div id="plane-card" class="d-flex flex-wrap">
+        <h2 class="text-center">Planes Serviced by Pan Am</h2>
+          <div class="text-center">
+            <button class="btn btn-light" data-toggle="modal" data-target="#exampleModal" id="add-plane"><i class="fas fa-plus-square" style="color:#2767AD;"></i> New Plane</button>
+            <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
         domString += planesComponent.createPlaneCardAuth(plane);
       });
 
-      domString += `    </div>
-                      </div>`;
+      domString += `        
+            </div>
+          </div>`;
 
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
@@ -42,16 +43,17 @@ const showPlanesNoAuth = () => {
   planesData.getPlanes()
     .then((planes) => {
       let domString = `
-                        <h2 class="text-center">Planes Serviced by Pan Am</h2>
-                          <div class="text-center">
-                          <div id="plane-card" class="d-flex flex-wrap">
+        <h2 class="text-center">Planes Serviced by Pan Am</h2>
+          <div class="text-center">
+            <div id="plane-card" class="d-flex flex-wrap">
                       `;
       planes.forEach((plane) => {
         domString += planesComponent.createPlaneCardNoAuth(plane);
       });
 
-      domString += `    </div>
-                      </div>`;
+      domString += `    
+            </div>
+          </div>`;
 
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');

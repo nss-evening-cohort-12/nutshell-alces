@@ -19,31 +19,31 @@ const buildLandingPage = () => {
     <img class="heading" src="https://i.ibb.co/BZGxbSR/Pan-am2.png" alt="Pan-am2" border="0">
       <div class="middle">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="https://specials-images.forbesimg.com/imageserve/1255842693/960x0.jpg?fit=scale" alt="First slide">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="https://specials-images.forbesimg.com/imageserve/1255842693/960x0.jpg?fit=scale" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="https://s3-us-west-1.amazonaws.com/flightfox/images/blog/first-class-challenge-air-canada.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="https://www.westjet.com/assets/wj-web/images/2018/wj/180927-inflight-economy-737x426.png" alt="Third slide">
+                </div>
               </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="https://s3-us-west-1.amazonaws.com/flightfox/images/blog/first-class-challenge-air-canada.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="https://www.westjet.com/assets/wj-web/images/2018/wj/180927-inflight-economy-737x426.png" alt="Third slide">
-              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
       </div>
       <h2>We're here for you.</h2>
       <div class="landingCardsContainer">
@@ -68,7 +68,7 @@ const buildLandingPage = () => {
             <p class="card-text">First Class meals for everyone on International Flights.</p>
           </div>
         </div>
-       </div> 
+      </div> 
     </div>
 
     `;

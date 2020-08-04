@@ -1,6 +1,4 @@
 import hideLanding from '../landingPage/landingPage';
-// import flightPath from './flightPath/flightPath';
-// import pilotDiv from './crew/pilots';
 import addFlights from './addFlights/addFlightLanding';
 import './dashBoard.scss';
 import utils from '../../helpers/utils';
