@@ -8,6 +8,7 @@ const foodMakerAuth = (food) => {
     <tr id="${food.id}" class="modify-food">
       <th scope="row">${food.name}</th>
         <td>$${food.price}</td>
+        <td>${food.type}</td>
         <td class="edit"><button type="button" id="${food.id}" class="btn btn-dark edit-food-item"><i class="fas fa-user-edit"></i></button></td>
         <td><button type="button" id="food-delete" class="btn btn-dark del-food-item"><i class="fas fa-trash-alt"></i></button></td>
         <td>
@@ -29,6 +30,7 @@ const foodMakerNoAuth = (food) => {
     <tr>
       <th scope="row">${food.name}</th>
       <td>$${food.price}</td>
+      <td>${food.type}</td>
     </tr>
   </tbody>
   `;
@@ -51,6 +53,7 @@ const authFood = () => {
           <tr>
             <th scope="col">Food</th>
             <th scope="col">Price</th>
+            <th scope="col">Type</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           <th scope="col">Available</th>

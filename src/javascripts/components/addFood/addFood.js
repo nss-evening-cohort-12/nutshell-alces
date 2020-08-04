@@ -10,6 +10,7 @@ const showAddFoodForm = () => {
     <tr class="add-food">
       <th scope="row"><input type="text" id="addFood-name"></th>
         <td><input type="text" id="addFood-price"></td>
+        <td><input type="text" id="addFood-type"></td>
         <td class="edit"><button type="button" class="btn btn-dark"><i class="fas fa-user-edit"></i></button></td>
         <td><button type="button" id="food-delete" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></td>
         <td>
@@ -35,6 +36,7 @@ const showAddFoodForm = () => {
         <tr>
           <th scope="col">Food</th>
           <th scope="col">Price</th>
+          <th scope="col">Type</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         <th scope="col">Available</th>

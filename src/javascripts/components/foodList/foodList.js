@@ -26,6 +26,7 @@ const buildFoods = () => {
               <tr>
                 <th scope="col">Food</th>
                 <th scope="col">Price</th>
+                <th scope="col">Type</th>
               </tr>
             </thead>
           </div>
@@ -57,6 +58,7 @@ const addFoodEvent = (e) => {
   const newFood = {
     name: $('#addFood-name').val(),
     price: $('#addFood-price').val() * 1,
+    type: $('#addFood-type').val(),
     isAvailable: $('#addFood-checkbox').prop('checked'),
   };
   foodData.addFood(newFood)
@@ -88,6 +90,7 @@ const editFoodEvent = (e) => {
   const editedFood = {
     name: $('#editFood-name').val(),
     price: $('#editFood-price').val() * 1,
+    type: $('#editFood-type').val(),
     isAvailable: $('#editFood-checkbox').prop('checked'),
   };
 

@@ -106,7 +106,7 @@ const showCrewEditForm = (e) => {
 
 const editCrewEvent = (e) => {
   e.preventDefault();
-  const crewId = e.target.closest('.crew-card').id;
+  const crewId = e.target.closest('.editting-crew').id;
 
   const editedCrew = {
     imageUrl: $('#edit-crew-image').val(),
