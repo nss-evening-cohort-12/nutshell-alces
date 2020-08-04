@@ -7,13 +7,15 @@ const foodMakerAuth = (food) => {
   <tbody>
     <tr id="${food.id}" class="modify-food">
       <th scope="row">${food.name}</th>
-      <td>$${food.price}</td>
-      <td class="edit"><button type="button" id="${food.id}" class="btn btn-dark edit-food-item"><i class="fas fa-user-edit"></i></button></td>
-      <td><button type="button" id="food-delete" class="btn btn-dark del-food-item"><i class="fas fa-trash-alt"></i></button></td>
-     <td><div>
-     <input type="checkbox" id="food" ${food.isAvailable ? 'checked' : ''} name="food">
-      <label for="food"></label>
-      </div></td>
+        <td>$${food.price}</td>
+        <td class="edit"><button type="button" id="${food.id}" class="btn btn-dark edit-food-item"><i class="fas fa-user-edit"></i></button></td>
+        <td><button type="button" id="food-delete" class="btn btn-dark del-food-item"><i class="fas fa-trash-alt"></i></button></td>
+        <td>
+          <div>
+            <input type="checkbox" id="food" ${food.isAvailable ? 'checked' : ''} name="food">
+            <label for="food"></label>
+          </div>
+        </td>
     </tr>
   </tbody>
   `;
@@ -42,7 +44,7 @@ const authFood = () => {
       <div class="text-center">
         <h2>Menu</h2>
         <div class="text-center" id="food-button">
-        <button type="button" id="add-food" class="btn btn-secondary mt-2 mb-4">Add Food</button>
+          <button type="button" id="add-food" class="btn btn-secondary mt-2 mb-4">Add Food</button>
         </div>
         <thead>
         <thead class="colored">

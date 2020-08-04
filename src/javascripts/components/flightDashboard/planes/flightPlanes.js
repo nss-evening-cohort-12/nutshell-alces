@@ -33,13 +33,4 @@ const buildPlanesDiv = () => {
     .catch((err) => console.error(err));
 };
 
-const getSelectedPlaneId = (e) => {
-  const selectedPlaneId = e.target.value;
-  console.warn(selectedPlaneId);
-};
-
-const flightPlaneEvents = () => {
-  $('body').on('change', '#plane-select', getSelectedPlaneId);
-};
-
-export default { buildPlanesDiv, getSelectedPlaneId, flightPlaneEvents };
+export default { buildPlanesDiv };

@@ -9,13 +9,15 @@ const showAddFoodForm = () => {
   <tbody>
     <tr class="add-food">
       <th scope="row"><input type="text" id="addFood-name"></th>
-      <td><input type="text" id="addFood-price"></td>
-      <td class="edit"><button type="button" class="btn btn-dark"><i class="fas fa-user-edit"></i></button></td>
-      <td><button type="button" id="food-delete" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></td>
-     <td><div>
-     <input type="checkbox" id="addFood-checkbox" name="food">
-      <label for="food"></label>
-      </div></td>
+        <td><input type="text" id="addFood-price"></td>
+        <td class="edit"><button type="button" class="btn btn-dark"><i class="fas fa-user-edit"></i></button></td>
+        <td><button type="button" id="food-delete" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button></td>
+        <td>
+      <div>
+        <input type="checkbox" id="addFood-checkbox" name="food">
+        <label for="food"></label>
+      </div>  
+      </td>
     </tr>
   </tbody>
   `;
@@ -26,7 +28,7 @@ const showAddFoodForm = () => {
       const headerString = `
       <h2 class="text-center mb-2">Menu</h2>
       <div class="text-center" id="food-button">
-      <button type="button" id="add-food" class="btn btn-secondary mt-2 mb-4">Add Food</button>
+        <button type="button" id="add-food" class="btn btn-secondary mt-2 mb-4">Add Food</button>
       </div>
       <thead>
       <thead class="colored">

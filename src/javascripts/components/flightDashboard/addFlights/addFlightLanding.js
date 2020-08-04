@@ -8,7 +8,6 @@ import flightCrew from '../flightCrew/flightCrew';
 import flightFoods from '../flightFoods/flightFoods';
 import flightsList from '../../flightsList/flightsList';
 
-// THIS FUNCTION WILL HIDE ALL DIVS RELATED TO ADD FLIGHTS
 const hideAddFlights = () => {
   utils.printToDom('#add-flights', '');
   utils.printToDom('#destination', '');
@@ -20,13 +19,13 @@ const hideAddFlights = () => {
 };
 
 const buildAddFlightLanding = () => {
-  const domString = `<div class="text-center" id="add-button">
+  const domString = `
+                    <div class="text-center" id="add-button">
                       <button type="submit" class="btn btn-secondary" type="submit" id="flight-adder">Add Flight!</button>
                       <p id="new-flight-validate"></p>
                     </div>`;
   utils.printToDom('#add-flights', domString);
 
-  // ADD NEW DIVS TO ADDFLIGHTS HERE
   fas.buildFaDiv();
   pilots.buildPilotDiv();
   flightPath.buildDestinationDiv();

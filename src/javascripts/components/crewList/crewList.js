@@ -25,14 +25,14 @@ const buildCrewAuth = () => {
         domString += crewComponent.crewCardMakerAuth(crew);
       });
 
-      domString += `</div>
-                  </div>`;
+      domString += `
+            </div>
+          </div>`;
 
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
       addFlights.hideAddFlights();
 
-      // utils.printToDom('#crew', '');
       utils.printToDom('#component-viewer', domString);
     })
     .catch((err) => console.error('no call no show', err));
@@ -51,8 +51,9 @@ const buildCrewNoAuth = () => {
         domString += crewComponent.crewCardMakerNoAuth(crew);
       });
 
-      domString += `</div>
-                  </div>`;
+      domString += `
+            </div>
+          </div>`;
 
       utils.printToDom('#component-viewer', '');
       utils.printToDom('#flightDashboard', '');
@@ -93,9 +94,7 @@ const addCrewEvent = (e) => {
 const removeCrewEvent = (e) => {
   const crewId = e.target.closest('.crew-card').id;
   crewData.deleteCrew(crewId)
-    .then((response) => {
-      console.warn('crew terminated', response);
-
+    .then(() => {
       buildCrewAuth();
     })
     .catch((err) => console.error('not terminated', err));

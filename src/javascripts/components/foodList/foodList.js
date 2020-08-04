@@ -94,7 +94,6 @@ const editFoodEvent = (e) => {
   foodData.updateFood(foodId, editedFood)
     .then(() => {
       utils.printToDom('#component-editor', '');
-      // utils.printToDom('#crew', '');
       menu.authFood();
     })
     .catch((err) => console.error('could not edit food', err));
