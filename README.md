@@ -15,6 +15,7 @@ This is a 3-person group project that allowed us to practice using a Firebase da
 1. Clone the repo to have it on your local machine along with all of the webpack components
 1. Use `npm start` to start up a local server
 1. Visit the server in your browser (should launch automatically and defaults to localhost:8080)
+1. Visit the deployed site at https://panam-10421.web.app/
 
 ### Screenshots
 <img src='./images/panam1.png' width=600>
