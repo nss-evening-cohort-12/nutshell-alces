@@ -62,7 +62,7 @@ const buildLandingPage = () => {
           </div>
         </div>
         <div class="cardL" style="width: 20rem;">
-          <img class="card-img-top" src="https://www.flyertalk.com/wp-content/uploads/2019/06/iStock-1049248354-1000x600.jpg"
+          <img class="card-img-top" src="https://s3-us-east-2.amazonaws.com/orbitz-media/blog/wp-content/uploads/2017/05/15204921/airplane-food.jpg"
           alt="Card image cap">
           <div class="card-body">
             <p class="card-text">First Class meals for everyone on International Flights.</p>
